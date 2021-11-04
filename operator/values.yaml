@@ -1,0 +1,36 @@
+---
+# limits should be set based on the number of plans/punchline
+# that the operator will be managing
+resources:
+  limits:
+    cpu: 1000m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 20Mi
+
+image:
+  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/operator:1.0.2
+  secretRef:
+    name: admin-secret
+  policy: IfNotPresent
+
+stormline:
+  enable: true
+  workers: 2
+
+flinkline:
+  enable: true
+  workers: 2
+
+sparkline:
+  enable: true
+  workers: 2
+
+application:
+  enable: true
+  workers: 2
+
+plan:
+  enable: true
+  workers: 2

@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+data:
+  controller_manager_config.yaml: |
+    ---
+    apiVersion: punchoperatorconfig.gitlab.thalesdigital.io/v1
+    kind: PunchOperatorConfig
+    health:
+      healthProbeBindAddress: :8081
+    metrics:
+      bindAddress: :8085
+    webhook:
+      port: 9443
+    leaderElection:
+      leaderElect: false
+      resourceName: c4b45ab4.gitlab.thalesdigital.io  
+    punch:
+      flinkline:
+        workers: {{ .Values.flinkline.workers | default 2 }}
+        enable: {{ .Values.flinkline.enable | default true }}
+      stormline:
+        workers: {{ .Values.stormline.workers | default 2 }}
+        enable: {{ .Values.stormline.enable | default true }}
+      application:
+        workers: {{ .Values.application.workers | default 2 }}
+        enable: {{ .Values.application.enable | default true }}
+      sparkline:
+        workers: {{ .Values.sparkline.workers | default 2 }}
+        enable: {{ .Values.sparkline.enable | default true }}
+      planScheduler:
+        workers: {{ .Values.plan.workers | default 2 }}
+        enable: {{ .Values.plan.enable | default true }}
+
+kind: ConfigMap
+metadata:
+  name: punchoperator-manager-config
+  namespace: {{  .Release.Namespace }}

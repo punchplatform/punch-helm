@@ -1,0 +1,162 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: plans.scheduler.gitlab.thalesdigital.io
+spec:
+  group: scheduler.gitlab.thalesdigital.io
+  names:
+    kind: Plan
+    listKind: PlanList
+    plural: plans
+    singular: plan
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .status.previousSchedule
+      name: PreviousSchedule
+      type: string
+    - jsonPath: .status.nextSchedule
+      name: NextSchedule
+      type: string
+    - jsonPath: .status.nextIteration
+      name: NextIteration
+      type: integer
+    - jsonPath: .spec.checkpointRef.name
+      name: Checkpoint
+      type: string
+    name: v1
+    schema:
+      openAPIV3Schema:
+        description: Plan is the Schema for the plans API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PlanSpec defines the desired state of Plan
+            properties:
+              apiVersion:
+                type: string
+              checkpointRef:
+                description: Enable pushing or fetching checkpoint dates from one
+                  of the supported backend
+                properties:
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                type: object
+              cron:
+                description: Either corn or interval should be set needs a cron expression
+                type: string
+              dates:
+                additionalProperties:
+                  properties:
+                    format:
+                      type: string
+                    offset:
+                      type: string
+                  required:
+                  - format
+                  - offset
+                  type: object
+                description: Templating can be applied before executing the plan Generates
+                  dates that will be substituted in .spec.punchline.template
+                type: object
+              implementation:
+                description: Will be used in case of Sparkline for executing pyspark/spark
+                enum:
+                - java
+                - python
+                type: string
+              interval:
+                description: Either corn or interval should be set use 1s, 1m, 1h
+                  or 1d
+                type: string
+              kind:
+                enum:
+                - Flinkline
+                - Stormline
+                - Sparkline
+                - Application
+                type: string
+              maxIteration:
+                description: Stop plan after N iteration
+                type: integer
+              templateSpec:
+                description: Application, Sparkline, Stormline or Flinkline (only
+                  .spec.dag)
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+            required:
+            - apiVersion
+            - kind
+            - templateSpec
+            type: object
+          status:
+            description: PlanStatus defines the observed state of Plan
+            properties:
+              currentScheduleEndTime:
+                description: RFC 3339 datetime realtime the current schedule started
+                type: string
+              lastErrorOccurenceTime:
+                description: RFC 3339 realtime an error was encountered
+                type: string
+              lastScheduleStatus:
+                description: final status of the last executed resource
+                type: string
+              nextIteration:
+                default: 0
+                type: integer
+              nextSchedule:
+                description: RFC 3339 datetime current schedule
+                type: string
+              phase:
+                description: similar to kubernetes pod phases Pending, Running, Succeeded,
+                  Failed, Unknown
+                enum:
+                - Pending
+                - Running
+                - Succeeded
+                - Failed
+                - Unknown
+                - Backoff
+                type: string
+              previousSchedule:
+                description: RFC 3339 datetime last succeeded schedule
+                type: string
+              previousScheduleEndTime:
+                description: RFC 3339 datetime realtime the last execution ended
+                type: string
+              previousScheduleStartTime:
+                description: RFC 3339 datetime realtime the last schedule was executed
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

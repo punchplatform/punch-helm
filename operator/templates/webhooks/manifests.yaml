@@ -1,0 +1,192 @@
+
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  creationTimestamp: null
+  name: punchoperator-mutating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: {{  .Release.Namespace }}/punchoperator-serving-cert
+webhooks:
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-application
+  failurePolicy: Fail
+  name: mapplication.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - applications
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
+  failurePolicy: Fail
+  name: mflinkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - flinklines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-sparkline
+  failurePolicy: Fail
+  name: msparkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - sparklines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-stormline
+  failurePolicy: Fail
+  name: mstormline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - stormlines
+  sideEffects: None
+
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  creationTimestamp: null
+  name: punchoperator-validating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: {{  .Release.Namespace }}/punchoperator-serving-cert
+webhooks:
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-application
+  failurePolicy: Fail
+  name: vapplication.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - DELETE
+    - UPDATE
+    resources:
+    - applications
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
+  failurePolicy: Fail
+  name: vflinkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - flinklines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-sparkline
+  failurePolicy: Fail
+  name: vsparkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - sparklines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-stormline
+  failurePolicy: Fail
+  name: vstormline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - stormlines
+  sideEffects: None
