@@ -8,7 +8,7 @@ entries:
     name: operator
     type: application
     urls:
-    - https://github.com/punchplatform/operator-helm.git/operator-1.0-SNAPSHOT.tgz
+    - https://github.com/punchplatform/punch-helm.git/operator-1.0-SNAPSHOT.tgz
     version: 1.0-SNAPSHOT
   operator-crds:
   - apiVersion: v2
@@ -18,6 +18,6 @@ entries:
     name: operator-crds
     type: application
     urls:
-    - https://github.com/punchplatform/operator-helm.git/operator-crds-1.0-SNAPSHOT.tgz
+    - https://github.com/punchplatform/punch-helm.git/operator-crds-1.0-SNAPSHOT.tgz
     version: 1.0-SNAPSHOT
 generated: "2021-11-04T17:46:42.28588738+01:00"
