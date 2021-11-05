@@ -10,7 +10,7 @@ resources:
     memory: 20Mi
 
 image:
-  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/operator:1.0.2
+  name: ghcr.io/punchplatform/operator:1-0-SNAPSHOT
   secretRef:
     name: admin-secret
   policy: IfNotPresent
