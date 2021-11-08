@@ -1,0 +1,10 @@
+image:
+  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/extraction-server:7.0.1-SNAPSHOT
+  secret: admin-secret
+  policy: IfNotPresent
+
+server:
+  port: 4243
+
+ingress:
+  enabled: false

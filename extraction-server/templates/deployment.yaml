@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "extraction-server.fullname" . }}
+  labels:
+    {{- include "extraction-server.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: extraction-server
+  template:
+    metadata:
+      labels:
+        app: extraction-server
+    spec:
+    {{- with .Values.image.secret }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.name }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.policy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.server.port }}

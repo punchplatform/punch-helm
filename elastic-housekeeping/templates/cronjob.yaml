@@ -1,0 +1,33 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "elastic-housekeeping.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "elastic-housekeeping.labels" . | nindent 4 }}
+spec:
+  schedule: "{{ .Values.schedule }}"
+  jobTemplate:
+    spec:
+      template:         
+        spec:
+        {{ if .Values.image.secret }}
+          imagePullSecrets:
+            - name: {{ .Values.image.secret }}
+        {{ end }}
+          containers:
+            - name: {{ .Chart.Name }}
+              image: "{{ .Values.image.name }}:{{ .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.policy }}
+              args: ["--tenant-configuration", "/opt/punch/config/config.yml", "--install-dir-path", "/opt/punch"]
+              env:
+                - name: PUNCHPLATFORM_TENANT
+                  value: {{ .Values.tenant }}
+              volumeMounts:
+                - mountPath: /opt/punch/config
+                  name: config
+          restartPolicy: Never
+          volumes:
+            - name: config
+              configMap:
+                name: {{ include "elastic-housekeeping.fullname" . }}-config

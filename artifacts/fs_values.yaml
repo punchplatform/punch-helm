@@ -1,0 +1,22 @@
+image:
+  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/artifacts-server:7.0.1-SNAPSHOT
+  secret: admin-secret
+  policy: IfNotPresent
+
+server:
+  port: 4245
+
+ingress:
+  enabled: true
+  url: artifacts.dpsc
+
+tenant:
+  name: mytenant
+
+web:
+  enabled: true
+
+metadata:
+  file: /tmp/artifacts/metadata
+data:
+  file: /tmp/artifacts/data

@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "elastic-housekeeping.fullname" . }}-config
+  labels:
+    {{- include "elastic-housekeeping.labels" . | nindent 4 }}
+  namespace: {{ .Release.Namespace }}
+data:
+  config.yml: |
+    {
+      "clusters_settings": [{
+        "cluster_id": "elasticsearch",
+        "actions": {{ toJson .Values.actions }}
+      }]
+    }
+
+  punchplatform.properties: |
+    {
+      "elasticsearch": {
+        "clusters": {
+          "elasticsearch": {
+            "nodes": {
+              "es_node": {
+                "http_api_address": "{{ .Values.elasticsearch.host }}",
+                "bind_address": "{{ .Values.elasticsearch.host }}",
+                "rack_id": "1"
+              }
+            },
+            "http_api_port": {{ .Values.elasticsearch.port }}
+          }
+        }
+      }
+    }

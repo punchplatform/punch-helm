@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "elastalert.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "elastalert.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "elastalert.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "elastalert.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- if .Values.image.secret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.secret }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.policy }}
+          args: ["--config", "/opt/punch/config/elastalert_config.yml", "--verbose"]
+          volumeMounts:
+            - mountPath: /opt/punch/config
+              name: elastalert-config
+      volumes:
+        - name: elastalert-config
+          configMap:
+            name: {{ include "elastalert.fullname" . }}-config

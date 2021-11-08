@@ -1,0 +1,44 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-artifacts
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: artifacts
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: artifacts
+  template:
+    metadata:
+      labels:
+        app: artifacts
+    spec:
+      restartPolicy: Always
+      {{- if .Values.image.secret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.secret }}
+      {{- end }}
+      containers:
+        - name: artifacts
+          image: "{{ .Values.image.name }}"
+          imagePullPolicy: "{{ .Values.image.policy }}"
+          args: ["--spring.config.location=/opt/punch/config/application.yml"]
+          ports:
+            - name: artifacts
+              containerPort: {{ .Values.server.port }}
+          volumeMounts:
+            - name: config
+              mountPath: /opt/punch/config
+      volumes:
+        - name: config
+          configMap:
+            name: {{ .Release.Name }}-configmap
+{{ if .Values.image.secret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.secret }}
+{{ end }}

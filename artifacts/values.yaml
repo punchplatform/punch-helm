@@ -1,0 +1,32 @@
+image:
+  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/artifacts-server:7.0.1-SNAPSHOT
+  secret: admin-secret
+  policy: IfNotPresent
+
+server:
+  port: 4245
+
+ingress:
+  url: artifacts.dpsc
+  enabled: true
+
+tenant:
+  name: mytenant
+
+web:
+  enabled: true
+
+metadata:
+  elasticsearch:
+    hosts:
+      - http://elasticsearch.doc-store:9200
+    index_name: artifacts-metadata
+
+data:
+  minio:
+    host: http://s3.object-store:9000
+    access_key: minio
+    secret_key: K@st2020*
+
+
+

@@ -1,0 +1,33 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "archive-housekeeping.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "archive-housekeeping.labels" . | nindent 4 }}
+spec:
+  schedule: "{{ .Values.schedule }}"
+  jobTemplate:
+    spec:
+      template:         
+        spec:
+        {{ if .Values.image.secret }}
+          imagePullSecrets:
+            - name: {{ .Values.image.secret }}
+        {{ end }}
+          containers:
+            - name: {{ .Chart.Name }}
+              image: "{{ .Values.image.name }}:{{ .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.policy }}
+              args: ["/opt/punch/config/config.yml"]
+              env:
+                - name: PUNCHPLATFORM_PROPERTIES_FILE
+                  value: /opt/punch/config/punchplatform.properties
+              volumeMounts:
+                - mountPath: /opt/punch/config
+                  name: config
+          restartPolicy: Never
+          volumes:
+            - name: config
+              configMap:
+                name: {{ include "archive-housekeeping.fullname" . }}-config

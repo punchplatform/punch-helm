@@ -1,0 +1,15 @@
+# Default values for elastalert.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: elastalert
+
+image:
+  repository: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/elastalert:7.0.1-SNAPSHOT
+  policy: IfNotPresent
+  secret: admin-secret
+
+elasticsearch:
+  host: elasticsearch.doc-store
+  port: 9200
+  index: elastalert

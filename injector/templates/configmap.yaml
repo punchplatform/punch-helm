@@ -1,0 +1,10 @@
+{{ range $i, $resource := .Values.configMap }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $resource.id }}
+data: 
+  {{ $resource.id }} : |-
+      {{- tpl (index $.Values $resource.id) $ | nindent 8 }}
+{{ end }}

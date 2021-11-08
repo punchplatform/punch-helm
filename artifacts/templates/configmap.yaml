@@ -1,0 +1,55 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $.Release.Name }}-configmap
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: artifacts
+data:
+  application.yml: |
+    server:
+      port: {{ .Values.server.port }}
+
+    application:
+      tenant: {{ .Values.tenant.name }}
+    #  roles:
+    #    ROLE_USER:
+    #      - UPLOAD_ARTIFACTS
+    #    ROLE_ADMIN:
+    #      - UPLOAD_ARTIFACTS
+    #      - DELETE_ARTIFACTS
+
+    web:
+      enabled: {{ .Values.web.enabled }}
+
+    metadata:
+    {{ toYaml .Values.metadata | nindent 6 }}
+
+    data:
+    {{ toYaml .Values.data | nindent 6 }}
+
+    spring:
+      servlet:
+        multipart:
+          max-file-size: 100MB
+          max-request-size: 100MB
+      security:
+        enabled: false
+        oauth2:
+          client:
+            provider:
+              keycloak:
+                authorization-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/auth
+                token-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/token
+                user-info-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/userinfo
+                jwk-set-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/certs
+                user-name-attribute: preferred_username
+            registration:
+              keycloak:
+                client-id: login-app
+                provider: keycloak
+                scope: openid
+                redirect-uri: http://localhost:4245/login/oauth2/code/keycloak
+                client-authentication-method: basic
+                authorization-grant-type: authorization_code

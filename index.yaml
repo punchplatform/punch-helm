@@ -2,18 +2,9 @@ apiVersion: v1
 entries:
   archive-housekeeping:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.453665343+01:00"
+    created: "2021-11-08T11:11:16.985380215+01:00"
     description: A Helm chart for Archive Housekeeping
-    digest: b34054a796c3929d06bb4df143efbb7741ef5e321c7b98689126ae6264814b95
-    name: archive-housekeeping
-    type: application
-    urls:
-    - https://punchplatform.github.io/archive-housekeeping-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.456620637+01:00"
-    description: A Helm chart for Archive Housekeeping
-    digest: bd9b29e7840dc82119735d59e215aa8cee348854ce2b792ded6c1f8ac62b1b54
+    digest: d5bb8a58caa3f442bb3633e994d5f4ced04a4ec8075dbd97fec0862c0f42dbcb
     name: archive-housekeeping
     type: application
     urls:
@@ -21,18 +12,9 @@ entries:
     version: 7.0.1-SNAPSHOT
   artifacts:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.45408435+01:00"
+    created: "2021-11-08T11:11:16.985750769+01:00"
     description: A Helm chart for the Punch Artifacts
-    digest: 7e24ce6f0e2ccef3c91e6523ae89c35542dbb7e4536d1d5064b1378dd2655e32
-    name: artifacts
-    type: application
-    urls:
-    - https://punchplatform.github.io/artifacts-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.456996259+01:00"
-    description: A Helm chart for the Punch Artifacts
-    digest: 76ac06c00a052eb41744e670ebb7233f2f587a0d03b0702d77f7b7ed73d84d0f
+    digest: e7361a15804ea8c694b5f358f59746a81a09b1b3b5e8efa3fdb6ac3cb23e3c43
     name: artifacts
     type: application
     urls:
@@ -40,18 +22,9 @@ entries:
     version: 7.0.1-SNAPSHOT
   elastalert:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.454358428+01:00"
+    created: "2021-11-08T11:11:16.986035017+01:00"
     description: A Helm chart for Elastalert
-    digest: 6557b7360bebb332313b3823057c60152b8b8815982b5f96ac38ec596836f364
-    name: elastalert
-    type: application
-    urls:
-    - https://punchplatform.github.io/elastalert-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.457253621+01:00"
-    description: A Helm chart for Elastalert
-    digest: 0e8cbf658957ee8e3a848dedd095fca445a7626347379c3c3d595b1774c8118b
+    digest: af13375644ff28f4d0f65cab153e7ce67c6e633090d24980fad28e4827ef6960
     name: elastalert
     type: application
     urls:
@@ -59,18 +32,9 @@ entries:
     version: 7.0.1-SNAPSHOT
   elastic-housekeeping:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.454689131+01:00"
+    created: "2021-11-08T11:11:16.986366279+01:00"
     description: A Helm chart for Elastic Housekeeping
-    digest: 29db653325d04cb29236668f286dcce83996ce344b23cb98bd2ff41db4730aad
-    name: elastic-housekeeping
-    type: application
-    urls:
-    - https://punchplatform.github.io/elastic-housekeeping-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.457590731+01:00"
-    description: A Helm chart for Elastic Housekeeping
-    digest: a7a6043bec6780d1c5e5503e7b012e5cd27e82134053cb7516de0b8325a63e72
+    digest: fbe967061fc16e6fcbae7fd3e9a7ba040ac8f40e5c8f00f16da7d0330bcfee09
     name: elastic-housekeeping
     type: application
     urls:
@@ -78,18 +42,9 @@ entries:
     version: 7.0.1-SNAPSHOT
   extraction-server:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.454963908+01:00"
+    created: "2021-11-08T11:11:16.986683042+01:00"
     description: A Helm chart for Punch extraction server
-    digest: 4d0043c31fafb99aff005a9b3df81a4520effe54daed03f4be71df7386181bfa
-    name: extraction-server
-    type: application
-    urls:
-    - https://punchplatform.github.io/extraction-server-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.457879085+01:00"
-    description: A Helm chart for Punch extraction server
-    digest: 1b5e47a7d23f9b2157bd6793f69c5acaaccc19180fcecf5a6e4a3a910d0004cb
+    digest: af578f72b8d7fea78e0169fe9998b978f6230d2c8b9b0d37aaa8833864019007
     name: extraction-server
     type: application
     urls:
@@ -97,18 +52,9 @@ entries:
     version: 7.0.1-SNAPSHOT
   log-injector:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.455163066+01:00"
+    created: "2021-11-08T11:11:16.986962306+01:00"
     description: A Helm chart for the Punch log injector
-    digest: d68e934744bfe676400bf7cebe2ac21a4b851260e154bb519c6110e3f9780aae
-    name: log-injector
-    type: application
-    urls:
-    - https://punchplatform.github.io/log-injector-7.0.1-SNAPSHOT.tgz
-    version: 7.0.1-SNAPSHOT
-  - apiVersion: v2
-    created: "2021-11-08T10:26:06.458093527+01:00"
-    description: A Helm chart for the Punch log injector
-    digest: e834b4e599d562b126a3a9c10a0c155704e71450de44d6642402937208872cef
+    digest: 8444fdfdf9cac8d2a19c0da5dd2008f13f9953366a001a53d1936bb0102492db
     name: log-injector
     type: application
     urls:
@@ -116,7 +62,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   operator:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.455550939+01:00"
+    created: "2021-11-08T11:11:16.987363368+01:00"
     description: A Helm chart for the Punch Operator
     digest: 8a7bd7ac543da3df4c8b37231305fc4a159630d2b2657a56a8cb6e7f5025aa47
     name: operator
@@ -126,7 +72,7 @@ entries:
     version: 1.0-SNAPSHOT
   operator-crds:
   - apiVersion: v2
-    created: "2021-11-08T10:26:06.456340624+01:00"
+    created: "2021-11-08T11:11:16.988193343+01:00"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: b52240a92d30428d6f1040bde9c6eb63d1e6f7e5c061cc14be5408592cdcfa37
     name: operator-crds
@@ -134,4 +80,4 @@ entries:
     urls:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0-SNAPSHOT.tgz
     version: 1.0-SNAPSHOT
-generated: "2021-11-08T10:26:06.452976966+01:00"
+generated: "2021-11-08T11:11:16.984980573+01:00"
