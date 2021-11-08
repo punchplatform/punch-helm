@@ -1,8 +1,14 @@
 # Punchplatform Helm Chart
 
 This repository regroups Punchplatform Helm Chart for deploying services:
-- PunchOperator
-- ArtifactServer
+- [PunchOperator](./operator/README.md)
+- [PunchOperator CRDs](./operator-crds/README.md)
+- [Injector](./injector/README.md)
+- [Extraction Server](./extraction-server/README.md)
+- [Elastic Housekeeping](./elastic-housekeeping/README.md)
+- [Elastalert](./elastalert/README.md)
+- [Artifacts Server](./artifacts/README.md)
+- [Archive Housekeeping](./archive-housekeeping/README.md)
 
 ## Quickstart
 
@@ -12,21 +18,10 @@ helm repo update
 # this will list available helm charts
 helm search repo punchplatform --devel
 
-# Deploy operator-crds
-helm install punch/operator-crds \
-    --version 1.0-SNAPSHOT \
-    --devel \
-    --generate-name
-
-# Deploy operator
-helm install punch/operator \
-    --version 1.0-SNAPSHOT \
+# Deploy a helm chart
+helm install punchplatform/<punch helm chart> \
+    --version <version> \
     --devel \
     --generate-name \
-    --namespace punchoperator-system \
-    --create-namespace
+    --namespace <namespace>
 ```
-
-## Documentation
-
-- [PunchOperator Helm Documentation](./operator/README.md)
