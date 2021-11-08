@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   operator:
   - apiVersion: v2
-    created: "2021-11-07T05:19:47.269265218Z"
+    created: "2021-11-08T05:19:43.4739375Z"
     description: A Helm chart for the Punch Operator
-    digest: c4e03e2ab1c5da43873036687eeaafab84ce597e1390b003878d301332e7c585
+    digest: 8a7bd7ac543da3df4c8b37231305fc4a159630d2b2657a56a8cb6e7f5025aa47
     name: operator
     type: application
     urls:
@@ -12,12 +12,12 @@ entries:
     version: 1.0-SNAPSHOT
   operator-crds:
   - apiVersion: v2
-    created: "2021-11-07T05:19:47.27021703Z"
+    created: "2021-11-08T05:19:43.474777314Z"
     description: A Helm chart containing CRDs for the Punch Operator
-    digest: 6cb3d73593b68036e71af555062b4587e9258a8ed2078db702f0d953af7d9a49
+    digest: b52240a92d30428d6f1040bde9c6eb63d1e6f7e5c061cc14be5408592cdcfa37
     name: operator-crds
     type: application
     urls:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0-SNAPSHOT.tgz
     version: 1.0-SNAPSHOT
-generated: "2021-11-07T05:19:47.26860821Z"
+generated: "2021-11-08T05:19:43.47331319Z"
