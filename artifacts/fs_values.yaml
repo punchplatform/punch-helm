@@ -1,5 +1,5 @@
 image:
-  name: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/artifacts-server:7.0.1-SNAPSHOT
+  name: ghcr.io/punchplatform/artifacts-server:7.0.1-SNAPSHOT
   secret: admin-secret
   policy: IfNotPresent
 

@@ -8,7 +8,7 @@ The Punchplatform Elasticsearch Housekeeping is in charge of cleaning up or movi
 
 | Configuration        | Description                         | Default value                                               |
 |----------------------|-------------------------------------|-------------------------------------------------------------|
-| image.name           | The ES Housekeeping docker image    | artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/es-housekeeping |
+| image.name           | The ES Housekeeping docker image    | ghcr.io/punchplatform/es-housekeeping |
 | image.policy         | The Kubernetes image pull policy    | IfNotPresent                                                |
 | image.secret         | Secret name to pull docker image    |      admin-secret                                                       |
 

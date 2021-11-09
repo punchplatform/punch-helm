@@ -5,7 +5,7 @@
 namespace: elastalert
 
 image:
-  repository: artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/elastalert:7.0.1-SNAPSHOT
+  repository: ghcr.io/punchplatform/elastalert:7.0.1-SNAPSHOT
   policy: IfNotPresent
   secret: admin-secret
 
