@@ -61,7 +61,7 @@ kubectl get plans
 
 | Configuration        | Description                         | Default value                                               |
 |----------------------|-------------------------------------|-------------------------------------------------------------|
-| image.name           | The Punch Operator docker image     | ghcr.io/punchplatform/operator:v1.0.2 |
+| image.name           | The Punch Operator docker image     | artifactory.thalesdigital.io/private-docker-punch/product/pp-punch/operator:v1.0.2 |
 | image.policy         | The Kubernetes image pull policy    | IfNotPresent                                                |
 | image.secret         | Secret name to pull docker image    | admin-secret                                                          |
 
