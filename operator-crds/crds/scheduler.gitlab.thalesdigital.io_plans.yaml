@@ -113,20 +113,17 @@ spec:
           status:
             description: PlanStatus defines the observed state of Plan
             properties:
-              currentScheduleEndTime:
+              currentSchedule:
+                description: RFC 3339 datetime current schedule
+                type: string
+              currentScheduleStartTime:
                 description: RFC 3339 datetime realtime the current schedule started
                 type: string
-              lastErrorOccurenceTime:
-                description: RFC 3339 realtime an error was encountered
-                type: string
-              lastScheduleStatus:
-                description: final status of the last executed resource
-                type: string
-              nextIteration:
+              iterations:
                 default: 0
                 type: integer
               nextSchedule:
-                description: RFC 3339 datetime current schedule
+                description: RFC 3339 datetime next schedule
                 type: string
               phase:
                 description: similar to kubernetes pod phases Pending, Running, Succeeded,
@@ -140,13 +137,16 @@ spec:
                 - Backoff
                 type: string
               previousSchedule:
-                description: RFC 3339 datetime last succeeded schedule
+                description: RFC 3339 datetime last schedule
                 type: string
               previousScheduleEndTime:
                 description: RFC 3339 datetime realtime the last execution ended
                 type: string
               previousScheduleStartTime:
-                description: RFC 3339 datetime realtime the last schedule was executed
+                description: RFC 3339 datetime realtime the last schedule started
+                type: string
+              previousScheduleStatus:
+                description: final status of the last schedule
                 type: string
             type: object
         type: object
