@@ -10,7 +10,7 @@ resources:
     memory: 20Mi
 
 image:
-  name: ghcr.io/punchplatform/operator:1.0.3
+  name: ghcr.io/punchplatform/operator:1.0-SNAPSHOT
   secretRef:
     name: admin-secret
   policy: IfNotPresent
