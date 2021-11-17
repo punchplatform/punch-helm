@@ -12,7 +12,7 @@ data:
       port: {{ .Values.server.port }}
 
     application:
-      tenant: {{ .Values.tenant.name }}
+      tenant: {{ .Values.application.tenant }}
     #  roles:
     #    ROLE_USER:
     #      - UPLOAD_ARTIFACTS
@@ -32,8 +32,8 @@ data:
     spring:
       servlet:
         multipart:
-          max-file-size: 100MB
-          max-request-size: 100MB
+          max-file-size: {{ .Values.application.file_size }}
+          max-request-size: {{ .Values.application.file_size }}
       security:
         enabled: false
         oauth2:

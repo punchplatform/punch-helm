@@ -50,6 +50,7 @@ application:
 | web.enabled          | Enable UI                          | true          |
 | application.tenant.name          | Tenant to use, used as index prefix for ES and bucket for S3    | mytenant   |
 | application.roles          | Role to use see OAUTH section bellow    |    |
+| application.file_size          | Maximum artifact size    |    |
 
 #### Metadata
 

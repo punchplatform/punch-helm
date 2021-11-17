@@ -10,8 +10,9 @@ ingress:
   url: artifacts.dpsc
   enabled: true
 
-tenant:
-  name: mytenant
+application:
+  tenant: mytenant
+  file_size: 100MB
 
 web:
   enabled: true
