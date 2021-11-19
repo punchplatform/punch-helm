@@ -4,6 +4,8 @@ kind: Service
 metadata:
   name: punchoperator-webhook-service
   namespace: {{  .Release.Namespace }}
+  labels:
+    control-plane: controller-manager
 spec:
   ports:
     - port: 443

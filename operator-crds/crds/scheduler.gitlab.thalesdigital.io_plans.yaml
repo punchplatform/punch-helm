@@ -23,11 +23,14 @@ spec:
     - jsonPath: .status.previousSchedule
       name: PreviousSchedule
       type: string
+    - jsonPath: .status.currentSchedule
+      name: CurrentSchedule
+      type: string
     - jsonPath: .status.nextSchedule
       name: NextSchedule
       type: string
-    - jsonPath: .status.nextIteration
-      name: NextIteration
+    - jsonPath: .status.iterations
+      name: Iterations
       type: integer
     - jsonPath: .spec.checkpointRef.name
       name: Checkpoint
@@ -148,6 +151,12 @@ spec:
               previousScheduleStatus:
                 description: final status of the last schedule
                 type: string
+              retries:
+                default: 0
+                description: Number of retries of plan current schedule This retries
+                  will fallback to 0 on each new successful schedule but will increment
+                  on each failed execution of the current schedule
+                type: integer
             type: object
         type: object
     served: true
