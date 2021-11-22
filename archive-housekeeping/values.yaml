@@ -1,5 +1,5 @@
 image:
-  name: ghcr.io/punchplatform/archive-housekeeping:7.0.1-SNAPSHOT
+  name: ghcr.io/punchplatform/archive-housekeeping:7.0.1-alpha1
   secret: admin-secret
   policy: IfNotPresent
 

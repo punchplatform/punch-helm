@@ -5,7 +5,7 @@
 namespace: elastalert
 
 image:
-  repository: ghcr.io/punchplatform/elastalert:7.0.1-SNAPSHOT
+  repository: ghcr.io/punchplatform/elastalert:7.0.1-alpha1
   policy: IfNotPresent
   secret: admin-secret
 
