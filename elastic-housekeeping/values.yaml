@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  name: ghcr.io/punchplatform/es-housekeeping:7.0.1-alpha1
+  name: ghcr.io/punchplatform/es-housekeeping:7.0.1-SNAPSHOT
   secret: "admin-secret"
   policy: "IfNotPresent"
 
