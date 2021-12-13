@@ -67,6 +67,13 @@ kubectl get plans
 
 ### Punchplatform Operator configuration
 
+#### Annotations
+
+| Configuration     | Description                                                      | Default value |
+|-------------------|------------------------------------------------------------------|---------------|
+| additionalAnnotations  | Add custom annotations for pod Operator                     |   empty        |
+|
+
 #### Stormline
 
 | Configuration     | Description                                                      | Default value |

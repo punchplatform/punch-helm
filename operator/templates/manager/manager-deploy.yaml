@@ -4,6 +4,10 @@ kind: Deployment
 metadata:
   labels:
     control-plane: controller-manager
+  {{- with .Values.additionalAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   name: punchoperator-controller-manager
   namespace: {{  .Release.Namespace }}
 spec:
@@ -15,6 +19,10 @@ spec:
     metadata:
       labels:
         control-plane: controller-manager
+      {{- with .Values.additionalAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 4 }}
+      {{- end }} 
     spec:
       {{- if .Values.image.secretRef.name }}
       imagePullSecrets:
