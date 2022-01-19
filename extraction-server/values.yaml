@@ -1,5 +1,5 @@
 image:
-  name: ghcr.io/punchplatform/extraction-server:7.0.1
+  name: ghcr.io/punchplatform/extraction-server:7.0.2-SNAPSHOT
   secret: admin-secret
   policy: IfNotPresent
 
