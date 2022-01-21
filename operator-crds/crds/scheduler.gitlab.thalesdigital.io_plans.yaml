@@ -32,6 +32,9 @@ spec:
     - jsonPath: .status.iterations
       name: Iterations
       type: integer
+    - jsonPath: .status.retries
+      name: Retries
+      type: integer
     - jsonPath: .spec.checkpointRef.name
       name: Checkpoint
       type: string
@@ -57,6 +60,10 @@ spec:
             properties:
               apiVersion:
                 type: string
+              backoffLimit:
+                default: 4
+                description: Number of attempts to retry scheduling a lost schedule
+                type: integer
               checkpointRef:
                 description: Enable pushing or fetching checkpoint dates from one
                   of the supported backend
