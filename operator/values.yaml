@@ -10,7 +10,7 @@ resources:
     memory: 20Mi
 
 image:
-  name: ghcr.io/punchplatform/operator:1.0-SNAPSHOT
+  name: ghcr.io/punchplatform/operator:8.0-dev
   secretRef:
     name: admin-secret
   policy: IfNotPresent
@@ -28,6 +28,14 @@ sparkline:
   workers: 2
 
 application:
+  enable: true
+  workers: 2
+
+batchApplication:
+  enable: true
+  workers: 2
+
+streamApplication:
   enable: true
   workers: 2
 

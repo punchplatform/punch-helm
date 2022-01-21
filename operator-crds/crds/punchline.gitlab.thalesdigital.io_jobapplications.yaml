@@ -6,30 +6,26 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.1
   creationTimestamp: null
-  name: applications.punchline.gitlab.thalesdigital.io
+  name: jobapplications.punchline.gitlab.thalesdigital.io
 spec:
   group: punchline.gitlab.thalesdigital.io
   names:
-    kind: Application
-    listKind: ApplicationList
-    plural: applications
-    singular: application
+    kind: JobApplication
+    listKind: JobApplicationList
+    plural: jobapplications
+    singular: jobapplication
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .spec.image
       name: Image
       type: string
-    - jsonPath: .spec.garbageCollect
-      name: Garbage
-      type: boolean
     - jsonPath: .status.phase
       name: Status
       type: string
-    name: v1
+    name: v2
     schema:
       openAPIV3Schema:
-        description: Application is the Schema for the applications API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -44,7 +40,6 @@ spec:
           metadata:
             type: object
           spec:
-            description: ApplicationSpec defines the desired state of Application
             properties:
               affinity:
                 description: Define affinity groups
@@ -767,10 +762,6 @@ spec:
                   - name
                   type: object
                 type: array
-              garbageCollect:
-                description: State whether to garbage collect application after completion
-                  or not
-                type: boolean
               image:
                 description: Container image to be used when our operator will be
                   executing pod
@@ -792,14 +783,6 @@ spec:
               initContainerUrl:
                 description: IP of resourcectl
                 type: string
-              metrics:
-                properties:
-                  port:
-                    type: integer
-                type: object
-              oneshot:
-                default: false
-                type: boolean
               resources:
                 description: Define resources limits or requests
                 properties:
@@ -852,12 +835,11 @@ spec:
                 type: integer
             type: object
           status:
-            description: ApplicationStatus defines the observed state of Application
             properties:
               Id:
                 type: string
               phase:
-                description: Active pods
+                description: Active Jobs
                 type: string
             type: object
         type: object

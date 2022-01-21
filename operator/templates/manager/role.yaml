@@ -43,6 +43,18 @@ rules:
   - update
   - watch
 - apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
   - ""
   resources:
   - configmaps
@@ -102,6 +114,42 @@ rules:
   - punchline.gitlab.thalesdigital.io
   resources:
   - applications/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications/status
   verbs:
   - create
   - delete
@@ -198,6 +246,42 @@ rules:
   - punchline.gitlab.thalesdigital.io
   resources:
   - stormlines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications/status
   verbs:
   - create
   - delete

@@ -27,6 +27,12 @@ data:
       sparkline:
         workers: {{ .Values.sparkline.workers | default 2 }}
         enable: {{ .Values.sparkline.enable | default true }}
+      batchApplication:
+        workers: {{ .Values.batchApplication.workers | default 2 }}
+        enable: {{ .Values.batchApplication.enable | default true }}
+      streamApplication:
+        workers: {{ .Values.streamApplication.workers | default 2 }}
+        enable: {{ .Values.streamApplication.enable | default true }}
       planScheduler:
         workers: {{ .Values.plan.workers | default 2 }}
         enable: {{ .Values.plan.enable | default true }}
