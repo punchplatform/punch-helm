@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.1
   creationTimestamp: null
-  name: stormlines.punchline.gitlab.thalesdigital.io
+  name: streamjavapunchlines.punchline.gitlab.thalesdigital.io
 spec:
   group: punchline.gitlab.thalesdigital.io
   names:
-    kind: Stormline
-    listKind: StormlineList
-    plural: stormlines
-    singular: stormline
+    kind: StreamJavaPunchline
+    listKind: StreamJavaPunchlineList
+    plural: streamjavapunchlines
+    singular: streamjavapunchline
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -23,10 +23,9 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
-    name: v1
+    name: v2
     schema:
       openAPIV3Schema:
-        description: Stormline is the Schema for the stormlines API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -41,7 +40,6 @@ spec:
           metadata:
             type: object
           spec:
-            description: StormlineSpec defines the desired state of Stormline
             properties:
               affinity:
                 description: Define affinity groups
@@ -639,11 +637,6 @@ spec:
                 items:
                   type: string
                 type: array
-              backoffLimit:
-                default: 6
-                description: See kubernetes official doc on Job BackoffLimit
-                format: int32
-                type: integer
               command:
                 description: Entrypoint to use for our image
                 items:
@@ -656,6 +649,13 @@ spec:
                   string)) each config will be mounted on pod FS at root (/) with
                   file name: key and file content: value'
                 type: object
+              dag:
+                description: current flink structs mix dynamic and static fields on
+                  the same schema level
+                items:
+                  type: object
+                type: array
+                x-kubernetes-preserve-unknown-fields: true
               dependencies:
                 items:
                   type: string
@@ -763,11 +763,6 @@ spec:
                   - name
                   type: object
                 type: array
-              garbageCollect:
-                default: false
-                description: State whether to garbage collect punchline after completion
-                  or not
-                type: boolean
               image:
                 description: Container image to be used when our operator will be
                   executing pod
@@ -789,170 +784,6 @@ spec:
               initContainerUrl:
                 description: Url of resourcectl
                 type: string
-              metrics:
-                properties:
-                  port:
-                    type: integer
-                type: object
-              oneshot:
-                default: false
-                type: boolean
-              punchline:
-                description: Punchline Config
-                properties:
-                  dag:
-                    description: Stormline dag definition
-                    items:
-                      properties:
-                        component:
-                          type: string
-                        package:
-                          type: string
-                        publish:
-                          items:
-                            properties:
-                              alias:
-                                type: string
-                              fields:
-                                items:
-                                  type: string
-                                type: array
-                              stream:
-                                type: string
-                            required:
-                            - stream
-                            type: object
-                          type: array
-                        settings:
-                          type: object
-                          x-kubernetes-preserve-unknown-fields: true
-                        subscribe:
-                          items:
-                            properties:
-                              alias:
-                                type: string
-                              component:
-                                type: string
-                              stream:
-                                type: string
-                            required:
-                            - component
-                            - stream
-                            type: object
-                          type: array
-                        type:
-                          type: string
-                      required:
-                      - component
-                      - settings
-                      - type
-                      type: object
-                    type: array
-                  platform:
-                    default: default
-                    type: string
-                  runtime:
-                    type: string
-                  settings:
-                    additionalProperties:
-                      type: string
-                    description: punchline settings (should not be set by user, user
-                      are expected to use the parent settings)
-                    type: object
-                  version:
-                    default: "7.0"
-                    type: string
-                required:
-                - dag
-                type: object
-              reporters:
-                description: metrics reporters
-                items:
-                  properties:
-                    bootstrap.servers:
-                      type: string
-                    brokers:
-                      description: lumberjack conf
-                      type: string
-                    credentials:
-                      properties:
-                        password:
-                          type: string
-                        token:
-                          type: string
-                        token_type:
-                          type: string
-                        user:
-                          type: string
-                      type: object
-                    destination:
-                      items:
-                        properties:
-                          compression:
-                            type: boolean
-                          host:
-                            type: string
-                          port:
-                            type: integer
-                        type: object
-                      type: array
-                    format:
-                      type: string
-                    group_connection_timeout:
-                      type: integer
-                    http_hosts:
-                      items:
-                        properties:
-                          host:
-                            type: string
-                          port:
-                            type: integer
-                        type: object
-                      type: array
-                    index_name:
-                      type: string
-                    index_suffix_date_pattern:
-                      type: string
-                    lumberjack:
-                      type: string
-                    metric_document_field_name:
-                      type: string
-                    regex:
-                      description: elastic conf
-                      items:
-                        type: string
-                      type: array
-                    reporting_interval:
-                      type: integer
-                    security.protocol:
-                      type: string
-                    ssl:
-                      type: boolean
-                    ssl.keystore.location:
-                      type: string
-                    ssl.keystore.password:
-                      type: string
-                    ssl.truststore.location:
-                      type: string
-                    ssl.truststore.password:
-                      type: string
-                    ssl_certificate:
-                      type: string
-                    ssl_private_key:
-                      description: security conf
-                      type: string
-                    ssl_trusted_certificate:
-                      type: string
-                    startup_connection_timeout:
-                      type: integer
-                    topic:
-                      type: string
-                    type:
-                      description: common keys
-                      type: string
-                  type: object
-                type: array
-                x-kubernetes-preserve-unknown-fields: true
               resources:
                 description: Define resources limits or requests
                 properties:
@@ -998,21 +829,13 @@ spec:
                   type: string
                 description: punchline settings
                 type: object
-              ttlSecondsAfterFinished:
-                default: 180
-                description: See kubernetes official doc on Job BackoffLimit
-                format: int32
-                type: integer
-            required:
-            - punchline
             type: object
           status:
-            description: StormlineStatus defines the observed state of Stormline
             properties:
               Id:
                 type: string
               phase:
-                description: Active pods
+                description: Active Jobs
                 type: string
             type: object
         type: object

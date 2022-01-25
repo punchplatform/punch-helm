@@ -120,6 +120,27 @@ webhooks:
     service:
       name: punchoperator-webhook-service
       namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchjavapunchline
+  failurePolicy: Fail
+  name: mbatchjavapunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - batchjavapunchlines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-streamapplication
   failurePolicy: Fail
   name: mstreamapplication.kb.io
@@ -133,6 +154,27 @@ webhooks:
     - UPDATE
     resources:
     - streamapplications
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /mutate-punchline-gitlab-thalesdigital-io-v2-streamjavapunchline
+  failurePolicy: Fail
+  name: mstreamjavapunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - streamjavapunchlines
   sideEffects: None
 
 ---
@@ -261,6 +303,28 @@ webhooks:
     service:
       name: punchoperator-webhook-service
       namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v2-batchjavapunchline
+  failurePolicy: Fail
+  name: vbatchjavapunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - DELETE
+    - UPDATE
+    resources:
+    - batchjavapunchlines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v2-streamapplication
   failurePolicy: Fail
   name: vstreamapplication.kb.io
@@ -275,4 +339,26 @@ webhooks:
     - UPDATE
     resources:
     - streamapplications
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: punchoperator-webhook-service
+      namespace: {{  .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v2-streamjavapunchline
+  failurePolicy: Fail
+  name: vstreamjavapunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - DELETE
+    - UPDATE
+    resources:
+    - streamjavapunchlines
   sideEffects: None
