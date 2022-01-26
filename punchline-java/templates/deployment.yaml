@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "punchline.fullname" . }}
+  labels:
+    {{- include "punchline.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "punchline.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "punchline.selectorLabels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+      - name: {{ .Values.global.imagePullSecret }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.global.containerImage }}"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+      {{ if .Values.punchline }}
+          args: ["/opt/punch/punchline"]
+          volumeMounts:
+            - name: punchline
+              mountPath: /opt/punch/punchline
+              subPath: punchline
+      volumes:
+        - name: punchline
+          configMap:
+            name: {{ $.Release.Name }}-configmap
+      {{ end }}
