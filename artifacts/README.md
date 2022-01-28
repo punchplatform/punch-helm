@@ -10,7 +10,7 @@ The Punch Artifacts Server includes a Restful API and a UI to manage artifacts l
 
 | Configuration        | Description                         | Default value                                               |
 |----------------------|-------------------------------------|-------------------------------------------------------------|
-| image.name           | The Artifacts docker image          | ghcr.io/punchplatform/artifacts-server:7.0.2-SNAPSHOT |
+| image.name           | The Artifacts docker image          | ghcr.io/punchplatform/artifacts-server:7.0.1-SNAPSHOT |
 | image.policy         | The Kubernetes image pull policy    | IfNotPresent                                                |
 | image.secret         | Secret name to pull docker image    | admin-secret                                                          |
 
