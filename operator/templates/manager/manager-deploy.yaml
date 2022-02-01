@@ -19,6 +19,9 @@ spec:
     metadata:
       labels:
         control-plane: controller-manager
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '9443'
+
       {{- with .Values.additionalAnnotations }}
       annotations:
         {{- toYaml . | nindent 4 }}
