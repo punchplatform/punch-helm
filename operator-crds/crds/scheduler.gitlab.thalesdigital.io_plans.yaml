@@ -4,7 +4,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.4.1
+    controller-gen.kubebuilder.io/version: v0.5.0
   creationTimestamp: null
   name: plans.scheduler.gitlab.thalesdigital.io
 spec:
@@ -44,14 +44,10 @@ spec:
         description: Plan is the Schema for the plans API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
@@ -65,8 +61,7 @@ spec:
                 description: Number of attempts to retry scheduling a lost schedule
                 type: integer
               checkpointRef:
-                description: Enable pushing or fetching checkpoint dates from one
-                  of the supported backend
+                description: Enable pushing or fetching checkpoint dates from one of the supported backend
                 properties:
                   kind:
                     type: string
@@ -87,8 +82,7 @@ spec:
                   - format
                   - offset
                   type: object
-                description: Templating can be applied before executing the plan Generates
-                  dates that will be substituted in .spec.punchline.template
+                description: Templating can be applied before executing the plan Generates dates that will be substituted in .spec.punchline.template
                 type: object
               implementation:
                 description: Will be used in case of Sparkline for executing pyspark/spark
@@ -97,8 +91,7 @@ spec:
                 - python
                 type: string
               interval:
-                description: Either corn or interval should be set use 1s, 1m, 1h
-                  or 1d
+                description: Either corn or interval should be set use 1s, 1m, 1h or 1d
                 type: string
               kind:
                 enum:
@@ -111,8 +104,7 @@ spec:
                 description: Stop plan after N iteration
                 type: integer
               templateSpec:
-                description: Application, Sparkline, Stormline or Flinkline (only
-                  .spec.dag)
+                description: Application, Sparkline, Stormline or Flinkline (only .spec.dag)
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
             required:
@@ -136,8 +128,7 @@ spec:
                 description: RFC 3339 datetime next schedule
                 type: string
               phase:
-                description: similar to kubernetes pod phases Pending, Running, Succeeded,
-                  Failed, Unknown
+                description: similar to kubernetes pod phases Pending, Running, Succeeded, Failed, Unknown
                 enum:
                 - Pending
                 - Running
@@ -160,9 +151,7 @@ spec:
                 type: string
               retries:
                 default: 0
-                description: Number of retries of plan current schedule This retries
-                  will fallback to 0 on each new successful schedule but will increment
-                  on each failed execution of the current schedule
+                description: Number of retries of plan current schedule This retries will fallback to 0 on each new successful schedule but will increment on each failed execution of the current schedule
                 type: integer
             type: object
         type: object
@@ -198,14 +187,10 @@ spec:
         description: Plan is the Schema for the plans API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
@@ -214,12 +199,10 @@ spec:
             properties:
               backoffLimit:
                 default: 4
-                description: Number of attempts to retry scheduling a lost schedule
-                  (this will be remove in near future)
+                description: Number of attempts to retry scheduling a lost schedule (this will be remove in near future)
                 type: integer
               checkpointRef:
-                description: Enable pushing or fetching checkpoint dates from one
-                  of the supported backend
+                description: Enable pushing or fetching checkpoint dates from one of the supported backend
                 properties:
                   kind:
                     type: string
@@ -240,8 +223,7 @@ spec:
                   - format
                   - offset
                   type: object
-                description: Templating can be applied before executing the plan Generates
-                  dates that will be substituted in .spec.punchline.template
+                description: Templating can be applied before executing the plan Generates dates that will be substituted in .spec.punchline.template
                 type: object
               implementation:
                 description: Will be used in case of Sparkline for executing pyspark/spark
@@ -250,8 +232,7 @@ spec:
                 - python
                 type: string
               interval:
-                description: Either corn or interval should be set use 1s, 1m, 1h
-                  or 1d
+                description: Either corn or interval should be set use 1s, 1m, 1h or 1d
                 type: string
               kind:
                 enum:
@@ -266,8 +247,7 @@ spec:
                 description: Stop plan after N iteration
                 type: integer
               templateSpec:
-                description: Application, Sparkline, Stormline or Flinkline (only
-                  .spec.dag)
+                description: Application, Sparkline, Stormline or Flinkline (only .spec.dag)
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
             required:
@@ -290,8 +270,7 @@ spec:
                 description: RFC 3339 datetime next schedule
                 type: string
               phase:
-                description: similar to kubernetes pod phases Pending, Running, Succeeded,
-                  Failed, Unknown
+                description: similar to kubernetes pod phases Pending, Running, Succeeded, Failed, Unknown
                 enum:
                 - Pending
                 - Running
@@ -314,9 +293,7 @@ spec:
                 type: string
               retries:
                 default: 0
-                description: Number of retries of plan current schedule This retries
-                  will fallback to 0 on each new successful schedule but will increment
-                  on each failed execution of the current schedule
+                description: Number of retries of plan current schedule This retries will fallback to 0 on each new successful schedule but will increment on each failed execution of the current schedule
                 type: integer
             type: object
         type: object
