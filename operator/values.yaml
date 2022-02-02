@@ -39,11 +39,11 @@ streamApplication:
   enable: true
   workers: 2
 
-batchJavaPunchline:
+batchPunchline:
   enable: true
   workers: 2
 
-streamJavaPunchline:
+streamPunchline:
   enable: true
   workers: 2
 

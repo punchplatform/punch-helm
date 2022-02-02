@@ -33,12 +33,12 @@ data:
       streamApplication:
         workers: {{ .Values.streamApplication.workers | default 2 }}
         enable: {{ .Values.streamApplication.enable | default true }}
-      batchJavaPunchline:
-        workers: {{ .Values.batchJavaPunchline.workers | default 2 }}
-        enable: {{ .Values.batchJavaPunchline.enable | default true }}
-      streamJavaPunchline:
-        workers: {{ .Values.streamJavaPunchline.workers | default 2 }}
-        enable: {{ .Values.streamJavaPunchline.enable | default true }}
+      batchPunchline:
+        workers: {{ .Values.batchPunchline.workers | default 2 }}
+        enable: {{ .Values.batchPunchline.enable | default true }}
+      streamPunchline:
+        workers: {{ .Values.streamPunchline.workers | default 2 }}
+        enable: {{ .Values.streamPunchline.enable | default true }}
       planScheduler:
         workers: {{ .Values.plan.workers | default 2 }}
         enable: {{ .Values.plan.enable | default true }}

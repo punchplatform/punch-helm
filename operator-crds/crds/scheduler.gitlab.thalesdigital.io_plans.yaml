@@ -212,8 +212,11 @@ spec:
           spec:
             description: PlanSpec defines the desired state of Plan
             properties:
-              apiVersion:
-                type: string
+              backoffLimit:
+                default: 4
+                description: Number of attempts to retry scheduling a lost schedule
+                  (this will be remove in near future)
+                type: integer
               checkpointRef:
                 description: Enable pushing or fetching checkpoint dates from one
                   of the supported backend
@@ -257,6 +260,7 @@ spec:
                 - Sparkline
                 - Application
                 - BatchApplication
+                - BatchPunchline
                 type: string
               maxIteration:
                 description: Stop plan after N iteration
@@ -267,7 +271,6 @@ spec:
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
             required:
-            - apiVersion
             - kind
             - templateSpec
             type: object
