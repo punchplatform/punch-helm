@@ -388,6 +388,17 @@ spec:
                 items:
                   type: string
                 type: array
+              configMapMounts:
+                items:
+                  properties:
+                    mountPath:
+                      type: string
+                    name:
+                      type: string
+                    namespace:
+                      type: string
+                  type: object
+                type: array
               configs:
                 additionalProperties:
                   type: string
