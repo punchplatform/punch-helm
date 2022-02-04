@@ -1,5 +1,5 @@
 image:
-  name: ghcr.io/punchplatform/artifacts-server:7.0.2-SNAPSHOT
+  name: ghcr.io/punchplatform/artifacts-server:7.0.1-SNAPSHOT
   secret: admin-secret
   policy: IfNotPresent
 
@@ -19,10 +19,17 @@ web:
 
 metadata:
   elasticsearch:
-    hosts:
-      - http://elasticsearch.doc-store:9200
+    http_hosts:
+      - host: elasticsearch.doc-store
+        port: 9200
+        scheme: http
     index_name: artifacts-metadata
-
+    security:
+      credentials:
+        username: admin
+        password: admin
+    useSelfSignedCertificate: false
+    hostname_verification: false
 data:
   minio:
     host: http://s3.object-store:9000
