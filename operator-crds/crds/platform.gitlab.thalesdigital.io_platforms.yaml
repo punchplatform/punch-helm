@@ -49,7 +49,6 @@ spec:
                           name:
                             type: string
                         required:
-                        - mountPath
                         - name
                         type: object
                       type: array
@@ -98,6 +97,7 @@ spec:
                   type: object
                 type: array
               imagePullPolicy:
+                description: PullPolicy describes a policy for if/when to pull a container image
                 type: string
               initContainerImage:
                 type: string
@@ -114,7 +114,6 @@ spec:
                           name:
                             type: string
                         required:
-                        - mountPath
                         - name
                         type: object
                       type: array
