@@ -18,12 +18,6 @@ data:
       flinkline:
         workers: {{ .Values.flinkline.workers | default 2 }}
         enable: {{ .Values.flinkline.enable | default true }}
-      stormline:
-        workers: {{ .Values.stormline.workers | default 2 }}
-        enable: {{ .Values.stormline.enable | default true }}
-      application:
-        workers: {{ .Values.application.workers | default 2 }}
-        enable: {{ .Values.application.enable | default true }}
       sparkline:
         workers: {{ .Values.sparkline.workers | default 2 }}
         enable: {{ .Values.sparkline.enable | default true }}

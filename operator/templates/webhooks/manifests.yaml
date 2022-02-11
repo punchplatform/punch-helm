@@ -14,27 +14,6 @@ webhooks:
     service:
       name: punchoperator-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-application
-  failurePolicy: Fail
-  name: mapplication.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - UPDATE
-    resources:
-    - applications
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: punchoperator-webhook-service
-      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
   failurePolicy: Fail
   name: mflinkline.kb.io
@@ -69,27 +48,6 @@ webhooks:
     - UPDATE
     resources:
     - sparklines
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: punchoperator-webhook-service
-      namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-stormline
-  failurePolicy: Fail
-  name: mstormline.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - UPDATE
-    resources:
-    - stormlines
   sideEffects: None
 - admissionReviewVersions:
   - v1
@@ -191,28 +149,6 @@ webhooks:
     service:
       name: punchoperator-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-application
-  failurePolicy: Fail
-  name: vapplication.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - DELETE
-    - UPDATE
-    resources:
-    - applications
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: punchoperator-webhook-service
-      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
   failurePolicy: Fail
   name: vflinkline.kb.io
@@ -249,28 +185,6 @@ webhooks:
     - DELETE
     resources:
     - sparklines
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: punchoperator-webhook-service
-      namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-stormline
-  failurePolicy: Fail
-  name: vstormline.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - UPDATE
-    - DELETE
-    resources:
-    - stormlines
   sideEffects: None
 - admissionReviewVersions:
   - v1
