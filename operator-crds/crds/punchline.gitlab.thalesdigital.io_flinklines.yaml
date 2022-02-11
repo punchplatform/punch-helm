@@ -692,6 +692,7 @@ spec:
           metadata:
             type: object
           spec:
+            description: FlinklineSpec defines the desired state of Flinkline
             properties:
               configs:
                 additionalProperties:
@@ -1233,7 +1234,6 @@ spec:
                 - applicationContainer
                 type: object
               dag:
-                description: current flink structs mix dynamic and static fields on the same schema level
                 items:
                   type: object
                 type: array
@@ -1262,6 +1262,7 @@ spec:
             - dag
             type: object
           status:
+            description: FlinklineStatus defines the observed state of Flinkline
             properties:
               clusterReady:
                 type: boolean
