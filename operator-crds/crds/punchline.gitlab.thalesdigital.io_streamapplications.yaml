@@ -1057,6 +1057,10 @@ spec:
                         description: Container image to be used when our operator
                           will be executing pod
                         type: string
+                      imagePullPolicy:
+                        description: Container image to be used when our operator
+                          will be executing pod
+                        type: string
                       resources:
                         description: Define resources limits or requests
                         properties:
@@ -1092,10 +1096,6 @@ spec:
                     items:
                       type: string
                     type: array
-                  imagePullPolicy:
-                    description: Container image to be used when our operator will
-                      be executing pod
-                    type: string
                   resourcesInitContainer:
                     description: Specify whether prior to the execution of the application;
                       resources are needed to be fetch on the application filesystem
@@ -1105,6 +1105,10 @@ spec:
                           from client side
                         type: boolean
                       image:
+                        description: Container image to be used when our operator
+                          will be executing pod
+                        type: string
+                      imagePullPolicy:
                         description: Container image to be used when our operator
                           will be executing pod
                         type: string
