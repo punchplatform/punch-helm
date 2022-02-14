@@ -1155,9 +1155,6 @@ spec:
               debug:
                 description: Enable debug mode which is useful for testing
                 type: boolean
-              deploySettings:
-                description: 'Settings specifics to kubernetes kind: Job'
-                type: object
               engineSettings:
                 additionalProperties:
                   type: string
