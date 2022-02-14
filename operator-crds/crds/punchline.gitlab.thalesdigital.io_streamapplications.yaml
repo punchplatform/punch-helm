@@ -16,9 +16,6 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .spec.image
-      name: Image
-      type: string
     - jsonPath: .status.phase
       name: Status
       type: string
@@ -1155,6 +1152,9 @@ spec:
                 required:
                 - applicationContainer
                 type: object
+              debug:
+                description: Enable debug mode which is useful for testing
+                type: boolean
               deploySettings:
                 description: 'Settings specifics to kubernetes kind: Job'
                 type: object
