@@ -88,42 +88,6 @@ rules:
 - apiGroups:
   - punchline.gitlab.thalesdigital.io
   resources:
-  - applications
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - applications/finalizers
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - applications/status
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
   - batchapplications
   verbs:
   - create
@@ -174,7 +138,13 @@ rules:
   resources:
   - batchpunchlines/finalizers
   verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
   - update
+  - watch
 - apiGroups:
   - punchline.gitlab.thalesdigital.io
   resources:
@@ -245,36 +215,6 @@ rules:
   - punchline.gitlab.thalesdigital.io
   resources:
   - sparklines/status
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - stormlines
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - stormlines/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - stormlines/status
   verbs:
   - create
   - delete

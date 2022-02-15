@@ -185,9 +185,6 @@ spec:
     - jsonPath: .status.iterations
       name: Iterations
       type: integer
-    - jsonPath: .status.retries
-      name: Retries
-      type: integer
     - jsonPath: .spec.checkpointRef.name
       name: Checkpoint
       type: string
@@ -211,11 +208,6 @@ spec:
           spec:
             description: PlanSpec defines the desired state of Plan
             properties:
-              backoffLimit:
-                default: 4
-                description: Number of attempts to retry scheduling a lost schedule
-                  (this will be remove in near future)
-                type: integer
               checkpointRef:
                 description: Enable pushing or fetching checkpoint dates from one
                   of the supported backend
@@ -311,12 +303,6 @@ spec:
               previousScheduleStatus:
                 description: final status of the last schedule
                 type: string
-              retries:
-                default: 0
-                description: Number of retries of plan current schedule This retries
-                  will fallback to 0 on each new successful schedule but will increment
-                  on each failed execution of the current schedule
-                type: integer
             type: object
         type: object
     served: true
