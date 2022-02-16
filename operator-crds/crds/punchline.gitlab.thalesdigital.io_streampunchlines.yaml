@@ -1091,11 +1091,6 @@ spec:
                     required:
                     - image
                     type: object
-                  dependencies:
-                    description: List of dependencies used during Launch
-                    items:
-                      type: string
-                    type: array
                   resourcesInitContainer:
                     description: Specify whether prior to the execution of the application;
                       resources are needed to be fetch on the application filesystem
@@ -1164,6 +1159,11 @@ spec:
               debug:
                 description: Enable debug mode which is useful for testing
                 type: boolean
+              dependencies:
+                description: List of dependencies used during Launch
+                items:
+                  type: string
+                type: array
               engineSettings:
                 additionalProperties:
                   type: string

@@ -2275,11 +2275,6 @@ spec:
                     required:
                     - image
                     type: object
-                  dependencies:
-                    description: List of dependencies used during Launch
-                    items:
-                      type: string
-                    type: array
                   resourcesInitContainer:
                     description: Specify whether prior to the execution of the application;
                       resources are needed to be fetch on the application filesystem
@@ -2345,6 +2340,11 @@ spec:
                   type: object
                 type: array
                 x-kubernetes-preserve-unknown-fields: true
+              dependencies:
+                description: List of dependencies used during Launch
+                items:
+                  type: string
+                type: array
               engineSettings:
                 additionalProperties:
                   type: string
