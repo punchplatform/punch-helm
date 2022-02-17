@@ -1152,9 +1152,6 @@ spec:
                 - applicationContainer
                 type: object
               dag:
-                items:
-                  type: object
-                type: array
                 x-kubernetes-preserve-unknown-fields: true
               debug:
                 description: Enable debug mode which is useful for testing
@@ -1165,10 +1162,9 @@ spec:
                   type: string
                 type: array
               engineSettings:
-                additionalProperties:
-                  type: string
-                description: Settings consumed only by the executed application
-                type: object
+                description: Settings consumed only by the specific application engine
+                  provided by the container image
+                x-kubernetes-preserve-unknown-fields: true
             required:
             - containers
             type: object
