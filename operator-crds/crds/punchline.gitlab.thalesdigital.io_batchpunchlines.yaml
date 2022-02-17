@@ -12,6 +12,8 @@ spec:
     kind: BatchPunchline
     listKind: BatchPunchlineList
     plural: batchpunchlines
+    shortNames:
+    - bpun
     singular: batchpunchline
   scope: Namespaced
   versions:

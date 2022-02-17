@@ -12,6 +12,8 @@ spec:
     kind: StreamPunchline
     listKind: StreamPunchlineList
     plural: streampunchlines
+    shortNames:
+    - spun
     singular: streampunchline
   scope: Namespaced
   versions:

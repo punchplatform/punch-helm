@@ -12,6 +12,8 @@ spec:
     kind: StreamApplication
     listKind: StreamApplicationList
     plural: streamapplications
+    shortNames:
+    - sapp
     singular: streamapplication
   scope: Namespaced
   versions:

@@ -12,6 +12,8 @@ spec:
     kind: BatchApplication
     listKind: BatchApplicationList
     plural: batchapplications
+    shortNames:
+    - bapp
     singular: batchapplication
   scope: Namespaced
   versions:
