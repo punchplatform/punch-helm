@@ -1221,13 +1221,6 @@ spec:
           spec:
             description: FlinklineSpec defines the desired state of Flinkline
             properties:
-              configs:
-                additionalProperties:
-                  type: string
-                description: 'A key value collection to (string-interface (possibly
-                  string)) each config will be mounted on pod FS at root (/) with
-                  file name: key and file content: value'
-                type: object
               containers:
                 description: Application system environment
                 properties:
@@ -2115,11 +2108,23 @@ spec:
                           location
                         items:
                           properties:
+                            content:
+                              additionalProperties:
+                                type: string
+                              description: 'A key value collection to (string-interface
+                                (possibly string)) each config will be mounted on
+                                pod FS at root (/) with file name: key and file content:
+                                value'
+                              type: object
                             mountPath:
+                              description: Absolute directory path where the configmaps
+                                should be mounted
                               type: string
                             name:
+                              description: Reference the name of an existing configmap
                               type: string
                             namespace:
+                              description: Referenced configmap namespace
                               type: string
                           type: object
                         type: array
