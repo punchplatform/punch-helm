@@ -274,6 +274,10 @@ spec:
               currentScheduleStartTime:
                 description: RFC 3339 datetime realtime the current schedule started
                 type: string
+              id:
+                description: Plan id used to differentiate two successive submission
+                  of same plan
+                type: string
               iterations:
                 default: 0
                 type: integer
