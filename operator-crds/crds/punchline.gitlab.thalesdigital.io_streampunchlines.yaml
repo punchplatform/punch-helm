@@ -1177,7 +1177,7 @@ spec:
             type: object
           status:
             properties:
-              Id:
+              id:
                 type: string
               phase:
                 description: Active Jobs

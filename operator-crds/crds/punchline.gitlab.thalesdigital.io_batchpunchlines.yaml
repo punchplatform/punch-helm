@@ -1192,7 +1192,9 @@ spec:
             type: object
           status:
             properties:
-              Id:
+              finishedAt:
+                type: string
+              id:
                 type: string
               phase:
                 description: Active Jobs
