@@ -1024,12 +1024,17 @@ spec:
                           to run
                         properties:
                           args:
-                            description: Args of our entrypoint
+                            description: Args of our entrypoint This defines/overrides
+                              the args provided to your image. If used in conjunction
+                              with 'command', args are appended to the 'command' arguments
                             items:
                               type: string
                             type: array
                           command:
-                            description: Entrypoint to use for our image
+                            description: Entrypoint and arguments to override the
+                              default one of your image This is an array, the first
+                              item being the entrypoint path, following ones being
+                              command-line arguments
                             items:
                               type: string
                             type: array
@@ -1182,6 +1187,15 @@ spec:
                             description: Container image to be used when our operator
                               will be executing pod
                             type: string
+                          replicas:
+                            description: For 'streaming' apps or punchlines, you can
+                              request more than 1 running pod (the default) so as
+                              to scale up your overall processing capability (if applicable
+                              to your kind of processing) For 'batch' applications
+                              or punchlines, only value 1 will be accepted for this
+                              setting
+                            format: int32
+                            type: integer
                           resources:
                             description: Define resources limits or requests
                             properties:
