@@ -241,8 +241,8 @@ spec:
                 - python
                 type: string
               interval:
-                description: Either corn or interval should be set use 1s, 1m, 1h
-                  or 1d
+                description: Either cron or interval should be set use 1s, 1m, 1h
+                  or 1d format
                 type: string
               kind:
                 enum:
@@ -256,6 +256,10 @@ spec:
               maxIteration:
                 description: Stop plan after N iteration
                 type: integer
+              monitoringInterval:
+                description: How time to wait between checks for a job end. By default
+                  15s use 1s, 1m, 1h or 1d format
+                type: string
               templateSpec:
                 description: Application, Sparkline, Stormline or Flinkline (only
                   .spec.dag)
