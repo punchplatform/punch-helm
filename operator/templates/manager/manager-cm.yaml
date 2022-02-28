@@ -15,28 +15,9 @@ data:
       leaderElect: false
       resourceName: c4b45ab4.gitlab.thalesdigital.io  
     punch:
-      flinkline:
-        workers: {{ .Values.flinkline.workers | default 2 }}
-        enable: {{ .Values.flinkline.enable | default true }}
-      sparkline:
-        workers: {{ .Values.sparkline.workers | default 2 }}
-        enable: {{ .Values.sparkline.enable | default true }}
-      batchApplication:
-        workers: {{ .Values.batchApplication.workers | default 2 }}
-        enable: {{ .Values.batchApplication.enable | default true }}
-      streamApplication:
-        workers: {{ .Values.streamApplication.workers | default 2 }}
-        enable: {{ .Values.streamApplication.enable | default true }}
-      batchPunchline:
-        workers: {{ .Values.batchPunchline.workers | default 2 }}
-        enable: {{ .Values.batchPunchline.enable | default true }}
-      streamPunchline:
-        workers: {{ .Values.streamPunchline.workers | default 2 }}
-        enable: {{ .Values.streamPunchline.enable | default true }}
-      planScheduler:
-        workers: {{ .Values.plan.workers | default 2 }}
-        enable: {{ .Values.plan.enable | default true }}
-
+    {{- with .Values.operator.punch }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
 kind: ConfigMap
 metadata:
   name: punchoperator-manager-config

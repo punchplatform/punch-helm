@@ -1,52 +1,47 @@
 ---
-# limits should be set based on the number of plans/punchline
-# that the operator will be managing
-resources:
-  limits:
-    cpu: 1000m
-    memory: 512Mi
-  requests:
-    cpu: 100m
-    memory: 20Mi
-
-image:
-  name: 
-  secretRef:
-    name: admin-secret
-  policy: IfNotPresent
-
-stormline:
-  enable: true
-  workers: 2
-
-flinkline:
-  enable: true
-  workers: 2
-
-sparkline:
-  enable: true
-  workers: 2
-
-application:
-  enable: true
-  workers: 2
-
-batchApplication:
-  enable: true
-  workers: 2
-
-streamApplication:
-  enable: true
-  workers: 2
-
-batchPunchline:
-  enable: true
-  workers: 2
-
-streamPunchline:
-  enable: true
-  workers: 2
-
-plan:
-  enable: true
-  workers: 2
+kubernetes:
+  additionalAnnotations:
+    publisher: punch
+  additionalLabels:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9443"
+  # limits should be set based on the number of plans/punchline
+  # that the operator will be managing
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 20Mi
+  image: ghcr.io/punchplatform/operator:8.0-dev
+  imagePullPolicy: IfNotPresent
+  imagePullSecret: admin-secret
+  # leader election is enable by default
+  # only one instance of the replica will be monitoring event
+  # the others will wait on standby mode waiting for a chance
+  # to take leadership
+  replicas: 1
+operator:
+  punch:
+    flinkline:
+      enable: true
+      workers: 2
+    sparkline:
+      enable: true
+      workers: 2
+    batchApplication:
+      enable: true
+      workers: 2
+    streamApplication:
+      enable: true
+      workers: 2
+    batchPunchline:
+      enable: true
+      workers: 2
+    streamPunchline:
+      enable: true
+      workers: 2
+    planScheduler:
+      enable: true
+      workers: 2

@@ -2,16 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  {{- with .Values.kubernetes.additionalLabels }}
   labels:
     control-plane: controller-manager
-  {{- with .Values.additionalAnnotations }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.kubernetes.additionalAnnotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
   name: punchoperator-controller-manager
   namespace: {{  .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.kubernetes.replicas }}
   selector:
     matchLabels:
       control-plane: controller-manager
@@ -19,25 +22,25 @@ spec:
     metadata:
       labels:
         control-plane: controller-manager
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '9443'
-
-      {{- with .Values.additionalAnnotations }}
+      {{- with .Values.kubernetes.additionalLabels }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.kubernetes.additionalAnnotations }}
       annotations:
-        {{- toYaml . | nindent 4 }}
+        {{- toYaml . | nindent 8 }}
       {{- end }} 
     spec:
-      {{- if .Values.image.secretRef.name }}
+      {{- if .Values.kubernetes.imagePullSecret }}
       imagePullSecrets:
-        - name: {{ .Values.image.secretRef.name }}
+        - name: {{ .Values.kubernetes.imagePullSecret }}
       {{- end }}
       containers:
         - args:
             - --config=controller_manager_config.yaml
           command:
             - /manager
-          image: {{ .Values.image.name }}
-          imagePullPolicy: {{ .Values.image.policy }}
+          image: {{ .Values.kubernetes.image }}
+          imagePullPolicy: {{ .Values.kubernetes.imagePullPolicy }}
           livenessProbe:
             httpGet:
               path: /healthz
@@ -60,11 +63,11 @@ spec:
             periodSeconds: 10
           resources:
             limits:
-              cpu: {{ .Values.resources.limits.cpu }}
-              memory: {{ .Values.resources.limits.memory }}
+              cpu: {{ .Values.kubernetes.resources.limits.cpu }}
+              memory: {{ .Values.kubernetes.resources.limits.memory }}
             requests:
-              cpu: {{ .Values.resources.requests.cpu }}
-              memory: {{ .Values.resources.requests.memory }}
+              cpu: {{ .Values.kubernetes.resources.requests.cpu }}
+              memory: {{ .Values.kubernetes.resources.requests.memory }}
           securityContext:
             allowPrivilegeEscalation: false
           volumeMounts:
