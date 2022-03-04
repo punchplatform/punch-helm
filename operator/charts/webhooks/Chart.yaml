@@ -1,6 +1,6 @@
 apiVersion: v2
-name: operator
-description: A Helm chart for the Punch Operator
+name: operator.webhook
+description: Install mutating and validating webhook configuration
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -16,15 +16,3 @@ type: application
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 version: "8"
-
-dependencies:
-  - name: operator.certificate
-    version: "8"
-    condition: operator.certificate.enabled
-    tags:
-      - operator.certificate
-  - name: operator.webhook
-    version: "8"
-    condition: operator.webhook.enabled
-    tags:
-      - operator.webhook

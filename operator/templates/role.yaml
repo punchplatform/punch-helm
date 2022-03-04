@@ -1,0 +1,323 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: punchoperator-manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - platform.gitlab.thalesdigital.io
+  resources:
+  - platforms
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchapplications/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchpunchlines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchpunchlines/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - batchpunchlines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - flinklines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - flinklines/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - flinklines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - sparklines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - sparklines/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - sparklines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streamapplications/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streampunchlines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streampunchlines/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.gitlab.thalesdigital.io
+  resources:
+  - streampunchlines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.gitlab.thalesdigital.io
+  resources:
+  - plans
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.gitlab.thalesdigital.io
+  resources:
+  - plans/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - scheduler.gitlab.thalesdigital.io
+  resources:
+  - plans/status
+  verbs:
+  - get
+  - patch
+  - update
