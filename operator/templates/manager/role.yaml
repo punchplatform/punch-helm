@@ -276,7 +276,13 @@ rules:
   resources:
   - streampunchlines/finalizers
   verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
   - update
+  - watch
 - apiGroups:
   - punchline.gitlab.thalesdigital.io
   resources:

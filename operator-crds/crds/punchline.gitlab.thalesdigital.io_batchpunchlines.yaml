@@ -1072,7 +1072,20 @@ spec:
                         description: Container image to be used when our operator
                           will be executing pod
                         type: string
+                      minReadySeconds:
+                        default: 60
+                        description: 'Minimum number of seconds for which a newly
+                          created pod should be ready without any of its container
+                          crashing, for it to be considered available. Defaults to
+                          0 (pod will be considered available as soon as it is ready)
+                          This is important when doing rolling update on a more-than-one
+                          replicas set: a new pod will be updated each time the previous
+                          one is "available" (i.e. 60s after updating the previous
+                          one)'
+                        format: int32
+                        type: integer
                       replicas:
+                        default: 1
                         description: For 'streaming' apps or punchlines, you can request
                           more than 1 running pod (the default) so as to scale up
                           your overall processing capability (if applicable to your
@@ -1110,6 +1123,10 @@ spec:
                     required:
                     - image
                     type: object
+                  monitoringInterval:
+                    description: How time to wait between checks for child resources
+                      health use 1s, 1m, 1h or 1d format
+                    type: string
                   resourcesInitContainer:
                     description: Specify whether prior to the execution of the application;
                       resources are needed to be fetch on the application filesystem
@@ -1209,6 +1226,7 @@ spec:
               id:
                 type: string
               phase:
+                default: Initializing
                 description: Active Jobs
                 type: string
             type: object
