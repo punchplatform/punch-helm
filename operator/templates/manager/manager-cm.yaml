@@ -20,5 +20,5 @@ data:
     {{- end }}
 kind: ConfigMap
 metadata:
-  name: punchoperator-manager-config
+  name: {{ .Release.Name }}-manager-config
   namespace: {{  .Release.Namespace }}

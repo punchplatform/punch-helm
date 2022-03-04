@@ -4,24 +4,24 @@ kind: Deployment
 metadata:
   {{- with .Values.kubernetes.additionalLabels }}
   labels:
-    control-plane: controller-manager
     {{- toYaml . | nindent 4 }}
   {{- end }}
+    control-plane: {{ .Release.Name }}-controller-manager
   {{- with .Values.kubernetes.additionalAnnotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
-  name: punchoperator-controller-manager
+  name: {{ .Release.Name }}-controller-manager
   namespace: {{  .Release.Namespace }}
 spec:
   replicas: {{ .Values.kubernetes.replicas }}
   selector:
     matchLabels:
-      control-plane: controller-manager
+      control-plane: {{ .Release.Name }}-controller-manager
   template:
     metadata:
       labels:
-        control-plane: controller-manager
+        control-plane: {{ .Release.Name }}-controller-manager
       {{- with .Values.kubernetes.additionalLabels }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -79,13 +79,13 @@ spec:
               subPath: controller_manager_config.yaml
       securityContext:
         runAsNonRoot: true
-      serviceAccountName: punchoperator-controller-manager
+      serviceAccountName: {{ .Release.Name }}-controller-manager
       terminationGracePeriodSeconds: 10
       volumes:
         - name: cert
           secret:
             defaultMode: 420
-            secretName: webhook-server-cert
+            secretName: {{ .Release.Name }}-webhook-server-cert
         - configMap:
-            name: punchoperator-manager-config
+            name: {{ .Release.Name }}-manager-config
           name: manager-config

@@ -2,13 +2,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: punchoperator-leader-election-rolebinding
+  name: {{ .Release.Name }}-leader-election-rolebinding
   namespace: {{  .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: punchoperator-leader-election-role
+  name: {{ .Release.Name }}-leader-election-role
 subjects:
   - kind: ServiceAccount
-    name: punchoperator-controller-manager
+    name: {{ .Release.Name }}-controller-manager
     namespace: {{  .Release.Namespace }}
