@@ -1041,67 +1041,13 @@ spec:
                 description: Punchline Config
                 properties:
                   dag:
-                    description: Stormline dag definition
-                    items:
-                      properties:
-                        component:
-                          type: string
-                        package:
-                          type: string
-                        publish:
-                          items:
-                            properties:
-                              alias:
-                                type: string
-                              fields:
-                                items:
-                                  type: string
-                                type: array
-                              stream:
-                                type: string
-                            required:
-                            - stream
-                            type: object
-                          type: array
-                        settings:
-                          type: object
-                          x-kubernetes-preserve-unknown-fields: true
-                        subscribe:
-                          items:
-                            properties:
-                              alias:
-                                type: string
-                              component:
-                                type: string
-                              stream:
-                                type: string
-                            required:
-                            - component
-                            - stream
-                            type: object
-                          type: array
-                        type:
-                          type: string
-                      required:
-                      - component
-                      - settings
-                      - type
-                      type: object
-                    type: array
-                  platform:
-                    default: default
-                    type: string
-                  runtime:
-                    type: string
-                  settings:
+                    x-kubernetes-preserve-unknown-fields: true
+                  engineSettings:
                     additionalProperties:
                       type: string
                     description: punchline settings (should not be set by user, user
                       are expected to use the parent settings)
                     type: object
-                  version:
-                    default: "7.0"
-                    type: string
                 required:
                 - dag
                 type: object
