@@ -23,13 +23,14 @@ metadata:
       - host: elasticsearch.doc-store
         port: 9200
         scheme: http
-    index_name: artifacts-metadata
+    index: artifacts-metadata
     security:
       credentials:
         username: admin
         password: admin
-    useSelfSignedCertificate: false
-    hostname_verification: false
+      ssl:
+        use_self_signed_certificate: false
+        hostname_verification: false
 data:
   minio:
     host: http://s3.object-store:9000
