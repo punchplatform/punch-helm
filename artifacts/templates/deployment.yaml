@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Release.Name }}-artifacts
   namespace: {{ .Release.Namespace }}
   labels:
     app: artifacts
@@ -37,7 +37,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ .Chart.Name }}
+            name: {{ .Release.Name }}-configmap
 {{ if .Values.image.secret }}
       imagePullSecrets:
         - name: {{ .Values.image.secret }}

@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Chart.Name }}
+  name: punch-{{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 5g
@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ .Chart.Name }}
+            name: {{ .Release.Name }}-service
             port:
               number: {{ .Values.server.port }}
 {{ end }}

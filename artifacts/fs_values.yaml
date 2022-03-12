@@ -1,7 +1,5 @@
-# Values for running Artifacts Server on File System
-# for data and metadata
 image:
-  name: ghcr.io/punchplatform/artifacts-server:8.0-dev
+  name: ghcr.io/punchplatform/artifacts-server:7.0.2-SNAPSHOT
   secret: admin-secret
   policy: IfNotPresent
 
@@ -14,19 +12,12 @@ ingress:
 
 application:
   tenant: mytenant
-
-spring:
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+  file_size: 100MB
 
 web:
   enabled: true
 
 metadata:
   file: /tmp/artifacts/metadata
-  elasticsearch: null
 data:
   file: /tmp/artifacts/data
-  minio: null
