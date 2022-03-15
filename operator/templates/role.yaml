@@ -2,8 +2,9 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  #
   creationTimestamp: null
-  name: punchoperator-manager-role
+  name: {{ .Release.Name }}-manager-role
 rules:
 - apiGroups:
   - ""
