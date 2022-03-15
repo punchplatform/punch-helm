@@ -96,6 +96,27 @@ webhooks:
     service:
       name: webhook-service
       namespace: system
+      path: /mutate-punchline-gitlab-thalesdigital-io-v2-sparkpunchline
+  failurePolicy: Fail
+  name: msparkpunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - sparkpunchlines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-streamapplication
   failurePolicy: Fail
   name: mstreamapplication.kb.io
@@ -225,6 +246,28 @@ webhooks:
     - UPDATE
     resources:
     - batchpunchlines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-punchline-gitlab-thalesdigital-io-v2-sparkpunchline
+  failurePolicy: Fail
+  name: vsparkpunchline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v2
+    operations:
+    - CREATE
+    - DELETE
+    - UPDATE
+    resources:
+    - sparkpunchlines
   sideEffects: None
 - admissionReviewVersions:
   - v1

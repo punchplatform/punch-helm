@@ -7,7 +7,7 @@ in charge of managing the punch CRDs (Custom Resources Definitions).
 Several types of CRDs are supported by the Punch: 
 
 - Flinkline: used to model a flink-compatible punchline. 
-- Sparkline: used to model a spark-compatible punchline.
+- SparkPunchline: used to model a spark-compatible punchline.
 - BatchApplication: used to model arbitrary batch applications.
 - StreamApplication: used to model arbitrary streaming applications.
 - BatchPunchline: used to model batch punchline.
@@ -33,7 +33,7 @@ kubectl delete -f <punchline_crd.yaml>
 To list the deployed punchlines: 
 
 ```sh
-kubectl get sparklines
+kubectl get sparkpunchlines
 kubectl get flinklines
 kubectl get platforms
 kubectl get batchapplication
@@ -87,12 +87,12 @@ kubectl get plans
 | operator.punch.flinkline.enable  | If Flinkline CRD is enabled                                                                      |   true        |
 | operator.punch.flinkline.workers | Number of threads to manage Flinkline CRDs. This is not the number of workers within a topology. |   2           |  
 
-#### Sparkline
+#### SparkPunchline
 
-| Configuration                    | Description                                                                                      | Default value |
-|----------------------------------|--------------------------------------------------------------------------------------------------|---------------|
-| operator.punch.sparkline.enable  | If Sparkline CRD is enabled                                                                      |   true        |
-| operator.punch.sparkline.workers | Number of threads to manage Sparkline CRDs. This is not the number of workers within a topology. |   2           | 
+| Configuration                         | Description                                                                                      | Default value |
+|---------------------------------------|--------------------------------------------------------------------------------------------------|---------------|
+| operator.punch.sparkpunchline.enable  | If SparkPunchline CRD is enabled                                                                      |   true        |
+| operator.punch.sparkpunchline.workers | Number of threads to manage SparkPunchline CRDs. This is not the number of workers within a topology. |   2           | 
 
 #### BatchApplication
 

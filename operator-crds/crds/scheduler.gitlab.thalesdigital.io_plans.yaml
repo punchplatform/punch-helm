@@ -235,7 +235,8 @@ spec:
                   dates that will be substituted in .spec.punchline.template
                 type: object
               implementation:
-                description: Will be used in case of Sparkline for executing pyspark/spark
+                description: Will be used in case of SparkPunchline for executing
+                  pyspark/spark
                 enum:
                 - java
                 - python
@@ -247,9 +248,7 @@ spec:
               kind:
                 enum:
                 - Flinkline
-                - Stormline
-                - Sparkline
-                - Application
+                - SparkPunchline
                 - BatchApplication
                 - BatchPunchline
                 type: string
@@ -261,8 +260,7 @@ spec:
                   15s use 1s, 1m, 1h or 1d format
                 type: string
               templateSpec:
-                description: Application, Sparkline, Stormline or Flinkline (only
-                  .spec.dag)
+                description: Flinkline;SparkPunchline;BatchApplication;BatchPunchline
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
             required:

@@ -5,16 +5,16 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: batchapplications.punchline.gitlab.thalesdigital.io
+  name: sparkpunchlines.punchline.gitlab.thalesdigital.io
 spec:
   group: punchline.gitlab.thalesdigital.io
   names:
-    kind: BatchApplication
-    listKind: BatchApplicationList
-    plural: batchapplications
+    kind: SparkPunchline
+    listKind: SparkPunchlineList
+    plural: sparkpunchlines
     shortNames:
-    - bapp
-    singular: batchapplication
+    - skpun
+    singular: sparkpunchline
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -1187,6 +1187,8 @@ spec:
                 required:
                 - applicationContainer
                 type: object
+              dag:
+                x-kubernetes-preserve-unknown-fields: true
               debug:
                 description: Enable debug mode which is useful for testing
                 type: boolean
@@ -1220,6 +1222,7 @@ spec:
                 type: object
             required:
             - containers
+            - dag
             type: object
           status:
             properties:

@@ -34,7 +34,7 @@ operator:
     flinkline:
       enable: true
       workers: 2
-    sparkline:
+    sparkPunchline:
       enable: true
       workers: 2
     batchApplication:

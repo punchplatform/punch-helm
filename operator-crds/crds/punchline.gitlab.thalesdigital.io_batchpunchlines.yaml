@@ -1209,6 +1209,11 @@ spec:
                     description: See kubernetes official doc on Job BackoffLimit
                     format: int32
                     type: integer
+                  garbageCollect:
+                    default: false
+                    description: 'Deprecated: to be removed State whether to garbage
+                      collect punchline after completion or not'
+                    type: boolean
                   ttlSecondsAfterFinished:
                     default: 180
                     description: See kubernetes official doc on Job BackoffLimit
@@ -1229,6 +1234,18 @@ spec:
                 default: Initializing
                 description: Active Jobs
                 type: string
+              sparkApplicationStatus:
+                description: TO REMOVE (used only by SparkPunchline)
+                properties:
+                  applicationSubmitted:
+                    type: boolean
+                  applicationSubmittedDate:
+                    type: string
+                  driverPodCreated:
+                    type: boolean
+                  driverPodName:
+                    type: string
+                type: object
             type: object
         type: object
     served: true
