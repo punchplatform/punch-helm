@@ -3,15 +3,17 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   creationTimestamp: null
-  name: mutating-webhook-configuration
+  name: {{ .Release.Name }}-mutating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ .Release.Name }}-serving-cert
 webhooks:
 - admissionReviewVersions:
   - v1
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
   failurePolicy: Fail
   name: mflinkline.kb.io
@@ -31,8 +33,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v1-sparkline
   failurePolicy: Fail
   name: msparkline.kb.io
@@ -52,8 +54,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchapplication
   failurePolicy: Fail
   name: mbatchapplication.kb.io
@@ -73,8 +75,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchpunchline
   failurePolicy: Fail
   name: mbatchpunchline.kb.io
@@ -94,8 +96,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-streamapplication
   failurePolicy: Fail
   name: mstreamapplication.kb.io
@@ -115,8 +117,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-streampunchline
   failurePolicy: Fail
   name: mstreampunchline.kb.io
@@ -136,15 +138,17 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
   creationTimestamp: null
-  name: validating-webhook-configuration
+  name: {{ .Release.Name }}-validating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ .Release.Name }}-serving-cert
 webhooks:
 - admissionReviewVersions:
   - v1
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
   failurePolicy: Fail
   name: vflinkline.kb.io
@@ -165,8 +169,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v1-sparkline
   failurePolicy: Fail
   name: vsparkline.kb.io
@@ -187,8 +191,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v2-batchapplication
   failurePolicy: Fail
   name: vbatchapplication.kb.io
@@ -209,8 +213,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v2-batchpunchline
   failurePolicy: Fail
   name: vbatchpunchline.kb.io
@@ -231,8 +235,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v2-streamapplication
   failurePolicy: Fail
   name: vstreamapplication.kb.io
@@ -253,8 +257,8 @@ webhooks:
   - v1beta1
   clientConfig:
     service:
-      name: webhook-service
-      namespace: system
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
       path: /validate-punchline-gitlab-thalesdigital-io-v2-streampunchline
   failurePolicy: Fail
   name: vstreampunchline.kb.io
