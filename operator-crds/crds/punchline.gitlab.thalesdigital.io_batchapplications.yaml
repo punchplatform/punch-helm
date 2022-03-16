@@ -1207,11 +1207,6 @@ spec:
                     description: See kubernetes official doc on Job BackoffLimit
                     format: int32
                     type: integer
-                  garbageCollect:
-                    default: false
-                    description: 'Deprecated: to be removed State whether to garbage
-                      collect punchline after completion or not'
-                    type: boolean
                   ttlSecondsAfterFinished:
                     default: 180
                     description: See kubernetes official doc on Job BackoffLimit

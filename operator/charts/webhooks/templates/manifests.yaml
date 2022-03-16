@@ -14,48 +14,6 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
-  failurePolicy: Fail
-  name: mflinkline.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - UPDATE
-    resources:
-    - flinklines
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: {{ .Release.Name }}-webhook-service
-      namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-sparkline
-  failurePolicy: Fail
-  name: msparkline.kb.io
-  rules:
-  - apiGroups:
-    - punchline.gitlab.thalesdigital.io
-    apiVersions:
-    - v1
-    operations:
-    - CREATE
-    - UPDATE
-    resources:
-    - sparklines
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: {{ .Release.Name }}-webhook-service
-      namespace: {{ .Release.Namespace }}
       path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchapplication
   failurePolicy: Fail
   name: mbatchapplication.kb.io
@@ -154,15 +112,6 @@ webhooks:
     resources:
     - streampunchlines
   sideEffects: None
----
-apiVersion: admissionregistration.k8s.io/v1
-kind: ValidatingWebhookConfiguration
-metadata:
-  creationTimestamp: null
-  name: {{ .Release.Name }}-validating-webhook-configuration
-  annotations:
-    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ .Release.Name }}-serving-cert
-webhooks:
 - admissionReviewVersions:
   - v1
   - v1beta1
@@ -170,9 +119,9 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
   failurePolicy: Fail
-  name: vflinkline.kb.io
+  name: mflinkline.kb.io
   rules:
   - apiGroups:
     - punchline.gitlab.thalesdigital.io
@@ -181,7 +130,6 @@ webhooks:
     operations:
     - CREATE
     - UPDATE
-    - DELETE
     resources:
     - flinklines
   sideEffects: None
@@ -192,9 +140,9 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-sparkline
+      path: /mutate-punchline-gitlab-thalesdigital-io-v1-sparkline
   failurePolicy: Fail
-  name: vsparkline.kb.io
+  name: msparkline.kb.io
   rules:
   - apiGroups:
     - punchline.gitlab.thalesdigital.io
@@ -203,10 +151,18 @@ webhooks:
     operations:
     - CREATE
     - UPDATE
-    - DELETE
     resources:
     - sparklines
   sideEffects: None
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  creationTimestamp: null
+  name: {{ .Release.Name }}-validating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ .Release.Name }}-serving-cert
+webhooks:
 - admissionReviewVersions:
   - v1
   - v1beta1
@@ -316,4 +272,48 @@ webhooks:
     - UPDATE
     resources:
     - streampunchlines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
+  failurePolicy: Fail
+  name: vflinkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - flinklines
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  - v1beta1
+  clientConfig:
+    service:
+      name: {{ .Release.Name }}-webhook-service
+      namespace: {{ .Release.Namespace }}
+      path: /validate-punchline-gitlab-thalesdigital-io-v1-sparkline
+  failurePolicy: Fail
+  name: vsparkline.kb.io
+  rules:
+  - apiGroups:
+    - punchline.gitlab.thalesdigital.io
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - sparklines
   sideEffects: None
