@@ -42,6 +42,18 @@ rules:
   - update
   - watch
 - apiGroups:
+  - apps
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
   - batch
   resources:
   - jobs
@@ -89,18 +101,6 @@ rules:
   - punchline.gitlab.thalesdigital.io
   resources:
   - batchapplications
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - punchline.gitlab.thalesdigital.io
-  resources:
-  - batchapplications/finalizers
   verbs:
   - create
   - delete
