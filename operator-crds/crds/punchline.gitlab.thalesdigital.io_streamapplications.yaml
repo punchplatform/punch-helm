@@ -929,6 +929,8 @@ spec:
                         description: Add additional configmap by reference to a given
                           location
                         items:
+                          description: Mount a configMap inline or from an already
+                            existing configMap
                           properties:
                             content:
                               additionalProperties:
@@ -1150,6 +1152,8 @@ spec:
                         description: Kubernetes secrets object to mount on the Container
                           filesystem
                         items:
+                          description: SecretRef is a reference to an existing secret
+                            that will be mounted on a resource
                           properties:
                             mountPath:
                               type: string
@@ -1171,6 +1175,8 @@ spec:
                     description: Kubernetes secrets object to mount on the Container
                       filesystem
                     items:
+                      description: SecretRef is a reference to an existing secret
+                        that will be mounted on a resource
                       properties:
                         mountPath:
                           type: string
