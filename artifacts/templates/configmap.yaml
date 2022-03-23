@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $.Release.Name }}-configmap
+  name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: artifacts
@@ -13,43 +13,31 @@ data:
 
     application:
       tenant: {{ .Values.application.tenant }}
-    #  roles:
-    #    ROLE_USER:
-    #      - UPLOAD_ARTIFACTS
-    #    ROLE_ADMIN:
-    #      - UPLOAD_ARTIFACTS
-    #      - DELETE_ARTIFACTS
 
     web:
       enabled: {{ .Values.web.enabled }}
 
     metadata:
-    {{ toYaml .Values.metadata | nindent 6 }}
+    {{- if .Values.metadata.elasticsearch }}
+      elasticsearch:
+      {{- toYaml .Values.metadata.elasticsearch | nindent 8 }}
+    {{- else if .Values.metadata.file }}
+      file:
+      {{- toYaml .Values.metadata.file | nindent 8 }}
+    {{- end }}
 
     data:
-    {{ toYaml .Values.data | nindent 6 }}
+    {{- if .Values.data.minio }}
+      minio:
+      {{- toYaml .Values.data.minio | nindent 8 }}
+    {{- else if .Values.metadata.file }}
+      file:
+      {{- toYaml .Values.data.file | nindent 8 }}
+    {{- end }}
 
     spring:
-      servlet:
-        multipart:
-          max-file-size: {{ .Values.application.file_size }}
-          max-request-size: {{ .Values.application.file_size }}
-      security:
-        enabled: false
-        oauth2:
-          client:
-            provider:
-              keycloak:
-                authorization-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/auth
-                token-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/token
-                user-info-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/userinfo
-                jwk-set-uri: http://localhost:8080/auth/realms/ArtifactServerRealm/protocol/openid-connect/certs
-                user-name-attribute: preferred_username
-            registration:
-              keycloak:
-                client-id: login-app
-                provider: keycloak
-                scope: openid
-                redirect-uri: http://localhost:4245/login/oauth2/code/keycloak
-                client-authentication-method: basic
-                authorization-grant-type: authorization_code
+    {{- toYaml .Values.spring | nindent 6 }}
+
+    logging:
+      level:
+        root: INFO
