@@ -5,16 +5,16 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: streamapplications.punchline.gitlab.thalesdigital.io
+  name: streampunchlines.punchline.punchplatform.io
 spec:
-  group: punchline.gitlab.thalesdigital.io
+  group: punchline.punchplatform.io
   names:
-    kind: StreamApplication
-    listKind: StreamApplicationList
-    plural: streamapplications
+    kind: StreamPunchline
+    listKind: StreamPunchlineList
+    plural: streampunchlines
     shortNames:
-    - sapp
-    singular: streamapplication
+    - spun
+    singular: streampunchline
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -1193,6 +1193,8 @@ spec:
                 required:
                 - applicationContainer
                 type: object
+              dag:
+                x-kubernetes-preserve-unknown-fields: true
               debug:
                 description: Enable debug mode which is useful for testing
                 type: boolean

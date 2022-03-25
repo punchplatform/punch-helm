@@ -14,12 +14,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchapplication
+      path: /mutate-punchline-punchplatform-io-v2-batchapplication
   failurePolicy: Fail
   name: mbatchapplication.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -35,12 +35,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v2-batchpunchline
+      path: /mutate-punchline-punchplatform-io-v2-batchpunchline
   failurePolicy: Fail
   name: mbatchpunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -56,12 +56,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v2-sparkpunchline
+      path: /mutate-punchline-punchplatform-io-v2-sparkpunchline
   failurePolicy: Fail
   name: msparkpunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -77,12 +77,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v2-streamapplication
+      path: /mutate-punchline-punchplatform-io-v2-streamapplication
   failurePolicy: Fail
   name: mstreamapplication.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -98,12 +98,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v2-streampunchline
+      path: /mutate-punchline-punchplatform-io-v2-streampunchline
   failurePolicy: Fail
   name: mstreampunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -119,12 +119,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-flinkline
+      path: /mutate-punchline-punchplatform-io-v1-flinkline
   failurePolicy: Fail
   name: mflinkline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v1
     operations:
@@ -140,12 +140,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /mutate-punchline-gitlab-thalesdigital-io-v1-sparkline
+      path: /mutate-punchline-punchplatform-io-v1-sparkline
   failurePolicy: Fail
   name: msparkline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v1
     operations:
@@ -170,12 +170,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v2-batchapplication
+      path: /validate-punchline-punchplatform-io-v2-batchapplication
   failurePolicy: Fail
   name: vbatchapplication.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -192,12 +192,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v2-batchpunchline
+      path: /validate-punchline-punchplatform-io-v2-batchpunchline
   failurePolicy: Fail
   name: vbatchpunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -214,12 +214,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v2-sparkpunchline
+      path: /validate-punchline-punchplatform-io-v2-sparkpunchline
   failurePolicy: Fail
   name: vsparkpunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -236,12 +236,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v2-streamapplication
+      path: /validate-punchline-punchplatform-io-v2-streamapplication
   failurePolicy: Fail
   name: vstreamapplication.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -258,12 +258,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v2-streampunchline
+      path: /validate-punchline-punchplatform-io-v2-streampunchline
   failurePolicy: Fail
   name: vstreampunchline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v2
     operations:
@@ -280,12 +280,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-flinkline
+      path: /validate-punchline-punchplatform-io-v1-flinkline
   failurePolicy: Fail
   name: vflinkline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v1
     operations:
@@ -302,12 +302,12 @@ webhooks:
     service:
       name: {{ .Release.Name }}-webhook-service
       namespace: {{ .Release.Namespace }}
-      path: /validate-punchline-gitlab-thalesdigital-io-v1-sparkline
+      path: /validate-punchline-punchplatform-io-v1-sparkline
   failurePolicy: Fail
   name: vsparkline.kb.io
   rules:
   - apiGroups:
-    - punchline.gitlab.thalesdigital.io
+    - punchline.punchplatform.io
     apiVersions:
     - v1
     operations:

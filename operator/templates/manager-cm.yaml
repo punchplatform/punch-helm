@@ -3,7 +3,7 @@ apiVersion: v1
 data:
   controller_manager_config.yaml: |
     ---
-    apiVersion: punchoperatorconfig.gitlab.thalesdigital.io/v2
+    apiVersion: punchoperatorconfig.punchplatform.io/v2
     kind: PunchOperatorConfig
     health:
       healthProbeBindAddress: :8081

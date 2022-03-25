@@ -5,16 +5,16 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: batchapplications.punchline.gitlab.thalesdigital.io
+  name: streamapplications.punchline.punchplatform.io
 spec:
-  group: punchline.gitlab.thalesdigital.io
+  group: punchline.punchplatform.io
   names:
-    kind: BatchApplication
-    listKind: BatchApplicationList
-    plural: batchapplications
+    kind: StreamApplication
+    listKind: StreamApplicationList
+    plural: streamapplications
     shortNames:
-    - bapp
-    singular: batchapplication
+    - sapp
+    singular: streamapplication
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -1205,45 +1205,19 @@ spec:
                 description: Settings consumed only by the specific application engine
                   provided by the container image
                 x-kubernetes-preserve-unknown-fields: true
-              jobSettings:
-                description: 'Settings specifics to kubernetes kind: Job'
-                properties:
-                  backoffLimit:
-                    default: 6
-                    description: See kubernetes official doc on Job BackoffLimit
-                    format: int32
-                    type: integer
-                  ttlSecondsAfterFinished:
-                    default: 180
-                    description: See kubernetes official doc on Job BackoffLimit
-                    format: int32
-                    type: integer
-                type: object
             required:
             - containers
             type: object
           status:
             properties:
-              finishedAt:
-                type: string
+              appliedGen:
+                format: int64
+                type: integer
               id:
                 type: string
               phase:
-                default: Initializing
                 description: Active Jobs
                 type: string
-              sparkApplicationStatus:
-                description: TO REMOVE (used only by SparkPunchline)
-                properties:
-                  applicationSubmitted:
-                    type: boolean
-                  applicationSubmittedDate:
-                    type: string
-                  driverPodCreated:
-                    type: boolean
-                  driverPodName:
-                    type: string
-                type: object
             type: object
         type: object
     served: true

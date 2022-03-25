@@ -5,16 +5,16 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: batchpunchlines.punchline.gitlab.thalesdigital.io
+  name: sparkpunchlines.punchline.punchplatform.io
 spec:
-  group: punchline.gitlab.thalesdigital.io
+  group: punchline.punchplatform.io
   names:
-    kind: BatchPunchline
-    listKind: BatchPunchlineList
-    plural: batchpunchlines
+    kind: SparkPunchline
+    listKind: SparkPunchlineList
+    plural: sparkpunchlines
     shortNames:
-    - bpun
-    singular: batchpunchline
+    - skpun
+    singular: sparkpunchline
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

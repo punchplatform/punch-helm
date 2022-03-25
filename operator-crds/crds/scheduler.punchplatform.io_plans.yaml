@@ -5,9 +5,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: plans.scheduler.gitlab.thalesdigital.io
+  name: plans.scheduler.punchplatform.io
 spec:
-  group: scheduler.gitlab.thalesdigital.io
+  group: scheduler.punchplatform.io
   names:
     kind: Plan
     listKind: PlanList
