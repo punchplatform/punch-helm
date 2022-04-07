@@ -2304,8 +2304,6 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
-                    required:
-                    - image
                     type: object
                   monitoringInterval:
                     description: How time to wait between checks for child resources
@@ -2350,7 +2348,6 @@ spec:
                           resources to trust or not self-signed certificates
                         type: boolean
                     required:
-                    - image
                     - resourcesProviderUrl
                     type: object
                   secretRefs:
