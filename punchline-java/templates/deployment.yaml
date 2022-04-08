@@ -19,13 +19,13 @@ spec:
         {{- include "punchline.selectorLabels" . | nindent 8 }}
     spec:
       imagePullSecrets:
-      - name: {{ .Values.global.imagePullSecret }}
+        - name: {{ .Values.global.imagePullSecret }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.global.containerImage }}"
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
       {{ if .Values.punchline }}
-          args: ["/opt/punch/punchline"]
+          args: [ "/opt/punch/punchline" ]
           volumeMounts:
             - name: punchline
               mountPath: /opt/punch/punchline

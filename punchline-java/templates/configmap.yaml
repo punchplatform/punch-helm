@@ -5,5 +5,5 @@ kind: ConfigMap
 metadata:
   name: {{ $.Release.Name }}-configmap
 data:
-  punchline : {{ .Values.punchline | quote }}
+  punchline: {{ .Values.punchline | quote }}
 {{ end }}
