@@ -1,0 +1,75 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: workloadpriorityqueues.workload.punchplatform.io
+spec:
+  group: workload.punchplatform.io
+  names:
+    kind: WorkloadPriorityQueue
+    listKind: WorkloadPriorityQueueList
+    plural: workloadpriorityqueues
+    shortNames:
+    - wpq
+    singular: workloadpriorityqueue
+  scope: Namespaced
+  versions:
+  - name: v2
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              parallel:
+                default: 0
+                description: Number of allowed workload to run simultaneously
+                type: integer
+            type: object
+          status:
+            description: status of priority queue to regulate workload
+            properties:
+              pending:
+                items:
+                  properties:
+                    name:
+                      type: string
+                    priority:
+                      type: integer
+                  type: object
+                type: array
+              running:
+                items:
+                  properties:
+                    name:
+                      type: string
+                    priority:
+                      type: integer
+                  type: object
+                type: array
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

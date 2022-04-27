@@ -88,6 +88,18 @@ rules:
 - apiGroups:
   - punchline.punchplatform.io
   resources:
+  - batchapplicationmodels
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.punchplatform.io
+  resources:
   - batchapplications
   verbs:
   - create
@@ -101,6 +113,18 @@ rules:
   - punchline.punchplatform.io
   resources:
   - batchapplications/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.punchplatform.io
+  resources:
+  - batchpunchlinemodels
   verbs:
   - create
   - delete
@@ -161,6 +185,18 @@ rules:
   - punchline.punchplatform.io
   resources:
   - flinklines/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - punchline.punchplatform.io
+  resources:
+  - sparkpunchlinemodels
   verbs:
   - create
   - delete
@@ -256,6 +292,26 @@ rules:
 - apiGroups:
   - scheduler.punchplatform.io
   resources:
+  - diagrams
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.punchplatform.io
+  resources:
+  - diagrams/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - scheduler.punchplatform.io
+  resources:
   - plans
   verbs:
   - create
@@ -269,6 +325,26 @@ rules:
   - scheduler.punchplatform.io
   resources:
   - plans/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - workload.punchplatform.io
+  resources:
+  - workloadpriorityqueues
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - workload.punchplatform.io
+  resources:
+  - workloadpriorityqueues/status
   verbs:
   - get
   - patch

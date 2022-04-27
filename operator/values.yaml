@@ -52,3 +52,6 @@ operator:
     planScheduler:
       enable: true
       workers: 2
+    diagramScheduler:
+      enable: true
+      workers: 2

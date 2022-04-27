@@ -1,0 +1,295 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: diagrams.scheduler.punchplatform.io
+spec:
+  group: scheduler.punchplatform.io
+  names:
+    kind: Diagram
+    listKind: DiagramList
+    plural: diagrams
+    shortNames:
+    - dg
+    singular: diagram
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.diagramPhase
+      name: Status
+      type: string
+    name: v2
+    schema:
+      openAPIV3Schema:
+        description: Diagram is the Schema for the diagrams API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DiagramSpec defines the desired state of Diagram
+            properties:
+              context:
+                additionalProperties:
+                  type: string
+                description: 'reference a configmap as context to resolve templating
+                  attributes use-case: plan schedule a workflow and needs to pass
+                  resolved templating fields to workflow'
+                type: object
+              layers:
+                description: A list layers where each of them contains a set of nodes
+                  to be triggered simultaneously
+                items:
+                  description: A list of nodes to be executed simultaneously
+                  properties:
+                    layerId:
+                      description: Number that goes from 1 to max allowed number Node
+                        that shares the same layer number will be executed at the
+                        sametime
+                      type: integer
+                    modelRef:
+                      description: Specify which model we are going to use for this
+                        node
+                      properties:
+                        kind:
+                          description: The actual kind of the model
+                          enum:
+                          - BatchApplicationModel
+                          - BatchPunchlineModel
+                          - SparkPunchlineModel
+                          type: string
+                        name:
+                          description: Name of the model to fetch
+                          type: string
+                      required:
+                      - kind
+                      - name
+                      type: object
+                    node:
+                      description: The node name (must be unique to the workflow)
+                      type: string
+                  required:
+                  - layerId
+                  - modelRef
+                  - node
+                  type: object
+                type: array
+              queueRef:
+                description: this property is used to control hard resource allocation
+                  to workflow it offers more fine-grain execution sequence
+                properties:
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  priority:
+                    default: 0
+                    description: set a priority number the higher the number the higher
+                      will be the priority
+                    type: integer
+                required:
+                - kind
+                - name
+                type: object
+              ttlSecondsAfterFinished:
+                default: 180
+                description: See kubernetes official doc on Job BackoffLimit
+                format: int32
+                type: integer
+              workflow:
+                description: logical steps of the diagram
+                properties:
+                  begin:
+                    description: Start the diagram from a given layerId
+                    type: integer
+                  steps:
+                    description: Specify the diagram workflow
+                    items:
+                      description: ordering of execution
+                      properties:
+                        else:
+                          description: Trigger a change in the workflow when conditions
+                            matches
+                          properties:
+                            layerId:
+                              description: Resume to a specified layerId
+                              type: integer
+                          type: object
+                        if:
+                          description: Evaluate conditions
+                          properties:
+                            conditions:
+                              description: Specify condition where each of them should
+                                evaluate to true to execute this node
+                              items:
+                                description: Condition used in when/expect field
+                                properties:
+                                  nodes:
+                                    description: Node name from a given layer
+                                    items:
+                                      description: Used by diagram
+                                      type: string
+                                    type: array
+                                  operator:
+                                    default: and
+                                    description: For a given node, evaluate status
+                                      list condition based on operator
+                                    enum:
+                                    - or
+                                    - and
+                                    type: string
+                                required:
+                                - nodes
+                                type: object
+                              type: array
+                            operator:
+                              default: and
+                              description: Operator to aggregate status
+                              type: string
+                          type: object
+                        layerId:
+                          description: Workflow reference of a layer
+                          type: integer
+                        then:
+                          description: Trigger a change in the workflow when conditions
+                            matches
+                          properties:
+                            layerId:
+                              description: Resume to a specified layerId If not set,
+                                proceed to the nextLayer (currentLayer + 1)
+                              type: integer
+                          type: object
+                      required:
+                      - layerId
+                      type: object
+                    type: array
+                required:
+                - begin
+                type: object
+            required:
+            - layers
+            type: object
+          status:
+            description: DiagramStatus defines the observed state of Plan
+            properties:
+              diagramPhase:
+                description: StreamPhase is a label for the condition of a streaming
+                  application or punchline
+                type: string
+              finishedAt:
+                type: string
+              layers:
+                description: Struct containing the layer status
+                properties:
+                  current:
+                    description: Used by diagram
+                    type: integer
+                  failed:
+                    items:
+                      description: Used by diagram
+                      type: integer
+                    type: array
+                  finished:
+                    items:
+                      description: Used by diagram
+                      type: integer
+                    type: array
+                  history:
+                    description: 'history are prepend: latest information will be
+                      at index0'
+                    items:
+                      description: Used by diagram
+                      type: integer
+                    type: array
+                  remaining:
+                    items:
+                      description: Used by diagram
+                      type: integer
+                    type: array
+                  skip:
+                    items:
+                      description: Used by diagram
+                      type: integer
+                    type: array
+                type: object
+              nodes:
+                description: Struct container each node status within a layer
+                properties:
+                  active:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                  activeTask:
+                    items:
+                      properties:
+                        name:
+                          type: string
+                        namespace:
+                          type: string
+                      type: object
+                    type: array
+                  candidate:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                  failed:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                  finished:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                  history:
+                    description: 'history are prepend: latest information will be
+                      at index0'
+                    items:
+                      properties:
+                        node:
+                          description: Used by diagram
+                          type: string
+                        observedStatus:
+                          description: StreamPhase is a label for the condition of
+                            a streaming application or punchline
+                          type: string
+                      type: object
+                    type: array
+                  remaining:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                  skip:
+                    items:
+                      description: Used by diagram
+                      type: string
+                    type: array
+                type: object
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

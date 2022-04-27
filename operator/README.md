@@ -46,16 +46,20 @@ Starting a plan is similar. I.e you use the same commands.
 
 ```sh
 kubectl apply -f <plan_crd.yaml>
+kubectl apply -f <diagram_crd.yaml>
 ```
 
 To stop it:
 
 ```sh
 kubectl delete -f <plan_crd.yaml>
+kubectl delete -f <diagram_crd.yaml>
 ```
 
 ```sh
+# schedulers
 kubectl get plans
+kubectl get diagrams
 ```
 
 ## Configuration
@@ -66,7 +70,7 @@ kubectl get plans
 
 | Configuration              | Description                         | Default value                                               |
 |----------------------------|-------------------------------------|-------------------------------------------------------------|
-| kubernetes.image           | The Punch Operator docker image     | ghcr.io/punchplatform/operator:v1.0.2 |                     |
+| kubernetes.image           | The Punch Operator docker image     | ghcr.io/punchplatform/operator:v1.0.2                       |
 | kubernetes.imagePullPolicy | The Kubernetes image pull policy    | IfNotPresent                                                |
 | kubernetes.imageSecret     | Secret name to pull docker image    | admin-secret                                                |
 
@@ -91,8 +95,8 @@ kubectl get plans
 
 | Configuration                         | Description                                                                                      | Default value |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|---------------|
-| operator.punch.sparkpunchline.enable  | If SparkPunchline CRD is enabled                                                                      |   true        |
-| operator.punch.sparkpunchline.workers | Number of threads to manage SparkPunchline CRDs. This is not the number of workers within a topology. |   2           | 
+| operator.punch.sparkpunchline.enable  | If SparkPunchline CRD is enabled                                                                      |   true   |
+| operator.punch.sparkpunchline.workers | Number of threads to manage SparkPunchline CRDs. This is not the number of workers within a topology. |   2      | 
 
 #### BatchApplication
 
@@ -114,6 +118,13 @@ kubectl get plans
 |----------------------------------|----------------------------------------------------------------------------------------------------------|---------------|
 | operator.punch.plan.enable       | If Plan CRD is enabled                                                                                   |   true        |
 | operator.punch.plan.workers      | Number of threads to manage Plan CRDs. This is not the number of workers within the planned application. |   2           |
+
+#### Diagram
+
+| Configuration                       | Description                                                                                                 | Default value |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------|
+| operator.punch.diagram.enable       | If Diagram CRD is enabled                                                                                   |   true        |
+| operator.punch.diagram.workers      | Number of threads to manage Diagram CRDs. This is not the number of workers within the planned application. |   2           |
 
 ## Install
 

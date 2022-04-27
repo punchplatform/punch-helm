@@ -251,6 +251,7 @@ spec:
                 - SparkPunchline
                 - BatchApplication
                 - BatchPunchline
+                - Diagram
                 type: string
               maxIteration:
                 description: Stop plan after N iteration
