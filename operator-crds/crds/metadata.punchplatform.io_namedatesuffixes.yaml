@@ -1,0 +1,68 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.8.0
+  creationTimestamp: null
+  name: namedatesuffixes.metadata.punchplatform.io
+spec:
+  group: metadata.punchplatform.io
+  names:
+    kind: NameDateSuffix
+    listKind: NameDateSuffixList
+    plural: namedatesuffixes
+    shortNames:
+    - nds
+    singular: namedatesuffix
+  scope: Namespaced
+  versions:
+  - name: v2
+    schema:
+      openAPIV3Schema:
+        description: NameDateSuffix is the Schema for the metadata API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: NameDateSuffixSpec defines the desired state of File
+            properties:
+              configMapRef:
+                description: reference a configmap where outputs will be persisted
+                  this field can be overrided but is used internally
+                properties:
+                  name:
+                    description: Name of the configmap to reference
+                    type: string
+                required:
+                - name
+                type: object
+              dateFormat:
+                description: define a generated dateformat
+                type: string
+              prefix:
+                description: define an arbitrary name prefix
+                type: string
+            required:
+            - dateFormat
+            - prefix
+            type: object
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

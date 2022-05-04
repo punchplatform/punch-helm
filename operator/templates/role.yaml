@@ -78,6 +78,30 @@ rules:
   - update
   - watch
 - apiGroups:
+  - metadata.punchplatform.io
+  resources:
+  - namedatesuffixes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - metadata.punchplatform.io
+  resources:
+  - uniqueids
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
   - platform.punchplatform.io
   resources:
   - platforms

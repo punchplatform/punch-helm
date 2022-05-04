@@ -20,7 +20,7 @@ spec:
   - name: v2
     schema:
       openAPIV3Schema:
-        description: Plan is the Schema for the plans API
+        description: BatchPunchlineModel is the Schema for the plans API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -35,8 +35,22 @@ spec:
           metadata:
             type: object
           spec:
-            description: BatchPunchlineModelSpec defines the desired state of Plan
+            description: BatchPunchlineModelSpec defines the desired state of BatchPunchlineModel
             properties:
+              context:
+                description: Specify additional templating context for the current
+                  model only
+                properties:
+                  configMapRef:
+                    description: A reference to a configmap
+                    properties:
+                      name:
+                        description: Name of the configmap to reference
+                        type: string
+                    required:
+                    - name
+                    type: object
+                type: object
               hooks:
                 description: Hook to be added before and after execution
                 properties:

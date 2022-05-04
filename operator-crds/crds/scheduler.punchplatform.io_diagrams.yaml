@@ -54,6 +54,27 @@ spec:
                 items:
                   description: A list of nodes to be executed simultaneously
                   properties:
+                    inputRefs:
+                      description: Specify a list of input this node is expecting
+                      items:
+                        description: Reference a Parameter type as node inputs or
+                          outputs
+                        properties:
+                          kind:
+                            description: the kind of the parameter type
+                            type: string
+                          name:
+                            description: the name of the parameter type
+                            type: string
+                          node:
+                            description: if input this is required if output this
+                              is optional
+                            type: string
+                        required:
+                        - kind
+                        - name
+                        type: object
+                      type: array
                     layerId:
                       description: Number that goes from 1 to max allowed number Node
                         that shares the same layer number will be executed at the
@@ -80,6 +101,28 @@ spec:
                     node:
                       description: The node name (must be unique to the workflow)
                       type: string
+                    outputRefs:
+                      description: Specify a list of output this node is going to
+                        publish
+                      items:
+                        description: Reference a Parameter type as node inputs or
+                          outputs
+                        properties:
+                          kind:
+                            description: the kind of the parameter type
+                            type: string
+                          name:
+                            description: the name of the parameter type
+                            type: string
+                          node:
+                            description: if input this is required if output this
+                              is optional
+                            type: string
+                        required:
+                        - kind
+                        - name
+                        type: object
+                      type: array
                   required:
                   - layerId
                   - modelRef
