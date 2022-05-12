@@ -29,6 +29,19 @@ web:
   # -- enable Artifacts Server UI
   enabled: true
 
+security:
+  # -- enable Artifacts Server security with keycloak
+  enabled: false
+
+keycloak:
+  # -- Keycloak auth server informations
+  auth_server_url: http://keycloak-http.authentication/auth/
+  realm: kast
+  resource: artifact-server
+  public_client: true
+  principal_attribute: preferred_username
+  use_resource_role_mappings: true
+
 metadata:
   # -- ES backend - connection information
   elasticsearch:
