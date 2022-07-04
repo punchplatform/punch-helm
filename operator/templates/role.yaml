@@ -314,6 +314,26 @@ rules:
   - update
   - watch
 - apiGroups:
+  - scheduler.kast.io
+  resources:
+  - flows
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scheduler.kast.io
+  resources:
+  - flows/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - scheduler.punchplatform.io
   resources:
   - diagrams
