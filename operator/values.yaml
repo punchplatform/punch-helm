@@ -14,7 +14,7 @@ kubernetes:
     requests:
       cpu: 100m
       memory: 20Mi
-  image: ghcr.io/punchplatform/operator:latest
+  image: ghcr.io/punchplatform/operator:8.0-dev
   imagePullPolicy: IfNotPresent
   imagePullSecret: admin-secret
   # leader election is enable by default
