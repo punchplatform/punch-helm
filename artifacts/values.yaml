@@ -13,6 +13,8 @@ ingress:
   enabled: true
   # -- ingress url
   url: artifacts-server.dpsc
+  # -- ingress class name to select an ingress controller
+  ingressClassName: nginx
 
 application:
   # -- tenant to store data
