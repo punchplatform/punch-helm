@@ -7,9 +7,23 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 5g
+{{- if .Values.ingress.tls }}
+{{- if and (eq .Values.ingress.certManagement "cert-manager") (eq .Values.ingress.certManager.issuerType "cluster-issuer") }}
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.certManager.issuerName }}
+{{- end }}
+{{- if and (eq .Values.ingress.certManagement "cert-manager") (eq .Values.ingress.certManager.issuerType "issuer") }}
+    cert-manager.io/issuer: {{ .Values.ingress.certManager.issuerName }}
+{{- end }}
+{{- end }}
 spec:
 {{- if .Values.ingress.ingressClassName }}
   ingressClassName: {{ .Values.ingress.ingressClassName }}
+{{- end }}
+{{- if .Values.ingress.tls }}
+  tls:
+  - hosts:
+    - {{ .Values.ingress.url }}
+    secretName: artifact-server-tls
 {{- end }}
   rules:
   - host: {{ .Values.ingress.url }}

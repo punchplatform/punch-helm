@@ -15,6 +15,13 @@ ingress:
   url: artifacts-server.dpsc
   # -- ingress class name to select an ingress controller
   ingressClassName: nginx
+  ## activate tls to expose ingress with a certificate
+  tls: false
+  certManagement: cert-manager # can be cert-manager or imported
+  #activated when cert_management = cert-manager
+  certManager:
+    issuerType: cluster-issuer # can be cluster-issuer or issuer
+    issuerName: myissuer # issuer name 
 
 application:
   # -- tenant to store data
