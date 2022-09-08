@@ -2118,6 +2118,9 @@ spec:
                               type: string
                           type: object
                         type: array
+                      debug:
+                        description: Enable debug mode which is useful for testing
+                        type: boolean
                       env:
                         description: Define additional environment variables
                         items:
@@ -2288,6 +2291,10 @@ spec:
                               More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
                             type: object
                         type: object
+                      restartOnDependencyUpdate:
+                        description: If true and a dependency was updated (by resourcesUpdateContainer)
+                          then restart the container
+                        type: boolean
                     type: object
                   monitoringInterval:
                     description: How time to wait between checks for child resources
@@ -2309,6 +2316,57 @@ spec:
                         description: Container image to be used when our operator
                           will be executing pod
                         type: string
+                      resourcesProviderUrl:
+                        description: URL of a backend storage to fetch artifacts
+                        type: string
+                      secretRefs:
+                        description: Kubernetes secrets object to mount on the Container
+                          filesystem
+                        items:
+                          description: SecretRef is a reference to an existing secret
+                            that will be mounted on a resource
+                          properties:
+                            mountPath:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        type: array
+                      trustSelfSignedCertificates:
+                        description: Allow the underlying implementation used to fetch
+                          resources to trust or not self-signed certificates
+                        type: boolean
+                    required:
+                    - resourcesProviderUrl
+                    type: object
+                  resourcesUpdateContainer:
+                    description: Specify whether during the execution of the application
+                      resources are needed to be up-to-date
+                    properties:
+                      debug:
+                        description: If debug is set, verbose mode will be activated
+                          from client side
+                        type: boolean
+                      image:
+                        description: Container image to be used when our operator
+                          will be executing pod
+                        type: string
+                      imagePullPolicy:
+                        description: Container image to be used when our operator
+                          will be executing pod
+                        type: string
+                      initialDelaySeconds:
+                        description: Number of seconds after the container has started
+                          before watchers are initiated. Default to 0 second.
+                        format: int32
+                        type: integer
+                      periodSeconds:
+                        description: How often (in seconds) to perform the watching.
+                          Default to 10 seconds. Minimum value is 1.
+                        format: int32
+                        type: integer
                       resourcesProviderUrl:
                         description: URL of a backend storage to fetch artifacts
                         type: string
