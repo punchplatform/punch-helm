@@ -1,0 +1,32 @@
+image:
+  name: ghcr.io/punchplatform/artifacts-server:8.0-dev
+  policy: IfNotPresent
+
+server:
+  # -- port to run the app
+  port: 8888
+
+ingress:
+  # -- enable an ingress
+  enabled: true
+  # -- ingress url
+  url: jupypunch.studio
+
+  # # -- ingress class name to select an ingress controller
+  # ingressClassName: nginx
+
+resources: 
+  replicas: 1
+  cpu: 2
+  memory: 2Gi
+
+minio:
+  host: http://s3.object-store:9000
+  access_key: minio
+  secret_key: password
+
+artifacts: 
+  host: http://artifacts-server.punch-artifacts:4245 
+  image:
+    name: ghcr.io/punchplatform/resourcectl:8.0-dev
+

@@ -1,0 +1,19 @@
+${HELM} upgrade \
+  --install artifacts \
+  --namespace jupypunch \
+  ${CHARTS_DIR}/artifacts-server-${PUNCH_ARTIFACTS_SERVICE_VERSION}.tgz \
+  --set image.name=${PUNCH_ARTIFACT_IMG} \
+  --set minio.access_key=${MINIO_ACCESS_KEY} \
+  --set minio.secret_key=${MINIO_SECRET_KEY} \
+  --set minio.host=http://${MINIO_SERVICE_NAME}:${MINIO_EXPOSURE_PORT} \
+  --create-namespace \
+  --wait
+
+helm upgrade jupypunch_chart \
+  --namespace jupypunch \
+  --set image.name=ghcr.io/punchplatform/jupypunch:8.0.1 \
+  --set minio.access_key=minio \
+  --set minio.secret_key=password \
+  --set minio.host=http://minio.object-store:9002 \
+  --create-namespace \
+  --wait

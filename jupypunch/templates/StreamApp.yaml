@@ -1,0 +1,49 @@
+---
+apiVersion: punchline.punchplatform.io/v2
+kind: StreamApplication
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: datastudio
+spec:
+  engineSettings:
+    spark.master: k8s://https://kubernetes.default.svc
+    spark.hadoop.fs.s3a.access.key:  {{ .Values.minio.acces_key }} 
+    spark.hadoop.fs.s3a.secret.key:  {{ .Values.minio.secret_key }}
+    spark.kubernetes.driverEnv.AWS_ACCESS_KEY_ID:  {{ .Values.minio.acces_key }}
+    spark.kubernetes.driverEnv.AWS_SECRET_ACCESS_KEY: {{ .Values.minio.secret_key }}
+    spark.kubernetes.driverEnv.MLFLOW_S3_ENDPOINT_URL: {{ .Values.minio.host }}
+    spark.hadoop.fs.s3a.endpoint:  {{ .Values.minio.host }}
+    spark.hadoop.fs.s3a.connection.ssl.enabled: false
+    
+    jupypunch.s3ContentsManager.enabled: false
+    jupypunch.s3ContentsManager.access_key: {{ .Values.minio.acces_key }}
+    jupypunch.s3ContentsManager.secret_key: {{ .Values.minio.secret_key }}
+    jupypunch.s3ContentsManager.endpoint_url: {{ .Values.minio.host }}
+    jupypunch.s3ContentsManager.bucket: datastudio
+
+
+    punch.s3.access_key: {{ .Values.minio.acces_key }}
+    punch.s3.secret_key: {{ .Values.minio.secret_key }}
+    punch.s3.endpoint: {{ .Values.minio.host }}
+
+  containers:
+    serviceAccount: admin-user
+    resourcesInitContainer:
+      image: {{ .Values.artifacts.image.name }}
+      resourcesProviderUrl: {{ .Values.artifacts.host }}
+    applicationContainer:
+      image: {{ .Values.image.name }}
+      imagePullPolicy: {{ .Values.image.policy }}
+      replicas: {{ .Values.resources.replicas}}
+      resources:
+        requests:
+          cpu: {{ .Values.resources.cpu}}
+          memory: {{ .Values.resources.memory}}
+      env:
+      - name: MLFLOW_S3_ENDPOINT_URL
+        value: {{ .Values.minio.host }}
+      - name: AWS_ACCESS_KEY_ID
+        value: {{ .Values.minio.acces_key }}
+      - name: AWS_SECRET_ACCESS_KEY
+        value: {{ .Values.minio.secret_key }}
