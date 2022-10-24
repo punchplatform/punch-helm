@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.application.replicas}}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      serviceAccount: {{ .Values.kubernetes.service_account }}
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ .Chart.Name }}
+            defaultMode: 420
+        - name: resourcectl-volume
+          emptyDir: {}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.application.image }}
+          imagePullPolicy: {{ .Values.application.imagePullPolicy }}
+          env:
+            - name: PUNCHLINE_FILE_PATH
+              value: /data/punchline
+            - name: KUBERNETES_MASTER
+              value: {{ .Values.kubernetes.apiserver }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /data
+            - name: resourcectl-volume
+              mountPath: /usr/share/punch
+          resources:
+            requests:
+              cpu: {{ .Values.application.resources.requests.cpu}}
+              memory: {{ .Values.application.resources.requests.memory}}
+  

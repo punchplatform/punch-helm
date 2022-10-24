@@ -1,0 +1,61 @@
+#### List of ports
+
+server:
+  port: 8888
+
+spark_ui:
+  port: 4040
+
+blockmanager:
+  port: 7777
+
+driver:
+  port: 2222
+
+#### Kubernetes
+
+kubernetes:
+  apiserver: https://kubernetes.default.svc
+  service_account: admin-user
+
+#### Resourcectl
+
+resourcesInitContainer:
+  image: ghcr.io/punchplatform/resourcectl:8.0-dev
+  url: http://artifacts-server.punch-artifacts:4245
+
+#### Application
+application:
+  image: ghcr.io/punchplatform/jupypunch:8.0-dev
+  imagePullPolicy: IfNotPresent
+  replicas: 1
+  resources: 
+    requests:
+      cpu: 2
+      memory: 2Gi
+
+#### Notebook Persistence
+
+s3ContentsManager:
+  enabled: false
+  bucket: jupyter
+
+#### Database
+
+s3:
+  access_key: minio
+  secret_key: password
+  endpoint: http://minio.object-store:9002
+
+elasticsearch:
+  http_hosts:
+    - host: punchplatform-es-default.doc-store
+      port: 9200
+      scheme: http
+  security:
+    credentials:
+      username: elastic
+      password: elastic
+
+kafka:
+  kafka.bootstrap.servers: kafka-kafka-bootstrap.processing:9092

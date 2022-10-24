@@ -1,0 +1,35 @@
+# Goals
+
+This chart constructs Kubernetes objects to deploy Jupyter.
+
+# Content
+
+- Create a deployment
+- Create a configMap
+- Create a service
+- Create a serviceAccount
+
+# Variables
+
+A default values file is provided, check his content to see chart variables.
+
+# Example
+
+Install with last images:  
+``` bash
+helm install jupypunch ./helm \
+		--namespace jupypunch \
+		--create-namespace \
+		--set application.image=ghcr.io/punchplatform/jupypunch:8.0-dev \
+		--set resourcesInitContainer.image=ghcr.io/punchplatform/resourcectl:8.0-dev \
+		--wait
+``` 
+Redirect port:
+``` bash
+kubectl port-forward -n jupypunch service/jupypunch 8888:8888
+#when a spark session is created, the spark UI is reachable on port 4040
+kubectl port-forward -n jupypunch service/jupypunch 4040:4040
+``` 
+Access:  
+**localhost:8888** or **localhost:8888/lab**  
+**localhost:4040**
