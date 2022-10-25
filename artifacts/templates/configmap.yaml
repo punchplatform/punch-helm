@@ -16,7 +16,7 @@ data:
 
     web:
       enabled: {{ .Values.web.enabled }}
-      
+
     security:
       enabled: {{ .Values.security.enabled }}
 
@@ -26,7 +26,7 @@ data:
       resource: {{ .Values.keycloak.resource }}
       public-client: {{ .Values.keycloak.public_client }}
       principal-attribute: {{ .Values.keycloak.principal_attribute }}
-      use-resource-role-mappings : {{ .Values.keycloak.use_resource_role_mappings }}
+      use-resource-role-mappings: {{ .Values.keycloak.use_resource_role_mappings }}
 
     metadata:
     {{- if .Values.metadata.elasticsearch }}

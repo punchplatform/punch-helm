@@ -27,7 +27,7 @@ spec:
         - name: artifacts
           image: "{{ .Values.image.name }}"
           imagePullPolicy: "{{ .Values.image.policy }}"
-          args: ["--spring.config.location=/opt/punch/config/application.yml"]
+          args: [ "--spring.config.location=/opt/punch/config/application.yml" ]
           ports:
             - name: artifacts
               containerPort: {{ .Values.server.port }}
