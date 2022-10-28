@@ -19,13 +19,12 @@ data:
             "serviceAccount": "{{ .Values.kubernetes.service_account }}"
         },
         "engineSettings": {
-            "spark.master": "k8s://{{ .Values.kubernetes.apiserver }}",
-            {{ if .Values.s3 }}
-            "spark.hadoop.fs.s3a.access.key": "{{ .Values.s3.access_key }}",
-            "spark.hadoop.fs.s3a.secret.key": "{{ .Values.s3.secret_key }}",
-            "spark.hadoop.fs.s3a.endpoint": "{{ .Values.s3.endpoint }}",
+            {{ if .Values.spark_conf }}
+              {{- range $k, $v := .Values.spark_conf }}
+                "{{ $k }}": "{{ tpl ($v) $}}",
+              {{- end }}
             {{ end }}
-            "jupypunch.s3ContentsManager.enabled": {{ .Values.s3ContentsManager.enabled }},
+            "jupypunch.s3ContentsManager.enabled": "{{ .Values.s3ContentsManager.enabled }}",
             "jupypunch.s3ContentsManager.access_key": "{{ .Values.s3.access_key }}",
             "jupypunch.s3ContentsManager.secret_key": "{{ .Values.s3.secret_key }}",
             "jupypunch.s3ContentsManager.endpoint_url": "{{ .Values.s3.endpoint }}",

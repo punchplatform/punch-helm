@@ -30,8 +30,6 @@ spec:
           env:
             - name: PUNCHLINE_FILE_PATH
               value: /data/punchline
-            - name: KUBERNETES_MASTER
-              value: {{ .Values.kubernetes.apiserver }}
           volumeMounts:
             - name: config-volume
               mountPath: /data
