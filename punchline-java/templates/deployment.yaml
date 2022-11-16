@@ -22,7 +22,7 @@ spec:
         - name: {{ .Values.global.imagePullSecret }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.global.containerImage }}"
+          image: "{{ .Values.global.containerImage }}:{{.Chart.Version}}"
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
       {{ if .Values.punchline }}
           args: [ "/opt/punch/punchline" ]

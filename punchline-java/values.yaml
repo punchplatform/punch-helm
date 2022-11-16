@@ -1,4 +1,4 @@
 ---
 global:
   imagePullPolicy: "IfNotPresent"
-  containerImage: "ghcr.io/punchplatform/punchline-java:8.0.0-snapshot"
+  containerImage: "ghcr.io/punchplatform/punchline-java"
