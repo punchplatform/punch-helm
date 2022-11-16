@@ -13,7 +13,7 @@ data:
     "spec": {
         "containers": {
             "resourcesInitContainer": {
-                "image": "{{ .Values.resourcesInitContainer.image }}",
+                "image": "{{ .Values.resourcesInitContainer.image }}:{{.Chart.Version}}",
                 "resourcesProviderUrl": "{{ .Values.resourcesInitContainer.url }}"
             },
             "serviceAccount": "{{ .Values.kubernetes.service_account }}"

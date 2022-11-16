@@ -25,7 +25,7 @@ spec:
           emptyDir: {}
       containers:
         - name: {{ .Chart.Name }}
-          image: {{ .Values.application.image }}
+          image: {{ .Values.application.image }}:{{.Chart.Version}}
           imagePullPolicy: {{ .Values.application.imagePullPolicy }}
           env:
             - name: PUNCHLINE_FILE_PATH

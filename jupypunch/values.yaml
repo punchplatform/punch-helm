@@ -20,12 +20,12 @@ kubernetes:
 #### Resourcectl
 
 resourcesInitContainer:
-  image: ghcr.io/punchplatform/resourcectl:8.0-dev
+  image: ghcr.io/punchplatform/resourcectl
   url: http://artifacts-server.punch-artifacts:4245
 
 #### Application
 application:
-  image: ghcr.io/punchplatform/jupypunch:8.0-dev
+  image: ghcr.io/punchplatform/jupypunch
   imagePullPolicy: IfNotPresent
   replicas: 1
   resources: 
