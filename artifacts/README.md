@@ -1,6 +1,6 @@
 # artifacts-server
 
-![Version: 8.1-dev](https://img.shields.io/badge/Version-8.1--dev-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 8.1-dev](https://img.shields.io/badge/AppVersion-8.1--dev-informational?style=flat-square)
+![Version: 8.0-dev](https://img.shields.io/badge/Version-8.0--dev-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 8.0-dev](https://img.shields.io/badge/AppVersion-8.0--dev-informational?style=flat-square)
 
 Helm chart for the Punch Artifacts Server
 
@@ -11,7 +11,7 @@ Helm chart for the Punch Artifacts Server
 | application.tenant | string | `"mytenant"` | tenant to store data |
 | data.file | string | `nil` | path to folder for FS data backend |
 | data.minio | object | `{"access_key":"minio","host":"http://s3.object-store:9000","secret_key":"password"}` | Connection information for Minio data backend |
-| image.name | string | `"ghcr.io/punchplatform/artifacts-server:8.1-dev"` |  |
+| image.name | string | `"ghcr.io/punchplatform/artifacts-server:8.0-dev"` |  |
 | image.policy | string | `"IfNotPresent"` |  |
 | image.secret | string | `"admin-secret"` | secret to pull image |
 | ingress.enabled | bool | `true` | enable an ingress |
