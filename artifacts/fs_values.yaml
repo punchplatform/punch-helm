@@ -1,7 +1,7 @@
 # Values for running Artifacts Server on File System
 # for data and metadata
 image:
-  name: ghcr.io/punchplatform/artifacts-server:8.1-dev
+  name: ghcr.io/punchplatform/artifacts-server:8.0-dev
   secret: admin-secret
   policy: IfNotPresent
 
