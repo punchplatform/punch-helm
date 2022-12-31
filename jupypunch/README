@@ -20,8 +20,8 @@ Install with last images:
 helm install jupypunch ./helm \
 		--namespace jupypunch \
 		--create-namespace \
-		--set application.image=ghcr.io/punchplatform/jupypunch:8.1-dev \
-		--set resourcesInitContainer.image=ghcr.io/punchplatform/resourcectl:8.1-dev \
+		--set application.image=ghcr.io/punchplatform/jupypunch:8.0-dev \
+		--set resourcesInitContainer.image=ghcr.io/punchplatform/resourcectl:8.0-dev \
 		--wait
 ``` 
 Redirect port:
