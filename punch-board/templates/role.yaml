@@ -1,0 +1,25 @@
+{{- if .Values.serviceAccount.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "punch-board.serviceAccountName" . }}
+rules:
+  - apiGroups: [ "", "apps", "argoproj.io", "ingresses", "flink.gitlab.thalesdigital.io","punchline.punchplatform.io"]
+    resources: ["*"] # FIXME TO OPEN "pods", "pods/log", "services", "configmaps", "secrets"
+    verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "punch-board.serviceAccountName" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "punch-board.serviceAccountName" . }}
+subjects:
+  - kind: ServiceAccount
+    namespace: {{ .Release.Namespace }}
+    name: {{ include "punch-board.serviceAccountName" . }}
+  {{- end }}
