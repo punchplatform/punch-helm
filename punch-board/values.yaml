@@ -137,10 +137,16 @@ config:
 
   operator:
     namespace: punchoperator-system
-    serviceAccount: operator-controller-manager
+    serviceAccount: operator-control  ler-manager
     labels:
       board.punch.io/platform: kooker
 
+  proxy:
+    '/v1/*sub':
+      target: 'http://artifacts-server.punch-artifacts:4245'
+      pathRewrite:
+        origin: '/v1'
+        remote: '/v1'
 
   auth:
     admin:
