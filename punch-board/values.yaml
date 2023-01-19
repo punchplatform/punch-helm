@@ -133,8 +133,8 @@ config:
     address: "http://prometheus-server.monitoring.svc.cluster.local"
 
   operator:
-    namespace: punchoperator-system
-    serviceAccount: operator-control  ler-manager
+    namespace: default
+    serviceAccount: default
     labels:
       board.punch.io/platform: kooker
 
