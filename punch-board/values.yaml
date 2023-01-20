@@ -118,39 +118,24 @@ config:
   temp:
     dir: /tmp
 
-  # database configuration
-  database:
-    sqlite:
-      uri: /sqlite.db
-      migrate: true
-
   # schema location
   schemas:
     file:
       path: /static
 
-  prometheus:
-    address: "http://prometheus-server.monitoring.svc.cluster.local"
-
-  operator:
+  kubernetes:
     namespace: default
     serviceAccount: default
     labels:
       board.punch.io/platform: kooker
 
-  proxy:
-    '/v1/*sub':
-      target: 'http://artifacts-server.punch-artifacts:4245'
-      pathRewrite:
-        origin: '/v1'
-        remote: '/v1'
+  punchArtifacts:
+    url: 'http://artifacts-server.punch-artifacts:4245'
 
   auth:
     admin:
       username: board
       password: board
-
-
     #openId:
      # keycloak:
       #  configUrl: "https://keycloak-internal-oidc.authentication.svc.cluster.local/auth/realms/kast/.well-known/openid-configuration" # public keycloak url
