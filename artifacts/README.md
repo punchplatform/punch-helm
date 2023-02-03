@@ -6,27 +6,29 @@ Helm chart for the Punch Artifacts Server
 
 ## Values
 
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| application.tenant | string | `"mytenant"` | tenant to store data |
-| data.file | string | `nil` | path to folder for FS data backend |
-| data.minio | object | `{"access_key":"minio","host":"http://s3.object-store:9000","secret_key":"password"}` | Connection information for Minio data backend |
-| image.name | string | `"ghcr.io/punchplatform/artifacts-server:8.1-dev"` |  |
-| image.policy | string | `"IfNotPresent"` |  |
-| image.secret | string | `"admin-secret"` | secret to pull image |
-| ingress.enabled | bool | `true` | enable an ingress |
-| ingress.ingressClassName | string | `"nginx"` | ingress class name to select an ingress controller |
-| ingress.url | string | `"artifacts-server.dpsc"` | ingress url |
-| keycloak.auth_server_url | string | `"http://keycloak-http.authentication/auth/"` | Keycloak auth server informations |
-| keycloak.principal_attribute | string | `"preferred_username"` |  |
-| keycloak.public_client | bool | `true` |  |
-| keycloak.realm | string | `"kast"` |  |
-| keycloak.resource | string | `"artifact-server"` |  |
-| keycloak.use_resource_role_mappings | bool | `true` |  |
-| metadata.elasticsearch | object | `{"http_hosts":[{"host":"elasticsearch.doc-store","port":9200,"scheme":"http"}],"index":"artifacts-metadata","security":{"credentials":{"password":"admin","username":"admin"},"ssl":{"hostname_verification":false,"use_self_signed_certificate":false}}}` | ES backend - connection information |
-| metadata.file | string | `nil` | path to folder for FS metadata backend |
-| security.enabled | bool | `false` | enable Artifacts Server security with keycloak |
-| server.port | int | `4245` | port to run the app |
-| spring | object | `{"servlet":{"multipart":{"max-file-size":"100MB","max-request-size":"100MB"}}}` | spring configuration |
-| web.enabled | bool | `true` | enable Artifacts Server UI |
+| Key                                        | Type   | Default                                                                               | Description                                        |
+|--------------------------------------------|--------|---------------------------------------------------------------------------------------|----------------------------------------------------|
+| config.application.tenant                  | string | `"mytenant"`                                                                          | tenant to store data                               |
+| config.data.file                           | string | `nil`                                                                                 | path to folder for FS data backend                 |
+| config.data.minio                          | object | `{"access_key":"minio","host":"http://s3.object-store:9000","secret_key":"password"}` | Connection information for Minio data backend      |
+| config.keycloak.auth_server_url            | string | `"http://keycloak-http.authentication/auth/"`                                         | Keycloak auth server informations                  |
+| config.keycloak.principal_attribute        | string | `"preferred_username"`                                                                |                                                    |
+| config.keycloak.public_client              | bool   | `true`                                                                                |                                                    |
+| config.keycloak.realm                      | string | `"kast"`                                                                              |                                                    |
+| config.keycloak.resource                   | string | `"artifact-server"`                                                                   |                                                    |
+| config.keycloak.use_resource_role_mappings | bool   | `true`                                                                                |                                                    |
+| config.metadata.elasticsearch              | object | `nil`                                                                                 | ES backend - connection information                |
+| config.metadata.file                       | string | `nil`                                                                                 | path to folder for FS metadata backend             |
+| config.data.minio                          | object | `{"access_key":"minio","host":"http://s3.object-store:9000","secret_key":"password"}` | Connection information for Minio metadata backend  |
+| config.security.enabled                    | bool   | `false`                                                                               | enable Artifacts Server security with keycloak     |
+| config.server.port                         | int    | `4245`                                                                                | port to run the app                                |
+| config.spring                              | object | `{"servlet":{"multipart":{"max-file-size":"100MB","max-request-size":"100MB"}}}`      | spring configuration                               |
+| config.web.enabled                         | bool   | `false`                                                                               | enable Artifacts Server UI                         |
+| image.name                                 | string | `"ghcr.io/punchplatform/artifacts-server:8.1-dev"`                                    |                                                    |
+| image.policy                               | string | `"IfNotPresent"`                                                                      |                                                    |
+| image.secret                               | string | `"admin-secret"`                                                                      | secret to pull image                               |
+| ingress.enabled                            | bool   | `true`                                                                                | enable an ingress                                  |
+| ingress.ingressClassName                   | string | `"nginx"`                                                                             | ingress class name to select an ingress controller |
+| ingress.url                                | string | `"artifacts-server.dpsc"`                                                             | ingress url                                        |
+| server.port                                | int    | `4245`                                                                                | port to run the app                                |
 

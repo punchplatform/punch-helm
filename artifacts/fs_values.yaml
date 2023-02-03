@@ -22,7 +22,7 @@ spring:
       max-request-size: 100MB
 
 web:
-  enabled: true
+  enabled: false
 
 metadata:
   file: /tmp/artifacts/metadata
