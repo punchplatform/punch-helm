@@ -115,8 +115,7 @@ config:
   listen: 0.0.0.0:8080
 
   # temporary directory
-  temp:
-    dir: /tmp
+  tmpDir: /tmp
 
   # schema location
   schemas:
@@ -129,16 +128,9 @@ config:
     labels:
       board.punch.io/platform: kooker
 
-  punchArtifacts:
-    url: 'http://artifacts-server.punch-artifacts:4245'
+  punchArtifacts: 'http://artifacts-server.punch-artifacts:4245'
 
   auth:
     admin:
       username: board
       password: board
-    #openId:
-     # keycloak:
-      #  configUrl: "https://keycloak-internal-oidc.authentication.svc.cluster.local/auth/realms/kast/.well-known/openid-configuration" # public keycloak url
-       # clientId: "punch-board"
-        #clientSecret: "e87a95f5-f7fb-4794-a52b-52bcb3cb15d0"
-        #redirectUrl: "https://kast-flow.dpsc/login"
