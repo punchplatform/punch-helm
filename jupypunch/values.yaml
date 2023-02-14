@@ -12,16 +12,31 @@ blockmanager:
 driver:
   port: 2222
 
+ingress:
+  # -- enable an ingress
+  enabled: true
+  # -- ingress url
+  url: jupypunch.punch
+  urlSparkUI: spark.punch
+  # -- ingress class name to select an ingress controller
+  ingressClassName: ""
+  ## activate tls to expose ingress with a certificate
+  tls: false
+  secretName: jupypunch-secret
+  certManagement: cert-manager # can be cert-manager or imported
+  #activated when cert_management = cert-manager
+  certManager:
+    issuerType: cluster-issuer # can be cluster-issuer or issuer
+    issuerName: myissuer # issuer name
+
 #### Kubernetes
 
 kubernetes:
   service_account: admin-user
 
-#### Resourcectl
+#### Artifacts server
 
-resourcesInitContainer:
-  image: ghcr.io/punchplatform/resourcectl
-  url: http://artifacts-server.punch-artifacts:4245
+punch.artifacts.server.url: http://artifacts-server.punch-artifacts:4245
 
 #### Application
 application:
