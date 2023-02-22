@@ -43,10 +43,6 @@ config:
         max-file-size: 100MB
         max-request-size: 100MB
 
-  web:
-    # -- enable Artifacts Server UI
-    enabled: false
-
   security:
     # -- enable Artifacts Server security with keycloak
     enabled: false

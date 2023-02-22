@@ -21,9 +21,6 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-web:
-  enabled: false
-
 metadata:
   file: /tmp/artifacts/metadata
   elasticsearch: null
