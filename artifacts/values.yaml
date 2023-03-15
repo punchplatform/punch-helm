@@ -23,16 +23,6 @@ server:
   # -- port to run the app
   port: 4245
 
-env: 
-  - name: JDK_JAVA_OPTIONS
-    value: "-Xms100m -Xmx450m"
-
-resources: 
-  requests:
-    memory: 100Mi
-  limits:
-    memory: 500Mi
-
 config:
   # ---------------------------------
   # Punch Artifact Server configuration file

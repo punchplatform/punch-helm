@@ -34,14 +34,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /opt/punch/config
-          {{- with .Values.resources }}
-          resources:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.env }}
-          env:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
       volumes:
         - name: config
           configMap:
