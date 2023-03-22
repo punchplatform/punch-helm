@@ -36,7 +36,7 @@ kubernetes:
 
 #### Artifacts server
 
-punch.artifacts.server.url: http://artifacts-server.punch-artifacts:4245
+punch.artifacts.server.url: http://artifacts-server.artifacts-server:4245/
 
 #### Application
 application:
@@ -57,13 +57,13 @@ s3ContentsManager:
 #### Database
 
 s3:
-  access_key: minio
-  secret_key: password
-  endpoint: http://minio.object-store:9002
+  access_key: minioadmin
+  secret_key: minioadmin
+  endpoint: http://minio.object-store:9000
 
 elasticsearch:
   http_hosts:
-    - host: punchplatform-es-default.doc-store
+    - host: elasticsearch-master.doc-store
       port: 9200
       scheme: http
   security:
@@ -72,7 +72,7 @@ elasticsearch:
       password: elastic
 
 kafka:
-  kafka.bootstrap.servers: kafka-kafka-bootstrap.processing:9092
+  kafka.bootstrap.servers: kooker-kafka-kafka-bootstrap.processing:9092
 
 
 #### Spark conf

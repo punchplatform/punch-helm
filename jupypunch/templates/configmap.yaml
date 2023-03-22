@@ -31,5 +31,6 @@ data:
       {{- end }}
       {{ if .Values.kafka }}
       kafka: {{- .Values.kafka | toYaml | trim | nindent 8 }}
+      kafka_stream: {{- .Values.kafka | toYaml | trim | nindent 8 }}
       {{- end }}
       keynotused: null
