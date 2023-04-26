@@ -30,7 +30,7 @@ securityContext: { }
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
+# runAsNonRoot: true
 # runAsUser: 1000
 
 service:
@@ -41,7 +41,7 @@ ingress:
   enabled: true
   className: null
   annotations: { }
-    # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
     - host: punch-board.dpsc
@@ -62,7 +62,7 @@ resources: { }
   #   cpu: 100m
   #   memory: 128Mi
   # requests:
-  #   cpu: 100m
+#   cpu: 100m
 #   memory: 128Mi
 
 autoscaling:
@@ -83,7 +83,7 @@ affinity: { }
 ##
 persistence:
   enabled: false
-  annotations: {}
+  annotations: { }
   
   path: /data
 
@@ -131,6 +131,16 @@ config:
   punchArtifacts: 'http://artifacts-server.punch-artifacts:4245'
 
   auth:
-    admin:
-      username: board
-      password: board
+    users:
+      board:
+        password: board
+        roles:
+          - admin
+          - editor
+          - viewer
+  #  keycloak:
+  #    realm: master
+  #    auth-server-url: http://keycloak.punch:8080/
+  #    resource: punch-board
+  #    credentials:
+  #      secret: 3e2Iov2MhYRh8VrG50F5INCT1vzU6b5a
