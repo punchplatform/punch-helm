@@ -53,18 +53,16 @@ config:
         max-file-size: 100MB
         max-request-size: 100MB
 
-  security:
-    # -- enable Artifacts Server security with keycloak
-    enabled: false
-
-  keycloak:
-    # -- Keycloak auth server informations
-    auth_server_url: http://keycloak-http.authentication/auth/
-    realm: kast
-    resource: artifact-server
-    public_client: true
-    principal_attribute: preferred_username
-    use_resource_role_mappings: true
+#  keycloak:
+#    # -- Keycloak auth server informations
+#    enabled: true
+#    realm: master
+#    auth-server-url: http://keycloak.punch:8080/
+#    resource: artifacts-server
+#    credentials:
+#      secret: BVl1UNFSONUXjvk7uxkdQyVkiXWKAuIf
+#    use-resource-role-mappings: true
+#    bearer-only: true
 
   metadata:
     # -- Connection information for Minio metadata backend
