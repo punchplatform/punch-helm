@@ -13,6 +13,14 @@ dependencies:
 - name: operator
   repository: https://punchplatform.github.io/punch-helm
   version: 8.1-dev
+- condition: certmanager.enabled
+  name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.11.0
+- condition: minio.enabled
+  name: minio
+  repository: https://charts.min.io/
+  version: 5.0.7
 description: Global Punch Helm chart 
 name: punch
 type: application
