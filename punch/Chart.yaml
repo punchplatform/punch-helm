@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: 8.1-dev
+dependencies:
+- name: artifacts-server
+  repository: https://punchplatform.github.io/punch-helm
+  version: 8.1-dev
+- name: punch-board
+  repository: https://punchplatform.github.io/punch-helm
+  version: 8.1-dev
+- name: operator-crds
+  repository: https://punchplatform.github.io/punch-helm
+  version: 8.1-dev
+- name: operator
+  repository: https://punchplatform.github.io/punch-helm
+  version: 8.1-dev
+description: Global Punch Helm chart 
+name: punch
+type: application
+version: 8.1-dev

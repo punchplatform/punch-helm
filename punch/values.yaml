@@ -1,0 +1,33 @@
+artifacts-server:
+  ingress:
+    url: artifacts-server.punch
+    ingressClassName: ""
+  config:
+    application:
+      tenant: "default"
+    metadata: 
+      minio:
+        host: http://minio.object-store:9000
+        access_key: minioadmin
+        secret_key: minioadmin
+    data:
+      minio:
+        host: http://minio.object-store:9000
+        access_key: minioadmin
+        secret_key: minioadmin
+
+punch-board:
+  image: ghcr.io/punchplatform/punch-board:8.1-dev
+  imagePullSecrets: [name: admin-secret]
+  ingress:
+    enabled: true
+    className: null
+    annotations: { }
+    hosts:
+      - host: board.punch
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: [ ]
+  config:
+    punchArtifacts: 'http://artifacts-server.default:4245'
