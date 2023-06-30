@@ -11,11 +11,5 @@ dependencies:
 - name: operator
   repository: https://punchplatform.github.io/punch-helm
   version: 8.1.5
-- name: cert-manager
-  repository: https://charts.jetstack.io
-  version: v1.11.0
-- name: minio
-  repository: https://charts.min.io/
-  version: 5.0.7
-digest: sha256:c992ff64695c34c026e891dfa49fe2f8e7ac69c595e7710c45635a4c22c73204
-generated: "2023-06-29T16:37:08.087677593+02:00"
+digest: sha256:a4b784b256a71e2efbd7e99050c0888937497ccc2d57a27cf08a6417f1d2e178
+generated: "2023-06-30T10:07:01.472681002Z"
