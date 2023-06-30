@@ -1,20 +1,13 @@
 artifacts-server:
   ingress:
     url: artifacts-server.punch
-    ingressClassName: ""
   config:
     application:
       tenant: "default"
     metadata: 
-      minio:
-        host: http://minio.default:9000
-        access_key: minioadmin
-        secret_key: minioadmin
+      file: /tmp/artifacts/metadata
     data:
-      minio:
-        host: http://minio.default:9000
-        access_key: minioadmin
-        secret_key: minioadmin
+      file: /tmp/artifacts/data
     keycloak:
       enabled: false
 
@@ -23,7 +16,6 @@ punch-board:
       punchArtifacts: 'http://artifacts-server.default:4245'
     ingress:
       enabled: true
-      className: nginx
       annotations: 
         "nginx.ingress.kubernetes.io/proxy-buffer-size": "128k"
       hosts:
