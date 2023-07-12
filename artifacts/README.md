@@ -27,8 +27,10 @@ Helm chart for the Punch Artifacts Server
 | image.name                                 | string | `"ghcr.io/punchplatform/artifacts-server:8.1-dev"`                                    |                                                    |
 | image.policy                               | string | `"IfNotPresent"`                                                                      |                                                    |
 | image.secret                               | string | `"admin-secret"`                                                                      | secret to pull image                               |
+| serviceAccountName                         | string | `"default"`                                                                           | service account name                               |
 | ingress.enabled                            | bool   | `true`                                                                                | enable an ingress                                  |
 | ingress.ingressClassName                   | string | `"nginx"`                                                                             | ingress class name to select an ingress controller |
 | ingress.url                                | string | `"artifacts-server.dpsc"`                                                             | ingress url                                        |
 | server.port                                | int    | `4245`                                                                                | port to run the app                                |
+
 

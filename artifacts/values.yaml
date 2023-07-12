@@ -4,6 +4,10 @@ image:
   secret: admin-secret
   policy: IfNotPresent
 
+serviceAccount:
+  name: default
+  create: false
+
 ingress:
   # -- enable an ingress
   enabled: true

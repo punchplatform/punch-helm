@@ -5,6 +5,8 @@ image:
   secret: admin-secret
   policy: IfNotPresent
 
+serviceAccountName: default
+
 server:
   port: 4245
 

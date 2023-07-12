@@ -23,6 +23,7 @@ spec:
       imagePullSecrets:
         - name: {{ .Values.image.secret }}
       {{- end }}
+      serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
         - name: artifacts
           image: "{{ .Values.image.name }}"
