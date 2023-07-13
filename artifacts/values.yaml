@@ -8,6 +8,10 @@ serviceAccount:
   name: default
   create: false
 
+gcpConfig:
+  enabled: false
+  serviceAccountName: '' #A GKE service account 
+  
 ingress:
   # -- enable an ingress
   enabled: true
