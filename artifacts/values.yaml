@@ -15,6 +15,7 @@ gcpConfig:
 ingress:
   # -- enable an ingress
   enabled: true
+  proxyBodySize: 5g
   # -- ingress url
   url: artifacts-server.dpsc
   # -- ingress class name to select an ingress controller

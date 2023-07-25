@@ -6,7 +6,7 @@ metadata:
   name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: 5g
+    nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxy-body-size }}
 {{- if .Values.ingress.tls }}
 {{- if and (eq .Values.ingress.certManagement "cert-manager") (eq .Values.ingress.certManager.issuerType "cluster-issuer") }}
     cert-manager.io/cluster-issuer: {{ .Values.ingress.certManager.issuerName }}
