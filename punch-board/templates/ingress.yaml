@@ -20,7 +20,6 @@ metadata:
     {{- include "punch-board.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
