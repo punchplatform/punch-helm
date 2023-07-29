@@ -11,7 +11,7 @@ serviceAccount:
 gcpConfig:
   enabled: false
   serviceAccountName: '' #A GKE service account 
-
+  
 ingress:
   # -- enable an ingress
   enabled: true
@@ -32,11 +32,11 @@ server:
   # -- port to run the app
   port: 4245
 
-env:
+env: 
   - name: JDK_JAVA_OPTIONS
     value: "-Xms100m -Xmx450m"
 
-resources:
+resources: 
   requests:
     memory: 100Mi
   limits:
@@ -62,35 +62,29 @@ config:
         max-file-size: 100MB
         max-request-size: 100MB
 
-  #  keycloak:
-  #    # -- Keycloak auth server informations
-  #    enabled: true
-  #    realm: master
-  #    auth-server-url: http://keycloak.punch:8080/
-  #    resource: artifacts-server
-  #    credentials:
-  #      secret: BVl1UNFSONUXjvk7uxkdQyVkiXWKAuIf
-  #    use-resource-role-mappings: true
-  #    bearer-only: true
+#  keycloak:
+#    # -- Keycloak auth server informations
+#    enabled: true
+#    realm: master
+#    auth-server-url: http://keycloak.punch:8080/
+#    resource: artifacts-server
+#    credentials:
+#      secret: BVl1UNFSONUXjvk7uxkdQyVkiXWKAuIf
+#    use-resource-role-mappings: true
+#    bearer-only: true
 
   metadata:
     # -- Connection information for Minio and gcs metadata backend
-    cloudstorage:
-      create_bucket: true
-
     minio:
-      create_bucket: true
+      skipCreateBucket: false
       host: http://s3.object-store:9000
       access_key: minio
       secret_key: password
 
   data:
     # -- Connection information for Minio and gcs data backend
-    cloudstorage:
-      create_bucket: true
-
     minio:
-      create_bucket: true
+      skipCreateBucket: false
       host: http://s3.object-store:9000
       access_key: minio
       secret_key: password
