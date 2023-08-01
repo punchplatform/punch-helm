@@ -75,6 +75,7 @@ config:
 
   metadata:
     # -- Connection information for Minio and gcs metadata backend
+    type: minio
     minio:
       skipCreateBucket: false
       host: http://s3.object-store:9000
@@ -83,6 +84,7 @@ config:
 
   data:
     # -- Connection information for Minio and gcs data backend
+    type: minio
     minio:
       skipCreateBucket: false
       host: http://s3.object-store:9000
