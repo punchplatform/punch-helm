@@ -29,8 +29,23 @@ ingress:
     issuerName: myissuer # issuer name
 
 server:
-  # -- port to run the app
   port: 4245
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /dev
+      prefix: stdout
+      buffered: false
+      suffix:
+      file-date-format:
+      pattern: '%h %l %u %t "%r" %s %b %D'
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    okhttp3: INFO
+    com.github.punchplatform.artifacts.server.controllers.utils.ReadWriteLock: DEBUG
 
 env: 
   - name: JDK_JAVA_OPTIONS
