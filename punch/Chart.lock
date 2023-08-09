@@ -12,4 +12,4 @@ dependencies:
   repository: https://punchplatform.github.io/punch-helm
   version: 8.1.6
 digest: sha256:83b75cee7216f52d4d49da1eb28f52b8cbbe04bba83fe3fe7403f8861b7859f8
-generated: "2023-08-08T02:03:51.658932079Z"
+generated: "2023-08-09T02:03:55.61360127Z"
