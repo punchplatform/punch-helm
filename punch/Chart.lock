@@ -1,15 +1,15 @@
 dependencies:
 - name: artifacts-server
   repository: https://punchplatform.github.io/punch-helm
-  version: 8.1.6
+  version: 8.1.7
 - name: punch-board
   repository: https://punchplatform.github.io/punch-helm
-  version: 8.1.6
+  version: 8.1.7
 - name: operator-crds
   repository: https://punchplatform.github.io/punch-helm
-  version: 8.1.6
+  version: 8.1.7
 - name: operator
   repository: https://punchplatform.github.io/punch-helm
-  version: 8.1.6
-digest: sha256:83b75cee7216f52d4d49da1eb28f52b8cbbe04bba83fe3fe7403f8861b7859f8
-generated: "2023-08-09T02:03:55.61360127Z"
+  version: 8.1.7
+digest: sha256:9f5e84c5bd86ed9845478fe9a158b59f1e299e79938c2fdd29ed7e475ad51a57
+generated: "2023-08-10T02:03:24.543813938Z"
