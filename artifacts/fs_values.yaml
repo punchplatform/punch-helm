@@ -25,7 +25,5 @@ spring:
 
 metadata:
   file: /tmp/artifacts/metadata
-  elasticsearch: null
 data:
   file: /tmp/artifacts/data
-  minio: null
