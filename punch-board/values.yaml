@@ -40,9 +40,7 @@ service:
 ingress:
   enabled: true
   className: null
-  annotations: {
-    nginx.ingress.kubernetes.io/proxy-body-size: 5g
-  }
+  annotations: { }
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
