@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}
 data:
-  jupypunch.conf: |
+  jupypunch_conf.yaml: |
     kubernetes: true
     spark.kubernetes.namespace: {{ .Release.Namespace }}
     spark.kubernetes.authenticate.driver.serviceAccountName: {{ .Values.kubernetes.service_account }}
