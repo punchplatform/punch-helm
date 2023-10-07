@@ -27,9 +27,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: {{ .Values.application.image }}
           imagePullPolicy: {{ .Values.application.imagePullPolicy }}
-          # env:
-          #   - name: PUNCHLINE_FILE_PATH
-          #     value: /opt/jupypunch/jupypunch.conf
           volumeMounts:
             - name: config-volume
               mountPath: /opt/jupypunch/
