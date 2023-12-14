@@ -12,7 +12,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # Specifies whether a service account and the corresponding roles should be created
   create: true
   # Annotations to add to the service account
   annotations: { }
@@ -129,6 +129,7 @@ config:
     serviceAccount: default
     labels:
       board.punch.io/platform: kooker
+    authenticationStrategy: serviceAccount
 
   punchArtifacts: 'http://artifacts-server.punch-artifacts:4245'
 
