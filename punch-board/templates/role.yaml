@@ -4,7 +4,7 @@ kind: ClusterRole
 metadata:
   name: {{ include "punch-board.serviceAccountName" . }}
 rules:
-  - apiGroups: [ "", "apps", "networking.k8s.io", "punchline.punchplatform.io", "scheduler.punchplatform.io", "platform.punchplatform.io"]
+  - apiGroups: [ "", "apps", "networking.k8s.io", "punchline.punchplatform.io", "scheduler.punchplatform.io"]
     resources: ["*"] # FIXME TO OPEN "pods", "pods/log", "services", "configmaps", "secrets"
     verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
 
