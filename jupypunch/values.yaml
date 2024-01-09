@@ -12,31 +12,16 @@ blockmanager:
 driver:
   port: 2222
 
-ingress:
-  # -- enable an ingress
-  enabled: true
-  # -- ingress url
-  url: jupypunch.punch
-  urlSparkUI: spark.punch
-  # -- ingress class name to select an ingress controller
-  ingressClassName: ""
-  ## activate tls to expose ingress with a certificate
-  tls: false
-  secretName: jupypunch-secret
-  certManagement: cert-manager # can be cert-manager or imported
-  #activated when cert_management = cert-manager
-  certManager:
-    issuerType: cluster-issuer # can be cluster-issuer or issuer
-    issuerName: myissuer # issuer name
-
 #### Kubernetes
 
 kubernetes:
   service_account: admin-user
 
-#### Artifacts server
+#### Resourcectl
 
-punch.artifacts.server.url: http://artifacts-server.artifacts-server:4245/
+resourcesInitContainer:
+  image: ghcr.io/punchplatform/resourcectl
+  url: http://artifacts-server.punch-artifacts:4245
 
 #### Application
 application:
@@ -57,13 +42,13 @@ s3ContentsManager:
 #### Database
 
 s3:
-  access_key: minioadmin
-  secret_key: minioadmin
-  endpoint: http://minio.object-store:9000
+  access_key: minio
+  secret_key: password
+  endpoint: http://minio.object-store:9002
 
 elasticsearch:
   http_hosts:
-    - host: elasticsearch-master.doc-store
+    - host: punchplatform-es-default.doc-store
       port: 9200
       scheme: http
   security:
@@ -72,7 +57,7 @@ elasticsearch:
       password: elastic
 
 kafka:
-  kafka.bootstrap.servers: kooker-kafka-kafka-bootstrap.processing:9092
+  kafka.bootstrap.servers: kafka-kafka-bootstrap.processing:9092
 
 
 #### Spark conf

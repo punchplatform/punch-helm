@@ -4,33 +4,44 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}
 data:
-  jupypunch_conf.yaml: |
-    kubernetes: true
-    spark.kubernetes.namespace: {{ .Release.Namespace }}
-    spark.kubernetes.authenticate.driver.serviceAccountName: {{ .Values.kubernetes.service_account }}
-    spark.ui.port: {{ .Values.spark_ui.port }}
-    {{ if .Values.spark_conf }}
-    {{- range $k, $v := .Values.spark_conf }}
-    {{ $k }}: {{ tpl ($v) $}}
-    {{- end }}
-    {{ end }}
-    jupypunch.s3ContentsManager.enabled: {{ .Values.s3ContentsManager.enabled }}
-    jupypunch.s3ContentsManager.access_key: {{ .Values.s3.access_key }}
-    jupypunch.s3ContentsManager.secret_key: {{ .Values.s3.secret_key }}
-    jupypunch.s3ContentsManager.endpoint_url: {{ .Values.s3.endpoint }}
-    jupypunch.s3ContentsManager.bucket: {{ .Values.s3ContentsManager.bucket }}
-
-    punch.artifacts.server.url: {{ index .Values "punch.artifacts.server.url" }}
-    
-    punch_nodes: 
-      {{ if .Values.s3 }}
-      s3: {{- .Values.s3 | toYaml | trim | nindent 8 }}
-      {{- end }}
-      {{ if .Values.elasticsearch }}
-      elasticsearch: {{- .Values.elasticsearch | toYaml | trim | nindent 8 }}
-      {{- end }}
-      {{ if .Values.kafka }}
-      kafka: {{- .Values.kafka | toYaml | trim | nindent 8 }}
-      kafka_stream: {{- .Values.kafka | toYaml | trim | nindent 8 }}
-      {{- end }}
-      keynotused: null
+  punchline: >-
+    {
+    "metadata": {
+      "namespace": "{{ .Release.Namespace }}",
+      "name": "{{ .Chart.Name }}"
+    },
+    "spec": {
+        "containers": {
+            "resourcesInitContainer": {
+                "image": "{{ .Values.resourcesInitContainer.image }}:{{.Chart.Version}}",
+                "resourcesProviderUrl": "{{ .Values.resourcesInitContainer.url }}"
+            },
+            "serviceAccount": "{{ .Values.kubernetes.service_account }}"
+        },
+        "engineSettings": {
+            {{ if .Values.spark_conf }}
+              {{- range $k, $v := .Values.spark_conf }}
+                "{{ $k }}": "{{ tpl ($v) $}}",
+              {{- end }}
+            {{ end }}
+            "jupypunch.s3ContentsManager.enabled": "{{ .Values.s3ContentsManager.enabled }}",
+            "jupypunch.s3ContentsManager.access_key": "{{ .Values.s3.access_key }}",
+            "jupypunch.s3ContentsManager.secret_key": "{{ .Values.s3.secret_key }}",
+            "jupypunch.s3ContentsManager.endpoint_url": "{{ .Values.s3.endpoint }}",
+            "jupypunch.s3ContentsManager.bucket": "{{ .Values.s3ContentsManager.bucket }}",
+            "punch_nodes": {
+                {{ if .Values.s3 }}
+                "s3": {{ toJson .Values.s3 }},
+                {{ end }}
+                {{ if .Values.elasticsearch }}
+                "elasticsearch": {{ toJson .Values.elasticsearch }},
+                {{ end }}
+                {{ if .Values.kafka }}
+                "kafka": {{ toJson .Values.kafka }},
+                {{ end }}
+                "keynotused": "null"
+              }
+            
+        }
+      }
+    }

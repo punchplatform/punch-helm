@@ -25,11 +25,14 @@ spec:
           emptyDir: {}
       containers:
         - name: {{ .Chart.Name }}
-          image: {{ .Values.application.image }}
+          image: {{ .Values.application.image }}:{{.Chart.Version}}
           imagePullPolicy: {{ .Values.application.imagePullPolicy }}
+          env:
+            - name: PUNCHLINE_FILE_PATH
+              value: /data/punchline
           volumeMounts:
             - name: config-volume
-              mountPath: /opt/jupypunch/
+              mountPath: /data
             - name: resourcectl-volume
               mountPath: /usr/share/punch
           resources:
