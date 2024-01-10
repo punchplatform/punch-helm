@@ -8,4 +8,47 @@ metadata:
     app: artifacts
 data:
   application.yml: |
-    {{- toYaml .Values.config | nindent 4 }}
+    server:
+      port: {{ .Values.server.port }}
+
+    application:
+      tenant: {{ .Values.application.tenant }}
+
+    web:
+      enabled: {{ .Values.web.enabled }}
+
+    security:
+      enabled: {{ .Values.security.enabled }}
+
+    keycloak:
+      auth-server-url: {{ .Values.keycloak.auth_server_url }}
+      realm: {{ .Values.keycloak.realm }}
+      resource: {{ .Values.keycloak.resource }}
+      public-client: {{ .Values.keycloak.public_client }}
+      principal-attribute: {{ .Values.keycloak.principal_attribute }}
+      use-resource-role-mappings: {{ .Values.keycloak.use_resource_role_mappings }}
+
+    metadata:
+    {{- if .Values.metadata.elasticsearch }}
+      elasticsearch:
+      {{- toYaml .Values.metadata.elasticsearch | nindent 8 }}
+    {{- else if .Values.metadata.file }}
+      file:
+      {{- toYaml .Values.metadata.file | nindent 8 }}
+    {{- end }}
+
+    data:
+    {{- if .Values.data.minio }}
+      minio:
+      {{- toYaml .Values.data.minio | nindent 8 }}
+    {{- else if .Values.metadata.file }}
+      file:
+      {{- toYaml .Values.data.file | nindent 8 }}
+    {{- end }}
+
+    spring:
+    {{- toYaml .Values.spring | nindent 6 }}
+
+    logging:
+      level:
+        root: INFO
