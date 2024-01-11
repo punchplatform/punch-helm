@@ -1,16 +1,21 @@
 image:
-  name: ghcr.io/punchplatform/artifacts-server:8.0-dev
+  name: ghcr.io/punchplatform/artifacts-server:8.1-dev
   # -- secret to pull image
   secret: admin-secret
   policy: IfNotPresent
 
-server:
-  # -- port to run the app
-  port: 4245
+serviceAccount:
+  name: default
+  create: false
 
+gcpConfig:
+  enabled: false
+  serviceAccountName: '' #A GKE service account 
+  
 ingress:
   # -- enable an ingress
   enabled: true
+  proxyBodySize: 5g
   # -- ingress url
   url: artifacts-server.dpsc
   # -- ingress class name to select an ingress controller
@@ -21,61 +26,82 @@ ingress:
   #activated when cert_management = cert-manager
   certManager:
     issuerType: cluster-issuer # can be cluster-issuer or issuer
-    issuerName: myissuer # issuer name 
+    issuerName: myissuer # issuer name
 
-application:
-  # -- tenant to store data
-  tenant: mytenant
+server:
+  port: 4245
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /dev
+      prefix: stdout
+      buffered: false
+      suffix:
+      file-date-format:
+      pattern: '%h %l %u %t "%r" %s %b %D'
 
-# -- spring configuration
-spring:
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    okhttp3: INFO
+    com.github.punchplatform.artifacts.server.controllers.utils.ReadWriteLock: DEBUG
 
-web:
-  # -- enable Artifacts Server UI
-  enabled: true
+env: 
+  - name: JDK_JAVA_OPTIONS
+    value: "-Xms100m -Xmx450m"
 
-security:
-  # -- enable Artifacts Server security with keycloak
-  enabled: false
+resources: 
+  requests:
+    memory: 100Mi
+  limits:
+    memory: 500Mi
 
-keycloak:
-  # -- Keycloak auth server informations
-  auth_server_url: http://keycloak-http.authentication/auth/
-  realm: kast
-  resource: artifact-server
-  public_client: true
-  principal_attribute: preferred_username
-  use_resource_role_mappings: true
+config:
+  # ---------------------------------
+  # Punch Artifact Server configuration file
+  # ---------------------------------
 
-metadata:
-  # -- ES backend - connection information
-  elasticsearch:
-    http_hosts:
-      - host: elasticsearch.doc-store
-        port: 9200
-        scheme: http
-    index: artifacts-metadata
-    security:
-      credentials:
-        username: admin
-        password: admin
-      ssl:
-        use_self_signed_certificate: false
-        hostname_verification: false
-  # -- (string) path to folder for FS metadata backend
-  file:
+  server:
+    # -- port to run the app
+    port: 4245
 
-data:
-  # -- Connection information for Minio data backend
-  minio:
-    host: http://s3.object-store:9000
-    access_key: minio
-    secret_key: password
-  # -- (string) path to folder for FS data backend
-  file:
+  application:
+    # -- tenant to store data
+    tenant: mytenant
 
+  # -- spring configuration
+  spring:
+    servlet:
+      multipart:
+        max-file-size: 100MB
+        max-request-size: 100MB
 
+#  keycloak:
+#    # -- Keycloak auth server informations
+#    enabled: true
+#    realm: master
+#    auth-server-url: http://keycloak.punch:8080/
+#    resource: artifacts-server
+#    credentials:
+#      secret: BVl1UNFSONUXjvk7uxkdQyVkiXWKAuIf
+#    use-resource-role-mappings: true
+#    bearer-only: true
+
+  metadata:
+    # -- Connection information for Minio and gcs metadata backend
+    type: minio
+    minio:
+      skipCreateBucket: false
+      host: http://s3.object-store:9000
+      access_key: minio
+      secret_key: password
+
+  data:
+    # -- Connection information for Minio and gcs data backend
+    type: minio
+    minio:
+      skipCreateBucket: false
+      host: http://s3.object-store:9000
+      access_key: minio
+      secret_key: password

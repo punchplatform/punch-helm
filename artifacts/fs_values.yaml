@@ -1,9 +1,11 @@
 # Values for running Artifacts Server on File System
 # for data and metadata
 image:
-  name: ghcr.io/punchplatform/artifacts-server:8.0-dev
+  name: ghcr.io/punchplatform/artifacts-server:8.1-dev
   secret: admin-secret
   policy: IfNotPresent
+
+serviceAccountName: default
 
 server:
   port: 4245
@@ -21,12 +23,7 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-web:
-  enabled: true
-
 metadata:
   file: /tmp/artifacts/metadata
-  elasticsearch: null
 data:
   file: /tmp/artifacts/data
-  minio: null
