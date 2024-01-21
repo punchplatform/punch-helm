@@ -29,7 +29,7 @@ securityContext: { }
   # capabilities:
   #   drop:
   #   - ALL
-  # readOnlyRootFilesystem: true
+# readOnlyRootFilesystem: true
 # runAsNonRoot: true
 # runAsUser: 1000
 
@@ -63,7 +63,7 @@ resources: { }
   # limits:
   #   cpu: 100m
   #   memory: 128Mi
-  # requests:
+# requests:
 #   cpu: 100m
 #   memory: 128Mi
 
@@ -107,6 +107,14 @@ persistence:
   VolumeName: ""
   accessMode: ReadWriteOnce
   size: 10Gi
+
+env:
+  # ---------------------------------
+  # Punch Board react env variables
+  # ---------------------------------
+  REACT_APP_VIEWS: '{"dashboard": true, "artifacts": true, "configurations": true, "lineage": true, "sigma_rules": true, "alerts": true, "devices": true, "tracking": true, "settings": true, "profile": true, "punchlines": true}'
+  REACT_APP_NAVBAR: '{"enabled":true, "separator": true, "kubeStatus": true}'
+  REACT_APP_LOGOS: '{"navBarLogo": "/images/punch_logo_white.svg"}'
 
 config:
   # ---------------------------------
