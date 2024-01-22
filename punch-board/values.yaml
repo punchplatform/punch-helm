@@ -114,7 +114,7 @@ env:
   # ---------------------------------
   REACT_APP_VIEWS: '{"dashboard": true, "artifacts": true, "configurations": true, "lineage": true, "sigma_rules": true, "alerts": true, "devices": true, "tracking": true, "settings": true, "profile": true, "punchlines": true}'
   REACT_APP_NAVBAR: '{"enabled":true, "separator": true, "kubeStatus": true}'
-  REACT_APP_LOGOS: '{"navBarLogo": "/images/punch_logo_white.svg"}'
+  REACT_APP_LOGOS: '{"navBarLogo": "/images/punch/punch_logo_white.svg"}'
 
 config:
   # ---------------------------------
