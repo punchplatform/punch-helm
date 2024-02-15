@@ -112,20 +112,10 @@ env:
   # ----------------------------------------
   # Punch Board react environment variables
   # ----------------------------------------
-  #VITE_APP_VIEWS: '{"dashboard": "true", "artifacts": "true", "configurations": "true", "lineage": "true", "sigma_rules": "true", "alerts": "true", "devices": "true", "tracking": "true", "settings": "true", "profile": "true", "punchlines": "true" }'
-  #VITE_APP_NAVBAR: '{"enabled":"true", "logo":"/images/punch/punch_logo_white.svg", "separator": "true", "kubeStatus": "true" }'
-  #VITE_APP_DOCK: '{"enabled":"false"}'
-  #VITE_APP_FOOTER: '{"enabled":"false"}'
-  #VITE_APP_LOGIN: '{"enabled":"true", "logo":"/innovation/images/logos/logo_white.svg"}'
-  #VITE_APP_MAIN: '{"favicon": "/punch/images/logos/favicon.svg", "title": "Innovation Hub"}'
-
-
-  VITE_APP_MAIN: '{"favicon": "/innovation/images/logos/favicon.svg", "title": "Innovation Hub"}'
-  VITE_APP_VIEWS: '{"innovation": "true", "artifacts": "true", "configurations": "true"}'
-  VITE_APP_NAVBAR: '{"enabled":"false"}'
-  VITE_APP_DOCK: '{"enabled":"true", "logo": "/images/innovation/logos/logo-black-transparent.svg"}'
-  VITE_APP_FOOTER: '{"enabled":"true"}'
-  VITE_APP_LOGIN: '{"enabled":"true", "logo":"/innovation/images/logos/logo_white.svg"}'
+  REACT_APP_VIEWS: '{"dashboard": "true", "artifacts": "true", "configurations": "true", "lineage": "true", "sigma_rules": "true", "alerts": "true", "devices": "true", "tracking": "true", "settings": "true", "profile": "true", "punchlines": "true" }'
+  REACT_APP_NAVBAR: '{"enabled":"true", "logo":"/images/punch/punch_logo_white.svg", "separator": "true", "kubeStatus": "true" }'
+  REACT_APP_DOCK: '{"enabled":"false"}'
+  REACT_APP_FOOTER: '{"enabled":"false"}'
 
 config:
   # ---------------------------------
