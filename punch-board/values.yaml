@@ -142,6 +142,17 @@ config:
 
   punchArtifacts: 'http://artifacts-server.punch-artifacts:4245'
 
+  services:
+    - prefix: '/v1/artifacts'
+      service: 'artifacts-server.punch-artifacts:4245'
+    - prefix: '/v1/docs'
+      service: 'artifacts-server.punch-artifacts:4247'
+  jwt:
+    secretKey: 'B613679A0814D9EC772F95D778C35FC5FF1697C493715653C6C712144292C5AD'
+  frontend:
+    name: punch
+    device: false
+
   auth:
     users:
       board:
