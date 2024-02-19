@@ -134,23 +134,26 @@ config:
   # The proxying of the services to your backends.
   # usage:
   #  call: /v1/<prefix>/<your service path> --> will be sent to --> <service>/v1/<prefix>/<your service path>
+  # This is a Kooker typical configuration, replace with your own if you are on GCP or Azure or elsewhere.
   services:
     - prefix: '/v1/artifacts'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
     - prefix: '/v1/configuration'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
     - prefix: '/v1/topology'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
     - prefix: '/v1/devices'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
     - prefix: '/v1/settings'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
     - prefix: '/v1/alerts'
-      service: 'artifacts-server.punch-artifacts:4245'
+      service: 'artifacts-server.artifacts-server:4245'
   # This jwt key is used to (only) sign the jwt token. The jwt token is a standard token
   # that contain the useful information about the user.
   # Check the proxy.go file.
   jwt:
+    # Of course this is not correct to have a token in a config file. This
+    # is just for the example. You should use a secret to store this token.
     secretKey: 'B613679A0814D9EC772F95D778C35FC5FF1697C493715653C6C712144292C5AD'
 
   # The frontend configuration for you board. Here you select the views you want to display
@@ -174,6 +177,7 @@ config:
           - admin
           - editor
           - viewer
+  # By default Keycloack is not setup. If you want to use it, you have to set the following
   #  keycloak:
   #    realm: master
   #    auth-server-url: http://keycloak.punch:8080/
