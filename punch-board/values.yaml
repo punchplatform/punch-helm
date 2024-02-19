@@ -108,15 +108,6 @@ persistence:
   accessMode: ReadWriteOnce
   size: 10Gi
 
-env:
-  # ----------------------------------------
-  # Punch Board react environment variables
-  # ----------------------------------------
-  REACT_APP_VIEWS: '{"dashboard": "true", "artifacts": "true", "configurations": "true", "lineage": "true", "sigma_rules": "true", "alerts": "true", "devices": "true", "tracking": "true", "settings": "true", "profile": "true", "punchlines": "true" }'
-  REACT_APP_NAVBAR: '{"enabled":"true", "logo":"/images/punch/punch_logo_white.svg", "separator": "true", "kubeStatus": "true" }'
-  REACT_APP_DOCK: '{"enabled":"false"}'
-  REACT_APP_FOOTER: '{"enabled":"false"}'
-
 config:
   # ---------------------------------
   # Punch Board configuration file
@@ -140,19 +131,41 @@ config:
       board.punch.io/platform: kooker
     authenticationStrategy: serviceAccount
 
-  punchArtifacts: 'http://artifacts-server.punch-artifacts:4245'
-
+  # The proxying of the services to your backends.
+  # usage:
+  #  call: /v1/<prefix>/<your service path> --> will be sent to --> <service>/v1/<prefix>/<your service path>
   services:
     - prefix: '/v1/artifacts'
       service: 'artifacts-server.punch-artifacts:4245'
-    - prefix: '/v1/docs'
-      service: 'artifacts-server.punch-artifacts:4247'
+    - prefix: '/v1/configuration'
+      service: 'artifacts-server.punch-artifacts:4245'
+    - prefix: '/v1/topology'
+      service: 'artifacts-server.punch-artifacts:4245'
+    - prefix: '/v1/devices'
+      service: 'artifacts-server.punch-artifacts:4245'
+    - prefix: '/v1/settings'
+      service: 'artifacts-server.punch-artifacts:4245'
+    - prefix: '/v1/alerts'
+      service: 'artifacts-server.punch-artifacts:4245'
+  # This jwt key is used to (only) sign the jwt token. The jwt token is a standard token
+  # that contain the useful information about the user.
+  # Check the proxy.go file.
   jwt:
     secretKey: 'B613679A0814D9EC772F95D778C35FC5FF1697C493715653C6C712144292C5AD'
-  frontend:
-    name: punch
-    device: false
 
+  # The frontend configuration for you board. Here you select the views you want to display
+  # and the logo you want to display.
+  frontend:
+    name: "punch"
+    views:
+      - "devices"
+      - "alerts"
+    favicon: "/images/punch/favicon.png"
+    title: "Punch"
+    navBarLogo: "/images/punch/punch_logo_white.svg"
+    loginLogo: "/images/punch/punch_logo_white.svg"
+
+  # The authentication configuration. Here you can define the users and their roles.
   auth:
     users:
       board:
