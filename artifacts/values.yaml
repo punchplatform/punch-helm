@@ -62,6 +62,19 @@ config:
   # Punch Artifact Server configuration file
   # ---------------------------------
 
+  springdoc:
+    # /v3/api-docs endpoint
+    api-docs:
+      path: /v1/api-docs
+      enabled: true
+    # /swagger-ui.html endpoint
+    swagger-ui:
+      enabled: true
+    # Paths to include
+    pathsToMatch:
+      - /v1/**
+    writer-with-order-by-keys: true
+
   server:
     # -- port to run the app
     port: 4245
