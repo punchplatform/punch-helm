@@ -3,8 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.8.0
-  creationTimestamp: null
+    controller-gen.kubebuilder.io/version: v0.14.0
   name: plans.scheduler.punchplatform.io
 spec:
   group: scheduler.punchplatform.io
@@ -43,14 +42,19 @@ spec:
         description: Plan is the Schema for the plans API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
             type: string
           metadata:
             type: object
@@ -73,7 +77,9 @@ spec:
                     type: string
                 type: object
               cron:
-                description: Either corn or interval should be set needs a cron expression
+                description: |-
+                  Either corn or interval should be set
+                  needs a cron expression
                 type: string
               dates:
                 additionalProperties:
@@ -86,8 +92,9 @@ spec:
                   - format
                   - offset
                   type: object
-                description: Templating can be applied before executing the plan Generates
-                  dates that will be substituted in .spec.punchline.template
+                description: |-
+                  Templating can be applied before executing the plan
+                  Generates dates that will be substituted in .spec.punchline.template
                 type: object
               implementation:
                 description: Will be used in case of Sparkline for executing pyspark/spark
@@ -96,8 +103,9 @@ spec:
                 - python
                 type: string
               interval:
-                description: Either corn or interval should be set use 1s, 1m, 1h
-                  or 1d
+                description: |-
+                  Either corn or interval should be set
+                  use 1s, 1m, 1h or 1d
                 type: string
               kind:
                 enum:
@@ -123,20 +131,27 @@ spec:
             description: PlanStatus defines the observed state of Plan
             properties:
               currentSchedule:
-                description: RFC 3339 datetime current schedule
+                description: |-
+                  RFC 3339 datetime
+                  current schedule
                 type: string
               currentScheduleStartTime:
-                description: RFC 3339 datetime realtime the current schedule started
+                description: |-
+                  RFC 3339 datetime
+                  realtime the current schedule started
                 type: string
               iterations:
                 default: 0
                 type: integer
               nextSchedule:
-                description: RFC 3339 datetime next schedule
+                description: |-
+                  RFC 3339 datetime
+                  next schedule
                 type: string
               phase:
-                description: similar to kubernetes pod phases Pending, Running, Succeeded,
-                  Failed, Unknown
+                description: |-
+                  similar to kubernetes pod phases
+                  Pending, Running, Succeeded, Failed, Unknown
                 enum:
                 - Pending
                 - Running
@@ -146,22 +161,29 @@ spec:
                 - Backoff
                 type: string
               previousSchedule:
-                description: RFC 3339 datetime last schedule
+                description: |-
+                  RFC 3339 datetime
+                  last schedule
                 type: string
               previousScheduleEndTime:
-                description: RFC 3339 datetime realtime the last execution ended
+                description: |-
+                  RFC 3339 datetime
+                  realtime the last execution ended
                 type: string
               previousScheduleStartTime:
-                description: RFC 3339 datetime realtime the last schedule started
+                description: |-
+                  RFC 3339 datetime
+                  realtime the last schedule started
                 type: string
               previousScheduleStatus:
                 description: final status of the last schedule
                 type: string
               retries:
                 default: 0
-                description: Number of retries of plan current schedule This retries
-                  will fallback to 0 on each new successful schedule but will increment
-                  on each failed execution of the current schedule
+                description: |-
+                  Number of retries of plan current schedule
+                  This retries will fallback to 0 on each new successful schedule
+                  but will increment on each failed execution of the current schedule
                 type: integer
             type: object
         type: object
@@ -194,14 +216,19 @@ spec:
         description: Plan is the Schema for the plans API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
             type: string
           metadata:
             type: object
@@ -218,7 +245,9 @@ spec:
                     type: string
                 type: object
               cron:
-                description: Either corn or interval should be set needs a cron expression
+                description: |-
+                  Either corn or interval should be set
+                  needs a cron expression
                 type: string
               dates:
                 additionalProperties:
@@ -231,8 +260,85 @@ spec:
                   - format
                   - offset
                   type: object
-                description: Templating can be applied before executing the plan Generates
-                  dates that will be substituted in .spec.punchline.template
+                description: |-
+                  Templating can be applied before executing the plan
+                  Generates dates that will be substituted in .spec.punchline.template
+                type: object
+              httpRequest:
+                description: |-
+                  enable triggering of plan schedules by requesting a foreign http server
+                  instead of the built-in cron-event generator
+                  doing so will make the fields interval and cron ignored
+                properties:
+                  response:
+                    properties:
+                      contexts:
+                        description: include additional context to be used under .spec.templateSpec
+                        items:
+                          properties:
+                            name:
+                              description: name under which all context data will
+                                be available
+                              type: string
+                            query:
+                              description: valid JsonPath to search for context
+                              type: string
+                          required:
+                          - name
+                          - query
+                          type: object
+                        type: array
+                      queries:
+                        description: required queries to control plan scheduling behavior
+                        properties:
+                          schedule:
+                            properties:
+                              current:
+                                type: string
+                              next:
+                                type: string
+                              previous:
+                                type: string
+                            required:
+                            - current
+                            - next
+                            - previous
+                            type: object
+                          stop:
+                            type: string
+                        required:
+                        - schedule
+                        - stop
+                        type: object
+                    required:
+                    - queries
+                    type: object
+                  server:
+                    description: needed metadata to request a foreign http server
+                    properties:
+                      body:
+                        description: body to make requests with queries if needed
+                        type: object
+                        x-kubernetes-preserve-unknown-fields: true
+                      headers:
+                        additionalProperties:
+                          type: string
+                        description: add headers on request
+                        type: object
+                      kind:
+                        description: 'available http requests are: POST'
+                        type: string
+                      url:
+                        description: url to make requests with queries if needed
+                        type: string
+                    required:
+                    - body
+                    - kind
+                    - url
+                    type: object
+                required:
+                - response
+                - server
                 type: object
               implementation:
                 description: Will be used in case of SparkPunchline for executing
@@ -242,8 +348,9 @@ spec:
                 - python
                 type: string
               interval:
-                description: Either cron or interval should be set use 1s, 1m, 1h
-                  or 1d format
+                description: |-
+                  Either cron or interval should be set
+                  use 1s, 1m, 1h or 1d format
                 type: string
               kind:
                 enum:
@@ -258,8 +365,9 @@ spec:
                 description: Stop plan after N iteration
                 type: integer
               monitoringInterval:
-                description: How time to wait between checks for a job end. By default
-                  15s use 1s, 1m, 1h or 1d format
+                description: |-
+                  How time to wait between checks for a job end. By default 15s
+                  use 1s, 1m, 1h or 1d format
                 type: string
               templateSpec:
                 description: Flinkline;SparkPunchline;BatchApplication;BatchPunchline
@@ -273,10 +381,14 @@ spec:
             description: PlanStatus defines the observed state of Plan
             properties:
               currentSchedule:
-                description: RFC 3339 datetime current schedule
+                description: |-
+                  RFC 3339 datetime
+                  current schedule
                 type: string
               currentScheduleStartTime:
-                description: RFC 3339 datetime realtime the current schedule started
+                description: |-
+                  RFC 3339 datetime
+                  realtime the current schedule started
                 type: string
               id:
                 description: Plan id used to differentiate two successive submission
@@ -286,11 +398,14 @@ spec:
                 default: 0
                 type: integer
               nextSchedule:
-                description: RFC 3339 datetime next schedule
+                description: |-
+                  RFC 3339 datetime
+                  next schedule
                 type: string
               phase:
-                description: similar to kubernetes pod phases Pending, Running, Succeeded,
-                  Failed, Unknown
+                description: |-
+                  similar to kubernetes pod phases
+                  Pending, Running, Succeeded, Failed, Unknown
                 enum:
                 - Pending
                 - Running
@@ -300,13 +415,19 @@ spec:
                 - Backoff
                 type: string
               previousSchedule:
-                description: RFC 3339 datetime last schedule
+                description: |-
+                  RFC 3339 datetime
+                  last schedule
                 type: string
               previousScheduleEndTime:
-                description: RFC 3339 datetime realtime the last execution ended
+                description: |-
+                  RFC 3339 datetime
+                  realtime the last execution ended
                 type: string
               previousScheduleStartTime:
-                description: RFC 3339 datetime realtime the last schedule started
+                description: |-
+                  RFC 3339 datetime
+                  realtime the last schedule started
                 type: string
               previousScheduleStatus:
                 description: final status of the last schedule
@@ -317,9 +438,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
