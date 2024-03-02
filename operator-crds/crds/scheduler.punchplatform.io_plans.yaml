@@ -264,7 +264,7 @@ spec:
                   Templating can be applied before executing the plan
                   Generates dates that will be substituted in .spec.punchline.template
                 type: object
-              httpRequest:
+              httpPullRequest:
                 description: |-
                   enable triggering of plan schedules by requesting a foreign http server
                   instead of the built-in cron-event generator
@@ -340,6 +340,36 @@ spec:
                 - response
                 - server
                 type: object
+              httpPushRequest:
+                description: |-
+                  enable triggering of plan schedules by listening for http post request
+                  instead of the built-in cron-event generator
+                properties:
+                  contexts:
+                    description: include additional context to be used under .spec.templateSpec
+                    items:
+                      properties:
+                        name:
+                          description: name under which all context data will be available
+                          type: string
+                        query:
+                          description: valid JsonPath to search for context
+                          type: string
+                      required:
+                      - name
+                      - query
+                      type: object
+                    type: array
+                  schedule:
+                    description: required queries to control plan scheduling behavior
+                    type: string
+                  stop:
+                    description: order to stop the plan
+                    type: string
+                required:
+                - schedule
+                - stop
+                type: object
               implementation:
                 description: Will be used in case of SparkPunchline for executing
                   pyspark/spark
@@ -397,6 +427,9 @@ spec:
               iterations:
                 default: 0
                 type: integer
+              lastSucceededTask:
+                description: Plan last succeeded task
+                type: string
               nextSchedule:
                 description: |-
                   RFC 3339 datetime
