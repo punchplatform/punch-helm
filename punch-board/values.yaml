@@ -118,6 +118,9 @@ config:
 
   # temporary directory
   tmpDir: /tmp
+  logging:
+    # Valid values are debug, info, warn
+    level: info
 
   # schema location
   schemas:
