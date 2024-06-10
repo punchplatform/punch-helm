@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   archive-housekeeping:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.932372667Z"
+    created: "2024-06-10T00:23:11.947504422Z"
     description: A Helm chart for Archive Housekeeping
     digest: db46cf8247700c1ddcdd1afdd38e3e643ccafd0910b875ce1a2c74154849dfcd
     name: archive-housekeeping
@@ -11,7 +11,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/archive-housekeeping-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.932081975Z"
+    created: "2024-06-10T00:23:11.947183108Z"
     description: A Helm chart for Archive Housekeeping
     digest: 800bd839491cafc15afe516ff53dd509af8b4d5d4ff199a7757d3bed31500c3b
     name: archive-housekeeping
@@ -20,7 +20,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/archive-housekeeping-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.93178691Z"
+    created: "2024-06-10T00:23:11.946816148Z"
     description: A Helm chart for Archive Housekeeping
     digest: 43cece0aacdef89d64c2a14d3bdeeae329f54c81b9d1e4af1257f8204ead2c3f
     name: archive-housekeeping
@@ -29,7 +29,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/archive-housekeeping-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.931471695Z"
+    created: "2024-06-10T00:23:11.946445427Z"
     description: A Helm chart for Archive Housekeeping
     digest: f2d4b6103924235ad1f52260a3544ba8c3acfdb3a4f6de6eee177301c3241882
     name: archive-housekeeping
@@ -38,7 +38,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/archive-housekeeping-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.931084328Z"
+    created: "2024-06-10T00:23:11.946003895Z"
     description: A Helm chart for Archive Housekeeping
     digest: 1cdaa1e7540de322fabba1e1602a8bba9880a34f38b918e133bf0157c9c6e5fb
     name: archive-housekeeping
@@ -48,7 +48,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   artifacts:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.937240537Z"
+    created: "2024-06-10T00:23:11.951373811Z"
     description: A Helm chart for the Punch Artifacts
     digest: 86bab94aca4fc86021b155eda97a1afc1346de12a8f2d41093fe3d334a2fc61b
     name: artifacts
@@ -57,7 +57,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-8.0-latest.tgz
     version: 8.0-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.936786613Z"
+    created: "2024-06-10T00:23:11.951024527Z"
     description: A Helm chart for the Punch Artifacts
     digest: ac98aa4ec2733d1d3165b793ba767905ed0bd86c8281c90d64405ec2cf3edfd2
     name: artifacts
@@ -66,7 +66,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-8.0-dev.tgz
     version: 8.0-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.937595233Z"
+    created: "2024-06-10T00:23:11.951708921Z"
     description: A Helm chart for the Punch Artifacts
     digest: 2830b296ce3d887f58e53a279754fe46f24f40d894b7cd4767beee2f48e1cfb0
     name: artifacts
@@ -75,7 +75,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-8.0.0-beta1.tgz
     version: 8.0.0-beta1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.936382549Z"
+    created: "2024-06-10T00:23:11.95060964Z"
     description: A Helm chart for the Punch Artifacts
     digest: 329d1fc88c8d9030ec7af9972f1de5f5ae5e82aedfde6ec605f1fbbf4a7396a4
     name: artifacts
@@ -84,7 +84,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-7.1.0-SNAPSHOT.tgz
     version: 7.1.0-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.935927297Z"
+    created: "2024-06-10T00:23:11.950116797Z"
     description: A Helm chart for the Punch Artifacts
     digest: 32a3cf85fab44f6ba10175d2a27384526216a9311598a37a5fc730f626b265e5
     name: artifacts
@@ -93,7 +93,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.935186098Z"
+    created: "2024-06-10T00:23:11.949593277Z"
     description: A Helm chart for the Punch Artifacts
     digest: 8a5f9a2f4319a404fd4f97f95e4d2b69c491b98a3fa647ed04d633fd59f61deb
     name: artifacts
@@ -102,7 +102,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.933602037Z"
+    created: "2024-06-10T00:23:11.949093606Z"
     description: A Helm chart for the Punch Artifacts
     digest: a65585608c1a86bc8a06645aac620aa131b116aa030485ae29622713e700f3f0
     name: artifacts
@@ -111,7 +111,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.93321918Z"
+    created: "2024-06-10T00:23:11.948589149Z"
     description: A Helm chart for the Punch Artifacts
     digest: 9537b36d43186d10f1aa6596237dabd7fe1167374f2cfd91c7e18850d48754f3
     name: artifacts
@@ -120,7 +120,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/artifacts-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.932782758Z"
+    created: "2024-06-10T00:23:11.948051035Z"
     description: A Helm chart for the Punch Artifacts
     digest: 8601d30af82d1d0b1e0c8e248d485cf5286b73bc9cd63d51bc535459220c644d
     name: artifacts
@@ -131,7 +131,7 @@ entries:
   artifacts-server:
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.946029851Z"
+    created: "2024-06-10T00:23:11.962843052Z"
     description: Helm chart for the Punch Artifacts Server
     digest: b6f6a2073c5b3b95575262140ea5b50783de3ee5e55a2e366b50b77c426d17f5
     name: artifacts-server
@@ -141,7 +141,7 @@ entries:
     version: 8.1.13
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.944738264Z"
+    created: "2024-06-10T00:23:11.962092481Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 2c127b55715db3ea5ed9a00afe4bf03f7505afc15904760787ea5edb801dcf2c
     name: artifacts-server
@@ -151,7 +151,7 @@ entries:
     version: 8.1.13-hiding-minio-credentials
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.944229775Z"
+    created: "2024-06-10T00:23:11.961318446Z"
     description: Helm chart for the Punch Artifacts Server
     digest: e61fe31c80d1f8c8ec8349804fac50e0df5b33ac40b32b617e43f4f7ba5dbcfb
     name: artifacts-server
@@ -161,7 +161,7 @@ entries:
     version: 8.1.12
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.943724886Z"
+    created: "2024-06-10T00:23:11.960605455Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 9601a47a43ce6a194a186a0c1c1bc71f23d7b7ae50b496c642438ea6e26d26b1
     name: artifacts-server
@@ -171,7 +171,7 @@ entries:
     version: 8.1.11
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.94326588Z"
+    created: "2024-06-10T00:23:11.959868758Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 6f973c295c4f911c1bcba65f4bb5adcc640875a1655ad65a880510771184c125
     name: artifacts-server
@@ -181,7 +181,7 @@ entries:
     version: 8.1.11-RC1
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.942782968Z"
+    created: "2024-06-10T00:23:11.958625073Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 0108e0cd119d9af10889433a496fd19c6a3315de4cdb40a1d2454aef9df901bf
     name: artifacts-server
@@ -191,7 +191,7 @@ entries:
     version: 8.1.10
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.942350408Z"
+    created: "2024-06-10T00:23:11.957690624Z"
     description: Helm chart for the Punch Artifacts Server
     digest: e10276af157059da5f6dd02a7b66f5b47e5371f7586ac8f151f1bf27199cb9e0
     name: artifacts-server
@@ -201,7 +201,7 @@ entries:
     version: 8.1.10-p1-metric-labels-fix
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.951192326Z"
+    created: "2024-06-10T00:23:11.969330906Z"
     description: Helm chart for the Punch Artifacts Server
     digest: a43b68847c8b9ae87d83bac690396e4313339ec5d7169f282d3fe50b8e7134f0
     name: artifacts-server
@@ -211,7 +211,7 @@ entries:
     version: 8.1.9
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.95069892Z"
+    created: "2024-06-10T00:23:11.968806902Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 6615267e703805da1a12f9d6495c325c6b47e62adbc8ed41728080cde0dbedb6
     name: artifacts-server
@@ -221,7 +221,7 @@ entries:
     version: 8.1.9-p1-421-hkp-resolver
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.95023628Z"
+    created: "2024-06-10T00:23:11.968316912Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 4b266404b4287ea44295185684be37f608ac65ada24719d7bae95844d100f524
     name: artifacts-server
@@ -231,7 +231,7 @@ entries:
     version: 8.1.8
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.949728758Z"
+    created: "2024-06-10T00:23:11.967826292Z"
     description: Helm chart for the Punch Artifacts Server
     digest: d0c8801f1cbe4fb22ae35b81dcb2b0ea0a85f8560a5366889dbd9a74951e6a5c
     name: artifacts-server
@@ -241,7 +241,7 @@ entries:
     version: 8.1.8-trajectory-simulator
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.949285634Z"
+    created: "2024-06-10T00:23:11.967372936Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 61dc4bc81d3fe458ab3d679fb0418cf1a081a9dec67b7431093743b9d3204929
     name: artifacts-server
@@ -251,7 +251,7 @@ entries:
     version: 8.1.8-simulator-patch
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.948796718Z"
+    created: "2024-06-10T00:23:11.966892204Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 2fe5fb6f87ef69111d62ef32141ab48201a22c79163360047f63debe256f3591
     name: artifacts-server
@@ -261,7 +261,7 @@ entries:
     version: 8.1.8-patch-schema
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.948372873Z"
+    created: "2024-06-10T00:23:11.96638795Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 9041636ffc51cf1559827469130f2481a67a4098038c1caae9a2e23b9e9fa9e3
     name: artifacts-server
@@ -271,7 +271,7 @@ entries:
     version: 8.1.7
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.947935953Z"
+    created: "2024-06-10T00:23:11.965671006Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 7e18c74feb30d207b36e7051376ae77f6ee434e345bcaa008751c8778562a661
     name: artifacts-server
@@ -281,7 +281,7 @@ entries:
     version: 8.1.6
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.947540692Z"
+    created: "2024-06-10T00:23:11.965067685Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 38fbc25a11b70e490fcd42d93d69d89cf172a332785c968190cdeb60150b4028
     name: artifacts-server
@@ -291,7 +291,7 @@ entries:
     version: 8.1.5
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.947204164Z"
+    created: "2024-06-10T00:23:11.964495366Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 517cd16ce12fc8bd0807904af21fe8f27e613e7c2c25440768777625a016c45f
     name: artifacts-server
@@ -301,7 +301,7 @@ entries:
     version: 8.1.4
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.946819287Z"
+    created: "2024-06-10T00:23:11.963957525Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 667213a394afeabc1c79a286b6c28b2f15732a6abd59b6172582720ea4a220ef
     name: artifacts-server
@@ -311,7 +311,7 @@ entries:
     version: 8.1.3
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.946447347Z"
+    created: "2024-06-10T00:23:11.963404494Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 3b803014b8f7145209ef36706d58db24c1d776d6d6caf34608452eb43ece5c13
     name: artifacts-server
@@ -321,7 +321,7 @@ entries:
     version: 8.1.2
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.941846531Z"
+    created: "2024-06-10T00:23:11.957195611Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 85921d116f3d7c402d1e30c04353d680c1bedec15bc23a9b4580ff3a811228ae
     name: artifacts-server
@@ -331,7 +331,7 @@ entries:
     version: 8.1.1
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.941478592Z"
+    created: "2024-06-10T00:23:11.956736655Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 6a7bceae8b477f7e388ee9c5512c2d65ff0bce0a664cc6d2e780e7ad4f7b64bb
     name: artifacts-server
@@ -341,7 +341,7 @@ entries:
     version: 8.1.0
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.941096415Z"
+    created: "2024-06-10T00:23:11.956185866Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 7cf78b97c72173459eb6073d6aebba8ab9b259cd9f552406a27980141a4477a1
     name: artifacts-server
@@ -351,9 +351,9 @@ entries:
     version: 8.1-latest
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:07.940533755Z"
+    created: "2024-06-10T00:23:11.955305408Z"
     description: Helm chart for the Punch Artifacts Server
-    digest: 9ec20210d253770a5c400f83788f9d4b5eabe87da31f29139e492c55b5716d79
+    digest: 73742c2cceda1bc5bc2e9f23d326110a14295310e836684ae49fc79bc36958c6
     name: artifacts-server
     type: application
     urls:
@@ -361,7 +361,7 @@ entries:
     version: 8.1-dev
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.940027123Z"
+    created: "2024-06-10T00:23:11.954502629Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 67f7abb1d533456302b24f40f0ca9565542c051a1be293e3122267491437cc97
     name: artifacts-server
@@ -371,7 +371,7 @@ entries:
     version: 8.0.3
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.939568256Z"
+    created: "2024-06-10T00:23:11.954059162Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 0ca750ced679303d88151a4d0cdf06f71d4e676fdd6e38c864b26347ec27408a
     name: artifacts-server
@@ -381,7 +381,7 @@ entries:
     version: 8.0.2
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.939191871Z"
+    created: "2024-06-10T00:23:11.953576506Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 0d0ad273f23874b0b780c779d2f05f40af2fa6607d42c3470f8ea95ff6dfe9a7
     name: artifacts-server
@@ -391,7 +391,7 @@ entries:
     version: 8.0.1
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.938796027Z"
+    created: "2024-06-10T00:23:11.953201242Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 6417e8c0714d2e18583e38edf10c417e326e07fd28e7fb559a5a862bde9da9cf
     name: artifacts-server
@@ -401,7 +401,7 @@ entries:
     version: 8.0.0
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.938483172Z"
+    created: "2024-06-10T00:23:11.952824852Z"
     description: Helm chart for the Punch Artifacts Server
     digest: 09de8ebab785e53364c5fa9ff2faa8f15f045a34c992e67a421fff27d448aa23
     name: artifacts-server
@@ -411,7 +411,7 @@ entries:
     version: 8.0-latest
   - apiVersion: v2
     appVersion: 8.0-dev
-    created: "2024-06-09T03:26:07.938063507Z"
+    created: "2024-06-10T00:23:11.952352804Z"
     description: Helm chart for the Punch Artifacts Server
     digest: d0e458dcef045503eaef51fb4756c5e27cec20e0e82bbcc11478e8e1671195ff
     name: artifacts-server
@@ -421,7 +421,7 @@ entries:
     version: 8.0-dev
   elastalert:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.952321014Z"
+    created: "2024-06-10T00:23:11.970722981Z"
     description: A Helm chart for Elastalert
     digest: 4a4075c8f9c4a79b35ab1b318a408c54cbecac2c09ce020f78d59de4d6f36e24
     name: elastalert
@@ -430,7 +430,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastalert-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.952121338Z"
+    created: "2024-06-10T00:23:11.970387348Z"
     description: A Helm chart for Elastalert
     digest: a6ca55d53910f2bc445c259a93da90ce541a9a34ab3771dafe2e73214468d373
     name: elastalert
@@ -439,7 +439,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastalert-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.95192278Z"
+    created: "2024-06-10T00:23:11.970143875Z"
     description: A Helm chart for Elastalert
     digest: b07a7fc11838feefb339091ab10441352eb16456d3179fc237836cedb5e22bdf
     name: elastalert
@@ -448,7 +448,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastalert-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.951689308Z"
+    created: "2024-06-10T00:23:11.969874457Z"
     description: A Helm chart for Elastalert
     digest: ce58ea87cd24421709f9603b4880e62e4cc7ea4f02ba46b543f370d3ca2c0bca
     name: elastalert
@@ -457,7 +457,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastalert-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.951441024Z"
+    created: "2024-06-10T00:23:11.969608338Z"
     description: A Helm chart for Elastalert
     digest: 453140ffdfe8ff053ae693f7d289bb9889eb1ee8e151fbaa8d07187a39652943
     name: elastalert
@@ -467,7 +467,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   elastic-housekeeping:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.953411461Z"
+    created: "2024-06-10T00:23:11.973653855Z"
     description: A Helm chart for Elastic Housekeeping
     digest: 1a2df9b5fe393687072b6ffffbddd1a2933c8a02752438fa69ba7a5f3e4879b3
     name: elastic-housekeeping
@@ -476,7 +476,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastic-housekeeping-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.953207408Z"
+    created: "2024-06-10T00:23:11.97301261Z"
     description: A Helm chart for Elastic Housekeeping
     digest: 07757336d1e965403960507bdd835996eb26a2389484fe8f0da28c9ab6cab290
     name: elastic-housekeeping
@@ -485,7 +485,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastic-housekeeping-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.953009647Z"
+    created: "2024-06-10T00:23:11.972338105Z"
     description: A Helm chart for Elastic Housekeeping
     digest: 9e6179976070d719852b120094b36f8433f92c2fca88b851523046e12380bf91
     name: elastic-housekeeping
@@ -494,7 +494,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastic-housekeeping-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.952757152Z"
+    created: "2024-06-10T00:23:11.971661163Z"
     description: A Helm chart for Elastic Housekeeping
     digest: dfe2db82678d952d978f2401f7f291a04c521b2a36a9dc0f4b18dcf97f882556
     name: elastic-housekeeping
@@ -503,7 +503,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/elastic-housekeeping-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.952554329Z"
+    created: "2024-06-10T00:23:11.971004087Z"
     description: A Helm chart for Elastic Housekeeping
     digest: 03635e9ee5c041f4b3e7363b286d0727eec236390097b4e0b8d1632475127ab8
     name: elastic-housekeeping
@@ -513,7 +513,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   extraction-server:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.955162707Z"
+    created: "2024-06-10T00:23:11.974859476Z"
     description: A Helm chart for Punch extraction server
     digest: d16196c66bf9405a4d3fffcd683e9d052ef98d88965be2d48917bcab79082d11
     name: extraction-server
@@ -522,7 +522,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/extraction-server-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.954589153Z"
+    created: "2024-06-10T00:23:11.974624822Z"
     description: A Helm chart for Punch extraction server
     digest: 845b105aeb33b903ad4c5bd1a3268bef27710212501875ff751c05c3795e0d35
     name: extraction-server
@@ -531,7 +531,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/extraction-server-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.954277823Z"
+    created: "2024-06-10T00:23:11.974417948Z"
     description: A Helm chart for Punch extraction server
     digest: 8eb15424d55b8c513d329a284309bf7ecc64a0d1b2775f15e06a364021e7262d
     name: extraction-server
@@ -540,7 +540,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/extraction-server-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.953860389Z"
+    created: "2024-06-10T00:23:11.974197769Z"
     description: A Helm chart for Punch extraction server
     digest: 84bbdc92e966b60fa4123308641e7adad99580ae9636a782e8625858ec0e035f
     name: extraction-server
@@ -549,7 +549,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/extraction-server-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.953642388Z"
+    created: "2024-06-10T00:23:11.973951596Z"
     description: A Helm chart for Punch extraction server
     digest: 22d2e8f4416837ae762d25691abd74f7ed131c51b3e8519d027bdb72c7fffb61
     name: extraction-server
@@ -559,7 +559,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   jupypunch:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.959593644Z"
+    created: "2024-06-10T00:23:11.981761089Z"
     description: Helm chart for jupy punch
     digest: 536df3deb64d6f734e7aab8853334db59df46a7a6bfc29c466aa8cce54b9160a
     name: jupypunch
@@ -568,7 +568,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.13.tgz
     version: 8.1.13
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.959247923Z"
+    created: "2024-06-10T00:23:11.981204832Z"
     description: Helm chart for jupy punch
     digest: 2caf58c287803f437d0ec544e8a8f0697e136df3c14f551eff8c4049ffc34fe9
     name: jupypunch
@@ -577,7 +577,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.12.tgz
     version: 8.1.12
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.958871314Z"
+    created: "2024-06-10T00:23:11.980599522Z"
     description: Helm chart for jupy punch
     digest: 63998842c98806f3534a02803fe8e218729903ad32cd2b2b6d9b55784f470ef8
     name: jupypunch
@@ -586,7 +586,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.11.tgz
     version: 8.1.11
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.958508424Z"
+    created: "2024-06-10T00:23:11.980192557Z"
     description: Helm chart for jupy punch
     digest: 4d89982f45af067c37c61db4863029fa6184fc4c1553c1180910e4e81e51bb5e
     name: jupypunch
@@ -595,7 +595,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.10.tgz
     version: 8.1.10
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.962844681Z"
+    created: "2024-06-10T00:23:11.987232642Z"
     description: Helm chart for jupy punch
     digest: 4a1f4469e07d1010a1615affe84d66cf05a6bfb90428133910ed2923f6e43d3a
     name: jupypunch
@@ -604,7 +604,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.9.tgz
     version: 8.1.9
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.962457849Z"
+    created: "2024-06-10T00:23:11.986710692Z"
     description: Helm chart for jupy punch
     digest: c93e32fc1821c20f96c5d0af280a8a37a9e1c9b512c6b9c28656adcdde61a5a4
     name: jupypunch
@@ -613,7 +613,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.8.tgz
     version: 8.1.8
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.961959677Z"
+    created: "2024-06-10T00:23:11.986272122Z"
     description: Helm chart for jupy punch
     digest: d89522239876fced81116aef9725713243457ed78a1462f2baa506247f14a8e3
     name: jupypunch
@@ -622,7 +622,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.7.tgz
     version: 8.1.7
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.961549475Z"
+    created: "2024-06-10T00:23:11.985788662Z"
     description: Helm chart for jupy punch
     digest: 5a667632082dc87d07954d28e20a61190b6268f204437e55f0dd6e423ff69fa9
     name: jupypunch
@@ -631,7 +631,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.6.tgz
     version: 8.1.6
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.96118869Z"
+    created: "2024-06-10T00:23:11.98504298Z"
     description: Helm chart for jupy punch
     digest: dea50c9a605b247eb14cb5fa7e8cfaf2e06144b41dbcb002adb24e7af8be0a8f
     name: jupypunch
@@ -640,7 +640,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.5.tgz
     version: 8.1.5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.960741361Z"
+    created: "2024-06-10T00:23:11.984253562Z"
     description: Helm chart for jupy punch
     digest: 663a86f5eecf34dcb5aba80b74b319f901f8643936423bfba43e512526e366ae
     name: jupypunch
@@ -649,7 +649,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.4.tgz
     version: 8.1.4
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.960341181Z"
+    created: "2024-06-10T00:23:11.983474599Z"
     description: Helm chart for jupy punch
     digest: 9ec42285f2d65a4b0bb8b2cefec03db9492ed14729b2e3c4759b075f8a3320b6
     name: jupypunch
@@ -658,7 +658,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.3.tgz
     version: 8.1.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.959982519Z"
+    created: "2024-06-10T00:23:11.982540698Z"
     description: Helm chart for jupy punch
     digest: db4a8bcace496dd8ccff61f18d939845e221d5c70458d7709f5862e34c38927b
     name: jupypunch
@@ -667,7 +667,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.2.tgz
     version: 8.1.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.958149787Z"
+    created: "2024-06-10T00:23:11.979607331Z"
     description: Helm chart for jupy punch
     digest: d9ebb5f96c6596c7a6e1cc435d6240471b9e679ff6f009bfafa1cfbf8e4b2656
     name: jupypunch
@@ -676,7 +676,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.1.tgz
     version: 8.1.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.957692095Z"
+    created: "2024-06-10T00:23:11.979130523Z"
     description: Helm chart for jupy punch
     digest: 820d162f7b6d733a6d2b14ab56b5e42ec820ee9a37702610f6e6359751d74f3b
     name: jupypunch
@@ -685,7 +685,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1.0.tgz
     version: 8.1.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.957351067Z"
+    created: "2024-06-10T00:23:11.978495588Z"
     description: Helm chart for jupy punch
     digest: 17a36488a8292b1cca8f5e557f769a6f0ce4a84d66bc82ee41895cc504a97fd3
     name: jupypunch
@@ -694,7 +694,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1-latest.tgz
     version: 8.1-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.956984263Z"
+    created: "2024-06-10T00:23:11.977251818Z"
     description: Helm chart for jupy punch
     digest: 67940076544b50db5e54393c5c9df71d8f6297456df7da0186811c5cb9555bf8
     name: jupypunch
@@ -703,7 +703,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.1-dev.tgz
     version: 8.1-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.95658842Z"
+    created: "2024-06-10T00:23:11.97652564Z"
     description: Helm chart for jupy punch
     digest: 95e339d9f1e90dffc795874edb5d32511faf37de9409d2f9ac68fc594280d1b1
     name: jupypunch
@@ -712,7 +712,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.0.3.tgz
     version: 8.0.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.956265484Z"
+    created: "2024-06-10T00:23:11.976171557Z"
     description: Helm chart for jupy punch
     digest: 8d367a7af3c4cc9a88ee23082cde61f36449b1900e6c635250f799c1f93b1833
     name: jupypunch
@@ -721,7 +721,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.0.2.tgz
     version: 8.0.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.955897654Z"
+    created: "2024-06-10T00:23:11.975741858Z"
     description: Helm chart for jupy punch
     digest: 5e1e421319468719473659fd405159443b6f7fbb37efd55ba6abe84c2df4e233
     name: jupypunch
@@ -730,7 +730,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/jupypunch-8.0-latest.tgz
     version: 8.0-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.95552697Z"
+    created: "2024-06-10T00:23:11.975253452Z"
     description: Helm chart for jupy punch
     digest: bc24e07b412373358339094d67f56882ee420e15bee609217cbefe7169cc6b84
     name: jupypunch
@@ -740,7 +740,7 @@ entries:
     version: 8.0-dev
   log-injector:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.964090168Z"
+    created: "2024-06-10T00:23:11.989307337Z"
     description: A Helm chart for the Punch log injector
     digest: 6accc3bf48f953f43ecb05d7950a66dfd600098de7d6ac3cb048771123a50f50
     name: log-injector
@@ -749,7 +749,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/log-injector-7.0.2-SNAPSHOT.tgz
     version: 7.0.2-SNAPSHOT
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.963585711Z"
+    created: "2024-06-10T00:23:11.989114715Z"
     description: A Helm chart for the Punch log injector
     digest: d44fccc955ae565c23601c75b3b1a1260b60018232a3ce3f66c1f4fef6b8d9b4
     name: log-injector
@@ -758,7 +758,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/log-injector-7.0.1.tgz
     version: 7.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.963405547Z"
+    created: "2024-06-10T00:23:11.98884738Z"
     description: A Helm chart for the Punch log injector
     digest: ee48fd44237eaa63d1951258210a766f306dc8ef1189796ff5f5fd6e65385905
     name: log-injector
@@ -767,7 +767,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/log-injector-7.0.1-rc5.tgz
     version: 7.0.1-rc5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.963234592Z"
+    created: "2024-06-10T00:23:11.988120161Z"
     description: A Helm chart for the Punch log injector
     digest: 43b3a7e2a4b716a853a176c0f84d5605cfd9b39c3a4e3c1b3f9282460a5c8291
     name: log-injector
@@ -776,7 +776,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/log-injector-7.0.1-alpha1.tgz
     version: 7.0.1-alpha1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.963055504Z"
+    created: "2024-06-10T00:23:11.987464927Z"
     description: A Helm chart for the Punch log injector
     digest: 0f3a3d63d4bb4b336a6e4c22e4c7177560df9cfd19bea09acbd4afdcd3970615
     name: log-injector
@@ -786,7 +786,7 @@ entries:
     version: 7.0.1-SNAPSHOT
   operator:
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.979316151Z"
+    created: "2024-06-10T00:23:12.009492074Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -808,7 +808,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.13.tgz
     version: 8.1.13
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.978682714Z"
+    created: "2024-06-10T00:23:12.00890176Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -830,7 +830,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.12.tgz
     version: 8.1.12
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.978139767Z"
+    created: "2024-06-10T00:23:12.008297748Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -852,7 +852,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.11.tgz
     version: 8.1.11
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.977591861Z"
+    created: "2024-06-10T00:23:12.007646949Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -874,7 +874,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.10.tgz
     version: 8.1.10
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.983988116Z"
+    created: "2024-06-10T00:23:12.015069097Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -896,7 +896,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.9.tgz
     version: 8.1.9
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.983433654Z"
+    created: "2024-06-10T00:23:12.014390412Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -918,7 +918,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.8.tgz
     version: 8.1.8
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.982865022Z"
+    created: "2024-06-10T00:23:12.013459649Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -940,7 +940,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.7.tgz
     version: 8.1.7
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.982289438Z"
+    created: "2024-06-10T00:23:12.012541466Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -962,7 +962,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.6.tgz
     version: 8.1.6
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.981741596Z"
+    created: "2024-06-10T00:23:12.011822069Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -984,7 +984,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.5.tgz
     version: 8.1.5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.981212777Z"
+    created: "2024-06-10T00:23:12.011246289Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1006,7 +1006,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.4.tgz
     version: 8.1.4
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.980638285Z"
+    created: "2024-06-10T00:23:12.010659109Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1028,7 +1028,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.3.tgz
     version: 8.1.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.980065115Z"
+    created: "2024-06-10T00:23:12.010091324Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1050,7 +1050,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.2.tgz
     version: 8.1.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.977054334Z"
+    created: "2024-06-10T00:23:12.007001297Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1072,7 +1072,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.1.tgz
     version: 8.1.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.976482024Z"
+    created: "2024-06-10T00:23:12.006224606Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1094,7 +1094,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1.0.tgz
     version: 8.1.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.975940023Z"
+    created: "2024-06-10T00:23:12.005580381Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1116,7 +1116,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1-latest.tgz
     version: 8.1-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.975370722Z"
+    created: "2024-06-10T00:23:12.00496528Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1138,7 +1138,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.1-dev.tgz
     version: 8.1-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.974688399Z"
+    created: "2024-06-10T00:23:12.004377372Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1160,7 +1160,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.3.tgz
     version: 8.0.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.973423649Z"
+    created: "2024-06-10T00:23:12.003749957Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1182,7 +1182,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.2.tgz
     version: 8.0.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.972871781Z"
+    created: "2024-06-10T00:23:12.00241583Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1204,7 +1204,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.1.tgz
     version: 8.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.972298097Z"
+    created: "2024-06-10T00:23:12.001085509Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1226,7 +1226,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.1-patch-57-merged-lists.tgz
     version: 8.0.1-patch-57-merged-lists
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.971707487Z"
+    created: "2024-06-10T00:23:12.000121234Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1248,7 +1248,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.0.tgz
     version: 8.0.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.969442207Z"
+    created: "2024-06-10T00:23:11.996742588Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1270,7 +1270,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0-latest.tgz
     version: 8.0-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.968802128Z"
+    created: "2024-06-10T00:23:11.995680261Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1292,7 +1292,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0-dev.tgz
     version: 8.0-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.971103604Z"
+    created: "2024-06-10T00:23:11.99920558Z"
     dependencies:
     - condition: operator.certificate.enabled
       name: operator.certificate
@@ -1314,7 +1314,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.0-beta2.tgz
     version: 8.0.0-beta2
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.970358371Z"
+    created: "2024-06-10T00:23:11.998096023Z"
     description: A Helm chart for the Punch Operator
     digest: 1207c37614efe7a77a9d6acd27cae7a8d791caab3ea4dbb5c827f02600f1cf12
     name: operator
@@ -1323,7 +1323,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.0-beta1.tgz
     version: 8.0.0-beta1
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.969939953Z"
+    created: "2024-06-10T00:23:11.997390981Z"
     description: A Helm chart for the Punch Operator
     digest: dcc87ed5daa52951a60d1446c8af6d3755abda6b8cc4fb82076c9c2abdf2a626
     name: operator
@@ -1332,7 +1332,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-8.0.0-ALPHA3-latest.tgz
     version: 8.0.0-ALPHA3-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.968171047Z"
+    created: "2024-06-10T00:23:11.994553317Z"
     description: A Helm chart for the Punch Operator
     digest: c49953be54b1c74a0e9ccbcfae96d51f78eeaacba9b2ab70a377377bb38ce17e
     name: operator
@@ -1341,7 +1341,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.967744202Z"
+    created: "2024-06-10T00:23:11.993959377Z"
     description: A Helm chart for the Punch Operator
     digest: 72d1dee401a4f2a88788ecdbde5e139677aac41e59643c33abe7624176df0212
     name: operator
@@ -1350,7 +1350,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.9.tgz
     version: 1.0.9
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.96738551Z"
+    created: "2024-06-10T00:23:11.993369283Z"
     description: A Helm chart for the Punch Operator
     digest: a73bf46efb42dc16a3cb58c41ae814e86e7fe4bd5dcdb4000f13873a4cd40791
     name: operator
@@ -1359,7 +1359,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.8.tgz
     version: 1.0.8
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.967017149Z"
+    created: "2024-06-10T00:23:11.992756606Z"
     description: A Helm chart for the Punch Operator
     digest: aff900f4319055a7a6a584e2721b06b499c7e3c89613d9e85b8513dbec834f83
     name: operator
@@ -1368,7 +1368,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.7.tgz
     version: 1.0.7
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.966541652Z"
+    created: "2024-06-10T00:23:11.992170402Z"
     description: A Helm chart for the Punch Operator
     digest: c286ff068910e24ecaa29de37f30d406bc1ba16b9676b6554230114e566b08a3
     name: operator
@@ -1377,7 +1377,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.6.tgz
     version: 1.0.6
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.966133917Z"
+    created: "2024-06-10T00:23:11.99156655Z"
     description: A Helm chart for the Punch Operator
     digest: 2ac4cf08ec259e935e1ffe3df45d10d302774816e47fd52eb6f46fe74d4dc14f
     name: operator
@@ -1386,7 +1386,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.965708957Z"
+    created: "2024-06-10T00:23:11.99099623Z"
     description: A Helm chart for the Punch Operator
     digest: 287b3281f5eeabee36a32f591f05f0d40d8709c253244559c16060762595dae2
     name: operator
@@ -1395,7 +1395,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.965297141Z"
+    created: "2024-06-10T00:23:11.990411107Z"
     description: A Helm chart for the Punch Operator
     digest: 4b19faec0a4dec3e2dfda3e11bffcc001c08a073be25ef5f73c8de5d026d8290
     name: operator
@@ -1404,7 +1404,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.964869555Z"
+    created: "2024-06-10T00:23:11.98979323Z"
     description: A Helm chart for the Punch Operator
     digest: 92a9b9f8a6528700ea6766cd428022474678ebd5df8dd07d8f18496ceba78c72
     name: operator
@@ -1414,7 +1414,7 @@ entries:
     version: 1.0-SNAPSHOT
   operator-crds:
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.084167378Z"
+    created: "2024-06-10T00:23:12.117666318Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 8f13bc944ba76a21c8e7054dbc80c08dacd423150eb72960cbb798f2d3dd1cc0
     name: operator-crds
@@ -1423,7 +1423,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.13.tgz
     version: 8.1.13
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.076361002Z"
+    created: "2024-06-10T00:23:12.109404459Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: edbc0ca7e5e17ea29b561b824681fe4fadc8f0d99121f0bfbf0426afbecc9bfd
     name: operator-crds
@@ -1432,7 +1432,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.12.tgz
     version: 8.1.12
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.066306219Z"
+    created: "2024-06-10T00:23:12.101650386Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 6ce4e369b4bb5e9a8f66e13b17751f0db525cc1422f94a060051766526a515cc
     name: operator-crds
@@ -1441,7 +1441,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.11.tgz
     version: 8.1.11
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.058554441Z"
+    created: "2024-06-10T00:23:12.093302919Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 00f75cfd66fe544bd0e97c980153a5841f23d045f03bfd71e2bc5ec2f0b62c05
     name: operator-crds
@@ -1450,7 +1450,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.10.tgz
     version: 8.1.10
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.121797752Z"
+    created: "2024-06-10T00:23:12.155343395Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: ba5e15a2e28f41110864dc3ff031f7496bd8d862c9444666bdf42bccebdd328b
     name: operator-crds
@@ -1459,7 +1459,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.9.tgz
     version: 8.1.9
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.111660666Z"
+    created: "2024-06-10T00:23:12.14573146Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: bcdc6e8230bded5c2046c41c4ad0d8be511de7cd401444e4e320e480f38737b2
     name: operator-crds
@@ -1468,7 +1468,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.8.tgz
     version: 8.1.8
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.107713723Z"
+    created: "2024-06-10T00:23:12.142570078Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 89c66f0d2928760223cf6a1a159cab4763a85c99059db1cb33e55351f13ea4be
     name: operator-crds
@@ -1477,7 +1477,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.7.tgz
     version: 8.1.7
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.103707557Z"
+    created: "2024-06-10T00:23:12.138248552Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: e6f5e277766c871510073fde4831fcb06d10da0fd8ad162de9e51bb50f599643
     name: operator-crds
@@ -1486,7 +1486,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.6.tgz
     version: 8.1.6
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.100559011Z"
+    created: "2024-06-10T00:23:12.134500183Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 3c83111e67294ae0ceabf6998e6d28e744a18143caafa02d021f2e5983023db7
     name: operator-crds
@@ -1495,7 +1495,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.5.tgz
     version: 8.1.5
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.095496714Z"
+    created: "2024-06-10T00:23:12.129668586Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 60e3c69b50ded64d6c21991eddbc70b71ef4f3fbe5a200cdf870284ae44da16d
     name: operator-crds
@@ -1504,7 +1504,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.4.tgz
     version: 8.1.4
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.091401887Z"
+    created: "2024-06-10T00:23:12.126228318Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: c8fb1993244207bb5565c3ef955b1928f0f34f12e61ac7fa31001a39631803e9
     name: operator-crds
@@ -1513,7 +1513,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.3.tgz
     version: 8.1.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.088526903Z"
+    created: "2024-06-10T00:23:12.122474672Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: c86db499e89ad08c8ef3e0903bbb52d9cc47c526a3d5ee91fd0174ad34c32023
     name: operator-crds
@@ -1522,7 +1522,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.2.tgz
     version: 8.1.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.050135354Z"
+    created: "2024-06-10T00:23:12.085543357Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 7c787aca699d4b132ee81cac8f0672e926991cc6ce2bccd4b08f26dd4dfc6471
     name: operator-crds
@@ -1531,7 +1531,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.1.tgz
     version: 8.1.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.046077922Z"
+    created: "2024-06-10T00:23:12.081207099Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 6f22e49f285ff2e60d9cf4193eb7545d4596fe0877672811c5f17f58ab9ea03f
     name: operator-crds
@@ -1540,7 +1540,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1.0.tgz
     version: 8.1.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.042176592Z"
+    created: "2024-06-10T00:23:12.077671613Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: fbb60910dc097c04c0ea3501fb689844fd70f8c6e641b01d0461415b130d9a1e
     name: operator-crds
@@ -1549,7 +1549,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1-latest.tgz
     version: 8.1-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.033408028Z"
+    created: "2024-06-10T00:23:12.069017888Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 7cf07736b4c71901351e3004c02e4f8da2bc80ed9f1c6c3323c1146806b70b22
     name: operator-crds
@@ -1558,7 +1558,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.1-dev.tgz
     version: 8.1-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.023635625Z"
+    created: "2024-06-10T00:23:12.05991524Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 268be4eb8e5716c758fcf574e8b7f96171bcf20edaa015560a21ee5f4198453f
     name: operator-crds
@@ -1567,7 +1567,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.3.tgz
     version: 8.0.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.020073435Z"
+    created: "2024-06-10T00:23:12.056474568Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: c388ab638d94ede91bf4de9e3d380e5d8f998f6ad35eb06160f277f581611844
     name: operator-crds
@@ -1576,7 +1576,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.2.tgz
     version: 8.0.2
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.016323812Z"
+    created: "2024-06-10T00:23:12.052179303Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: e05792a659adb551af9107cc9e1f0bcd01c3a7a1b24ae29ede4b5a1adf24a4a2
     name: operator-crds
@@ -1585,7 +1585,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.1.tgz
     version: 8.0.1
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.012726472Z"
+    created: "2024-06-10T00:23:12.048651432Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 20765a11fec663640607902ce90b1b9d30d657dd5d90a7409ebcfe83c782cd7f
     name: operator-crds
@@ -1594,7 +1594,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.1-patch-57-merged-lists.tgz
     version: 8.0.1-patch-57-merged-lists
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.009750661Z"
+    created: "2024-06-10T00:23:12.045644429Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 6c180bb436c281415b60e27abb4cefc5f4f958d51c203e41d050ad03d1145314
     name: operator-crds
@@ -1603,7 +1603,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.0.tgz
     version: 8.0.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.999276955Z"
+    created: "2024-06-10T00:23:12.034163315Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 99a1fa174fd9f018c83b29b6a495e173df346c61d80065ec7044d2fc0ac9f395
     name: operator-crds
@@ -1612,7 +1612,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0-latest.tgz
     version: 8.0-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.995772801Z"
+    created: "2024-06-10T00:23:12.030548453Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 133d2e3d30fbddade47584977c4a6c9186364c41921d8b71f1f54c936ad7696b
     name: operator-crds
@@ -1621,7 +1621,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0-dev.tgz
     version: 8.0-dev
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.006750793Z"
+    created: "2024-06-10T00:23:12.04279749Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 64c0e768d66c3e068c0ce9cc5c50f91750d1324a0e9a28f8da9c52614658d811
     name: operator-crds
@@ -1630,7 +1630,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.0-beta2.tgz
     version: 8.0.0-beta2
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.00381279Z"
+    created: "2024-06-10T00:23:12.039631391Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: afb53b8a83471b8415b2b3b2f3b51ea2ec854eb1c73a4e6587b9eecc1c1afe54
     name: operator-crds
@@ -1639,7 +1639,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.0-beta1.tgz
     version: 8.0.0-beta1
   - apiVersion: v2
-    created: "2024-06-09T03:26:08.000619669Z"
+    created: "2024-06-10T00:23:12.035651122Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 509d0295b370469824b45b6162f6264bea2e0fbc7c0283963d069ff9af45b913
     name: operator-crds
@@ -1648,7 +1648,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-8.0.0-ALPHA3-latest.tgz
     version: 8.0.0-ALPHA3-latest
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.992579405Z"
+    created: "2024-06-10T00:23:12.025448237Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 1371492cc5ff89633b82e14517f128854e8ab87459b1434889aa8696fe989d97
     name: operator-crds
@@ -1657,7 +1657,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.991658234Z"
+    created: "2024-06-10T00:23:12.02427733Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: ca6d1f28933b3e9d546bfe4c81ace6aafe1c4a197cd04f837834d8edb108c25f
     name: operator-crds
@@ -1666,7 +1666,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.9.tgz
     version: 1.0.9
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.990375715Z"
+    created: "2024-06-10T00:23:12.023082219Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: f85e09f2d1b27fbaf9c5960ca236abafded03b46c6c58c7ba24fa98c9021ea7f
     name: operator-crds
@@ -1675,7 +1675,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.8.tgz
     version: 1.0.8
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.989413024Z"
+    created: "2024-06-10T00:23:12.020750811Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: a6810749da0b97be18326a68c8803e712be908971cde9f71acf71936b6b673f3
     name: operator-crds
@@ -1684,7 +1684,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.7.tgz
     version: 1.0.7
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.988523316Z"
+    created: "2024-06-10T00:23:12.019750882Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: eb69f4ed982810efbed0c6c3179e3c6db179944391ace02a09fb183816cc4cd3
     name: operator-crds
@@ -1693,7 +1693,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.6.tgz
     version: 1.0.6
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.987660415Z"
+    created: "2024-06-10T00:23:12.018784151Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 22afe6312d1add3c4e7542516ff24ec98f49e2d5eaec07a693fe2aa8d53a3d1c
     name: operator-crds
@@ -1702,7 +1702,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.986845264Z"
+    created: "2024-06-10T00:23:12.017813241Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: b4d6bdac4ef26c0356d2d7ca09aa01f805057fa6a4133fb85b611e018493e0d6
     name: operator-crds
@@ -1711,7 +1711,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.986055099Z"
+    created: "2024-06-10T00:23:12.016924488Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: 38f751f23c213bfb3c63e1ab683ee99385d10aff40a55c9657050973392a02c1
     name: operator-crds
@@ -1720,7 +1720,7 @@ entries:
     - https://punchplatform.github.io/punch-helm/operator-crds-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
-    created: "2024-06-09T03:26:07.985242886Z"
+    created: "2024-06-10T00:23:12.015998724Z"
     description: A Helm chart containing CRDs for the Punch Operator
     digest: d8d761c9c362f2c7fbf9769ef0be19dedb74c3ea4ab27d1715011cee562d99bf
     name: operator-crds
@@ -1731,7 +1731,7 @@ entries:
   punch:
   - apiVersion: v2
     appVersion: 8.1-dev
-    created: "2024-06-09T03:26:08.127005724Z"
+    created: "2024-06-10T00:23:12.161260871Z"
     dependencies:
     - name: artifacts-server
       repository: https://punchplatform.github.io/punch-helm
@@ -1756,7 +1756,7 @@ entries:
   punch-board:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.131522078Z"
+    created: "2024-06-10T00:23:12.166952407Z"
     description: A Helm chart for Kubernetes
     digest: e5ac833b5faddc3dd0e01c49ad5888d55b0a9c19d492bf4558ac312229ac1bfe
     name: punch-board
@@ -1766,7 +1766,7 @@ entries:
     version: 8.1.13
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.13097809Z"
+    created: "2024-06-10T00:23:12.166249394Z"
     description: A Helm chart for Kubernetes
     digest: f6e9fa57004e92e781dac959f4a61e46f078694cddba4bd4c520b5b59f69182b
     name: punch-board
@@ -1776,7 +1776,7 @@ entries:
     version: 8.1.12
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.130430338Z"
+    created: "2024-06-10T00:23:12.165063182Z"
     description: A Helm chart for Kubernetes
     digest: d8c4bd9077dda0a3ec6964eeaaee6bdd897ea7a79707349ed1009146276d1421
     name: punch-board
@@ -1786,7 +1786,7 @@ entries:
     version: 8.1.11
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.129871093Z"
+    created: "2024-06-10T00:23:12.164141534Z"
     description: A Helm chart for Kubernetes
     digest: 8fab36a325d7d799704453fe5582528301d0ab773791aa0d7ae8de0a9f7880b5
     name: punch-board
@@ -1796,7 +1796,7 @@ entries:
     version: 8.1.10
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.139627018Z"
+    created: "2024-06-10T00:23:12.17194341Z"
     description: A Helm chart for Kubernetes
     digest: 96e1d9f0a41ad5f185fa4cce133a24cdc55a2f0637ff6abbf99f11d47d5a2d2e
     name: punch-board
@@ -1806,7 +1806,7 @@ entries:
     version: 8.1.9
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.13884452Z"
+    created: "2024-06-10T00:23:12.171368675Z"
     description: A Helm chart for Kubernetes
     digest: 81998b6ea154a666e613a61cbd3fe96c0bf71ab3bc4cb6d1850c9b19121496fe
     name: punch-board
@@ -1816,7 +1816,7 @@ entries:
     version: 8.1.8
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.138046753Z"
+    created: "2024-06-10T00:23:12.170862743Z"
     description: A Helm chart for Kubernetes
     digest: bcd12d7642530c11b9b3bc3441655ac7f5e2a8b88e6331b272c34d14f716e35e
     name: punch-board
@@ -1826,7 +1826,7 @@ entries:
     version: 8.1.7
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.137277886Z"
+    created: "2024-06-10T00:23:12.170341359Z"
     description: A Helm chart for Kubernetes
     digest: 0c3d7896614bb6dfd6331e2463e268894790dd236fe7860900edea59c9ab930b
     name: punch-board
@@ -1836,7 +1836,7 @@ entries:
     version: 8.1.6
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.136488682Z"
+    created: "2024-06-10T00:23:12.169738317Z"
     description: A Helm chart for Kubernetes
     digest: 3796543bdaf51cbfccdd61563e315b64db88dd23ddc8d876f825d0d649daeda9
     name: punch-board
@@ -1846,7 +1846,7 @@ entries:
     version: 8.1.5
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.135731036Z"
+    created: "2024-06-10T00:23:12.169196428Z"
     description: A Helm chart for Kubernetes
     digest: c66625ac1c07465edea1dbd1a0701828c0abd8d79718e97c8024b5b0c4eb1f30
     name: punch-board
@@ -1856,7 +1856,7 @@ entries:
     version: 8.1.4
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.134964844Z"
+    created: "2024-06-10T00:23:12.168647544Z"
     description: A Helm chart for Kubernetes
     digest: 2d946ff6211c38258c4c54202f93cfab34d751af0ca197e913d0ec5e0b902f90
     name: punch-board
@@ -1866,7 +1866,7 @@ entries:
     version: 8.1.4-patch-monaco
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.13251333Z"
+    created: "2024-06-10T00:23:12.168142243Z"
     description: A Helm chart for Kubernetes
     digest: 574fe456c924766f52e123264ae950c312d2921aa1bf2dce71d5dd3827e2fa70
     name: punch-board
@@ -1876,7 +1876,7 @@ entries:
     version: 8.1.3
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.132042204Z"
+    created: "2024-06-10T00:23:12.167544469Z"
     description: A Helm chart for Kubernetes
     digest: 8ef7e9dcc4b2ae03dbf7c54d2cb9b882ea110e477c16f43f32127d89074d14d9
     name: punch-board
@@ -1886,7 +1886,7 @@ entries:
     version: 8.1.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.129294279Z"
+    created: "2024-06-10T00:23:12.163551619Z"
     description: A Helm chart for Kubernetes
     digest: 6d47ea995e1ff87d32452fe52cbe32e0a8c4ddd1d3531a12866498d97af8aed4
     name: punch-board
@@ -1896,7 +1896,7 @@ entries:
     version: 8.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.128771874Z"
+    created: "2024-06-10T00:23:12.163069015Z"
     description: A Helm chart for Kubernetes
     digest: 51de3f158f6fa2e2416bbf4f18ee0b776578535b49e63dfdaeba9a5c46d644d3
     name: punch-board
@@ -1906,7 +1906,7 @@ entries:
     version: 8.1.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.128282412Z"
+    created: "2024-06-10T00:23:12.162550136Z"
     description: A Helm chart for Kubernetes
     digest: 8cf36d22261af2ec13e2bfc58390751bfbf829b57a69c186fba00cb28c65a6c1
     name: punch-board
@@ -1916,7 +1916,7 @@ entries:
     version: 8.1-latest
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-06-09T03:26:08.127685696Z"
+    created: "2024-06-10T00:23:12.161966506Z"
     description: A Helm chart for Kubernetes
     digest: 0758e98df68b47049346d1ea70c927d3abb6e4071aaecc7fc358490dda4cf4f2
     name: punch-board
@@ -1927,7 +1927,7 @@ entries:
   punchline-java:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.14289683Z"
+    created: "2024-06-10T00:23:12.174596008Z"
     description: A Helm chart to start a java punchline
     digest: 4a087d476abb1eadfe10cce83a45a62fe75a4b13089bf166dfcd515e3458afb9
     name: punchline-java
@@ -1937,7 +1937,7 @@ entries:
     version: 8.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.142606747Z"
+    created: "2024-06-10T00:23:12.174395757Z"
     description: A Helm chart to start a java punchline
     digest: 825ae59baa9119ebbfa4dadc7cf190c75e8ff5b6c8cf8a22950f731835e2f8b5
     name: punchline-java
@@ -1947,7 +1947,7 @@ entries:
     version: 8.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.142325201Z"
+    created: "2024-06-10T00:23:12.174109512Z"
     description: A Helm chart to start a java punchline
     digest: 58d4327a40f2d2357e0ae86533d8cfa144011e981d193081c6b240917516c449
     name: punchline-java
@@ -1957,7 +1957,7 @@ entries:
     version: 8.1-latest
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.14202985Z"
+    created: "2024-06-10T00:23:12.173748778Z"
     description: A Helm chart to start a java punchline
     digest: b6e8209ab1d11056523c2d1e937182de358f7bb057ed1a68cf9c11e809210b30
     name: punchline-java
@@ -1967,7 +1967,7 @@ entries:
     version: 8.1-dev
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.141730727Z"
+    created: "2024-06-10T00:23:12.173560509Z"
     description: A Helm chart to start a java punchline
     digest: 519dbc5315af151e923527f27a592f9c372f64de1ec3245d4c54f5bd5598dfeb
     name: punchline-java
@@ -1977,7 +1977,7 @@ entries:
     version: 8.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.141476356Z"
+    created: "2024-06-10T00:23:12.173361209Z"
     description: A Helm chart to start a java punchline
     digest: aae04d9b32c3fdaeb569616d6c9dcc3b30d83e8b9135ac96a82ec7a665e85da8
     name: punchline-java
@@ -1987,7 +1987,7 @@ entries:
     version: 8.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.14120129Z"
+    created: "2024-06-10T00:23:12.173142657Z"
     description: A Helm chart to start a java punchline
     digest: 4b21dc2ac0dc07226eacb820be276437fb2a3c8c7abfde30334aa0ebf6dd1da4
     name: punchline-java
@@ -1997,7 +1997,7 @@ entries:
     version: 8.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.140921411Z"
+    created: "2024-06-10T00:23:12.172923106Z"
     description: A Helm chart to start a java punchline
     digest: fc21b03a0aff86f069196d720cfbd11107d78d691e3347f0e067019b5dcc4c47
     name: punchline-java
@@ -2007,7 +2007,7 @@ entries:
     version: 8.0.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.140246759Z"
+    created: "2024-06-10T00:23:12.172520955Z"
     description: A Helm chart to start a java punchline
     digest: 0f9e4c2ca6e1a6d9f077f8dc5e890cc7fb8f54aa4a948bf623ec483bd917c375
     name: punchline-java
@@ -2017,7 +2017,7 @@ entries:
     version: 8.0-latest
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.139936704Z"
+    created: "2024-06-10T00:23:12.172257579Z"
     description: A Helm chart to start a java punchline
     digest: f1cfa270e7889a0159dc7d49978eb0436ab0357048042966c7deac36362c38ff
     name: punchline-java
@@ -2027,7 +2027,7 @@ entries:
     version: 8.0-dev
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-09T03:26:08.140604328Z"
+    created: "2024-06-10T00:23:12.172726271Z"
     description: A Helm chart to start a java punchline
     digest: f39bc1bc4716183e6faef37fea03b9492cdee6e96c1e5a98788830e3f4ae038c
     name: punchline-java
@@ -2035,4 +2035,4 @@ entries:
     urls:
     - https://punchplatform.github.io/punch-helm/punchline-java-8.0.0-beta1.tgz
     version: 8.0.0-beta1
-generated: "2024-06-09T03:26:07.930501049Z"
+generated: "2024-06-10T00:23:11.94524596Z"
